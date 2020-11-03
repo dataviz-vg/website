@@ -1,6 +1,6 @@
 ---
-description: What is Hugo?
-title: About
+description: Read, watch
+title: Resources
 ---
 
 ## Read 
