@@ -1,0 +1,42 @@
+---
+title: Ciqual
+author: Colin Fay
+date: '2020-10-06'
+slug: ciqual
+categories:
+  - food
+  - nutriment
+tags:
+  - food
+draft: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE, 
+  echo = FALSE, 
+  warning = FALSE, 
+  message = FALSE
+)
+```
+
+```{r}
+library(tidyverse)
+fls <- tempfile(fileext = ".xls")
+download.file("https://ciqual.anses.fr/cms/sites/default/files/inline-files/Table%20Ciqual%202020_ENG_2020%2007%2007.xls", fls)
+df <- readxl::read_excel(fls)
+```
+
+```{r}
+library(magrittr)
+df %>%
+  mutate(`Fat (g/100g)` = as.numeric(`Fat (g/100g)`)) %>%
+  filter(`Fat (g/100g)` != 100) %>%
+  top_n(25, `Fat (g/100g)`) %>%
+ # count(alim_grp_nom_eng)
+  #select(`Fat (g/100g)`)
+  arrange(desc(`Fat (g/100g)`)) %>%
+  ggplot(aes(reorder(alim_nom_eng, `Fat (g/100g)`), `Fat (g/100g)`, fill = alim_grp_nom_eng)) +
+  geom_col() + 
+  coord_flip()
+```

@@ -1,0 +1,108 @@
+---
+title: "Greenhouse gas emissions per 2,000 kcal by diet"
+author: "Colin Fay"
+date: 2020-11-02
+slug: "greenhouse-by-diet-2000kcal"
+categories: ["environment"]
+tags: ["greenhouse", "ecology", "environment"]
+params:
+  table: greenhousebydiet2000kcal.csv
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<div id="about-the-source" class="section level3">
+<h3>🔎 About the source</h3>
+<div class="source">
+<p>Scarborough, P., Appleby, P.N., Mizdrak, A. et al. <em>Dietary greenhouse gas emissions of meat-eaters, fish-eaters, vegetarians and vegans in the UK</em>. Climatic Change 125, 179–192 (2014). <a href="https://doi.org/10.1007/s10584-014-1169-1" class="uri">https://doi.org/10.1007/s10584-014-1169-1</a></p>
+</div>
+<div class="link">
+<p><a href="https://link.springer.com/article/10.1007/s10584-014-1169-1">link.springer.com/article/10.1007/s10584-014-1169-1</a></p>
+</div>
+<div class="quote">
+<blockquote>
+<p>The production of animal-based foods is associated with higher greenhouse gas (GHG) emissions than plant-based foods.</p>
+</blockquote>
+</div>
+<div class="count">
+<blockquote>
+<p>The diets of 2,041 vegans, 15,751 vegetarians, 8,123 fish-eaters and 29,589 meat-eaters aged 20–79 were assessed using a validated food frequency questionnaire. Comparable GHG emissions parameters were developed for the underlying food codes using a dataset of GHG emissions for 94 food commodities in the UK, with a weighting for the global warming potential of each component gas.</p>
+</blockquote>
+</div>
+</div>
+<div id="visualising-the-data" class="section level3">
+<h3>📈 Visualising the data</h3>
+<p>Visualization of <em>Table 3 Mean greenhouse gas emissions per 2,000 kcal by diet type and sex</em> (we are using the aggregated data, i.e. without the sex variable).</p>
+<p>This visualization displays the mean amount of greenhouse gas emission for 2,000kcal of a given diet (either High meat-eaters ( ≥ 100 g/day), Medium meat-eaters (50–99 g/day), Low meat-eaters ( &lt; 50 g/day), Fish-eaters, Vegetarians, or Vegans).</p>
+<p><img src="/post/2020-11-02-greenhouse-gas-2000-kcal-diet_files/figure-html/unnamed-chunk-2-1.png" width="1152" /></p>
+<details closed>
+<p><summary> <span title="Click to Expand"> Show the data </span> </summary></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+Diet
+</th>
+<th style="text-align:right;">
+Mean dietary GHG emissions (kgCO2e)
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+High meat-eaters ( ≥ 100 g/day)
+</td>
+<td style="text-align:right;">
+7.19
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Medium meat-eaters (50–99 g/day)
+</td>
+<td style="text-align:right;">
+5.63
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Low meat-eaters ( &lt; 50 g/day)
+</td>
+<td style="text-align:right;">
+4.67
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Fish-eaters
+</td>
+<td style="text-align:right;">
+3.91
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Vegetarians
+</td>
+<td style="text-align:right;">
+3.81
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Vegans
+</td>
+<td style="text-align:right;">
+2.89
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<p><br></p>
+<div class="code">
+<p>Code behind this post is available <a href="https://github.com/vegviz/2020-11-02-greenhouse-gas-2000-kcal-diet.Rmd">here</a>.</p>
+</div>
+</div>

@@ -1,0 +1,192 @@
+---
+title: "Worlwide Meat Production over the Years"
+author: "Colin Fay"
+date: 2020-11-08
+slug: "worldwide-meat-production-over-years"
+categories: ["industry"]
+tags: ["livestock", "production", "industry"]
+draft: true
+params:
+  table: meat-over-years.csv
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE, 
+  echo = FALSE, 
+  warning = FALSE, 
+  message = FALSE
+)
+library(vegviz)
+```
+
+### `r emo::ji("mag_right")` About the source 
+
+::: {.source}
+Food and Agriculture Organization of the United Nations - _Livestock Primary_ dataset.
+::: 
+
+::: {.link}
+[fao.org/faostat/en/#data/QL](https://www.fao.org/faostat/en/#data/QL)
+:::
+
+::: {.quote}
+> 
+:::
+
+::: {.count}
+> The data on livestock numbers are intended to cover all domestic animals irrespective of their age and the place or purpose of their breeding. Estimates have been made for non-reporting countries as well as for countries reporting incomplete data. However, in certain countries, data for chickens, ducks and turkeys do not yet seem to represent the total number of these birds. Certain other countries give a single figure for all poultry; data for these countries are shown under “Chickens”.
+:::
+
+```{r}
+library(tidyverse)
+library(magrittr)
+if (!file.exists(
+  params$table
+)){
+  # READ DATA HERE
+  fls <- tempfile(fileext = ".zip")
+  download.file("http://fenixservices.fao.org/faostat/static/bulkdownloads/Production_LivestockPrimary_E_All_Data.zip", fls)
+  unzip(fls,exdir = dirname(fls))
+  readr::read_csv(
+    file.path(
+      dirname(fls), "Production_LivestockPrimary_E_All_Data.csv"
+    )
+  ) %>%
+    select(-matches("Y....F$")) %>%
+    select(-matches("Code")) %>%
+    mutate(Item = tolower(Item)) %>%
+    filter(grepl('meat', Item)) %>%
+    filter(Element == "Production", Unit == "tonnes") %>% 
+    select(-Element, - Unit) %>%
+    pivot_longer(
+      names_to = "Year", 
+      values_to = "Head", 
+      cols = tidyselect::matches("Y....$")
+    ) %>%
+    mutate(
+      #Head = Head * 1000, 
+      Year = gsub("Y(....)", "\\1", Year), 
+      Year = as.numeric(Year)
+    ) %>%
+    group_by(Year, Item) %>%
+    summarize(
+      Head = sum(Head, na.rm = TRUE)
+    ) %>%
+    readr::write_csv(params$table)
+  unlink(
+    file.path(
+      dirname(fls), "Production_LivestockPrimary_E_All_Data.csv"
+    )
+  )
+}
+source_table <- readr::read_csv(params$table)
+
+```
+
+
+### `r emo::ji("chart_with_upwards_trend")` Visualising the data
+
+Visualization of _Livestock Primary_.
+The data is filtered by Item, then the Production in tonnes is kept, grouped by year, and summed. 
+
+```{r}
+# DATA MANIP
+adjust_and_draw <- function(
+  item, 
+  color = 1, 
+  filter_total = TRUE
+){
+  adjusted_table <- source_table %>%  
+    filter(grepl(item, Item))
+  if (filter_total){
+    adjusted_table <- adjusted_table %>% filter(!grepl('total', Item))
+  }
+  
+  gg <- adjusted_table %>%
+    ggplot(aes(Year, Head)) + 
+    geom_col(fill = viridis::viridis(6)[color]) + 
+    labs(
+      x = tools::toTitleCase(item), 
+      y = sprintf(
+        "Production in %s", 
+        "tonnes"
+      ), 
+      caption = "Via dataviz.vg",
+      subtitle = "From: fao.org/faostat"
+    ) +
+    scale_y_continuous(labels = scales::comma) + 
+    ggtheme()
+  list(
+    tbl  = adjusted_table, 
+    gg = gg
+  )
+}
+
+```
+
+
+These visualizations will display the evolution of the production in tonnes of various livestock, from 1960 to 2018.
+
+#### Global meat production in tonnes
+
+```{r fig.dim = c(12, 6)}
+# VIZ
+df <- adjust_and_draw("meat, total", color = 2, filter_total = FALSE)
+df$gg + 
+  labs(
+    title = "Meat production over the years"
+  )
+```
+
+`r details::details(knitr::kable(df$tbl, format = "html"), summary = "Show the data",lang  = NULL)`
+
+#### Le'ts focus on some species:
+
+```{r}
+# VIZ
+df <- source_table %>%  
+  mutate(Item = tolower(Item)) %>%
+  filter(grepl("(duck)|(pig)|(chicken)|(poultry)|(sheep)|(cattle)", Item)) %>%
+  #filter(Element == 'Production' & Unit == 'tonnes') %>% 
+  #filter(grepl('meat', Item)) %>% 
+  filter(!grepl('indigenous', Item)) %>% 
+  filter(!grepl('total', Item))
+```
+
+::: {.animated}
+
+```{r evol-animated}
+library(gganimate)
+x <- df %>%
+  ggplot(aes(Year, Head, group = Item, color = Item)) + 
+  geom_line(size = 1.5) + 
+  geom_segment(aes(xend = 2020, yend = Head), linetype = 2, colour = 'grey') + 
+  geom_text(aes(x = 2021, label = Item), hjust = 0) +
+  xlim(1960, 2030) + 
+  guides(color = FALSE) + 
+  labs(
+    title = "Evolution of the meat production of 6 species",
+    x = "Year", 
+    y = sprintf(
+      "Production in %s",
+      "tonnes"
+    ),
+    subtitle = "From: fao.org/faostat", 
+    caption = "Via dataviz.vg"
+  ) +
+  scale_y_continuous(labels = scales::comma) + 
+  scale_color_viridis_d(option = "A") +
+  ggtheme() + 
+  transition_reveal(Year)
+animate(x, fps = 5, duration = 15, ref_frame = -1, height = 600, width =1200)
+
+```
+
+:::
+
+`r details::details(knitr::kable(df, format = "html"), summary = "Show the data",lang  = NULL)`
+
+::: {.code}
+Code behind this post is available `r build_link(knitr::current_input())`. 
+:::

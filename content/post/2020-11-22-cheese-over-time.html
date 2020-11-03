@@ -1,0 +1,497 @@
+---
+title: "Worlwide Cheese Production over Time"
+author: "Colin Fay"
+date: 2020-11-22
+slug: "worldwide-cheese-production-over-time"
+categories: ["industry"]
+tags: ["livestock", "production", "industry"]
+draft: true
+params:
+  table: cheese-over-years.csv
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<div id="about-the-source" class="section level3">
+<h3>🔎 About the source</h3>
+<div class="source">
+<p>Food and Agriculture Organization of the United Nations - <em>Livestock Processed</em> dataset.</p>
+</div>
+<div class="link">
+<p><a href="https://www.fao.org/faostat/en/#data/QP">fao.org/faostat/en/#data/QP</a></p>
+</div>
+<div class="quote">
+<blockquote>
+
+</blockquote>
+</div>
+<div class="count">
+<blockquote>
+<p>The data on livestock numbers are intended to cover all domestic animals irrespective of their age and the place or purpose of their breeding. Estimates have been made for non-reporting countries as well as for countries reporting incomplete data. However, in certain countries, data for chickens, ducks and turkeys do not yet seem to represent the total number of these birds. Certain other countries give a single figure for all poultry; data for these countries are shown under “Chickens”.</p>
+</blockquote>
+</div>
+</div>
+<div id="visualising-the-data" class="section level3">
+<h3>📈 Visualising the data</h3>
+<p>Visualization of <em>Livestock Primary</em>.
+The data is filtered by Item, then the Production in tonnes is kept, grouped by year, and summed.</p>
+<p>These visualizations will display the evolution of the production in tonnes from 1960 to 2018.</p>
+<div id="global-production-in-tonnes" class="section level4">
+<h4>Global production in tonnes</h4>
+<p><img src="/post/2020-11-22-cheese-over-time_files/figure-html/unnamed-chunk-3-1.png" width="1152" /></p>
+<details closed>
+<p><summary> <span title="Click to Expand"> Show the data </span> </summary></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right;">
+Year
+</th>
+<th style="text-align:right;">
+Head
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+1961
+</td>
+<td style="text-align:right;">
+24653440
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1962
+</td>
+<td style="text-align:right;">
+25158143
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1963
+</td>
+<td style="text-align:right;">
+25712452
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1964
+</td>
+<td style="text-align:right;">
+26901977
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1965
+</td>
+<td style="text-align:right;">
+28591131
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1966
+</td>
+<td style="text-align:right;">
+30385727
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1967
+</td>
+<td style="text-align:right;">
+31486320
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1968
+</td>
+<td style="text-align:right;">
+32133510
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1969
+</td>
+<td style="text-align:right;">
+33263302
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1970
+</td>
+<td style="text-align:right;">
+34981376
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1971
+</td>
+<td style="text-align:right;">
+36618375
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1972
+</td>
+<td style="text-align:right;">
+38490100
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1973
+</td>
+<td style="text-align:right;">
+40030940
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1974
+</td>
+<td style="text-align:right;">
+42021240
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1975
+</td>
+<td style="text-align:right;">
+42708738
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1976
+</td>
+<td style="text-align:right;">
+45285581
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1977
+</td>
+<td style="text-align:right;">
+46796522
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1978
+</td>
+<td style="text-align:right;">
+48774896
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1979
+</td>
+<td style="text-align:right;">
+50718116
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1980
+</td>
+<td style="text-align:right;">
+51938989
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1981
+</td>
+<td style="text-align:right;">
+52757496
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1982
+</td>
+<td style="text-align:right;">
+54442774
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1983
+</td>
+<td style="text-align:right;">
+55920955
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1984
+</td>
+<td style="text-align:right;">
+57460602
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1985
+</td>
+<td style="text-align:right;">
+59235447
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1986
+</td>
+<td style="text-align:right;">
+60232613
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1987
+</td>
+<td style="text-align:right;">
+62192370
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1988
+</td>
+<td style="text-align:right;">
+64130621
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1989
+</td>
+<td style="text-align:right;">
+65042946
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1990
+</td>
+<td style="text-align:right;">
+66816228
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1991
+</td>
+<td style="text-align:right;">
+64392900
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1992
+</td>
+<td style="text-align:right;">
+63445557
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1993
+</td>
+<td style="text-align:right;">
+64438071
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1994
+</td>
+<td style="text-align:right;">
+65980386
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1995
+</td>
+<td style="text-align:right;">
+66761446
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1996
+</td>
+<td style="text-align:right;">
+68289555
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1997
+</td>
+<td style="text-align:right;">
+69755290
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1998
+</td>
+<td style="text-align:right;">
+71348609
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1999
+</td>
+<td style="text-align:right;">
+73149331
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2000
+</td>
+<td style="text-align:right;">
+75731616
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2001
+</td>
+<td style="text-align:right;">
+77443108
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2002
+</td>
+<td style="text-align:right;">
+79094155
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2003
+</td>
+<td style="text-align:right;">
+80322104
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2004
+</td>
+<td style="text-align:right;">
+82806313
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2005
+</td>
+<td style="text-align:right;">
+85406271
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2006
+</td>
+<td style="text-align:right;">
+87108053
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:right;">
+88927623
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2008
+</td>
+<td style="text-align:right;">
+90305541
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2009
+</td>
+<td style="text-align:right;">
+91237393
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2010
+</td>
+<td style="text-align:right;">
+93768721
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2011
+</td>
+<td style="text-align:right;">
+94495723
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2012
+</td>
+<td style="text-align:right;">
+97046814
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2013
+</td>
+<td style="text-align:right;">
+100009779
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2014
+</td>
+<td style="text-align:right;">
+103770582
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<p><br></p>
+<div class="code">
+<p>Code behind this post is available <a href="https://github.com/vegviz/2020-11-22-cheese-over-time.Rmd">here</a>.</p>
+</div>
+</div>
+</div>

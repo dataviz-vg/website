@@ -1,0 +1,219 @@
+---
+title: "Typical Slaughter Age and Natural Life Span of Animals"
+author: "Colin Fay"
+date: 2020-11-29
+slug: "natural-slaughtered-lifespan-animals"
+categories: ["industry"]
+tags: ["livestock", "production", "industry"]
+draft: true
+params:
+  table: lifespan.csv
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<div id="about-the-source" class="section level3">
+<h3>🔎 About the source</h3>
+<div class="source">
+<p>Farm Transparency Project - Age of animals slaughtered</p>
+</div>
+<div class="link">
+<p><a href="https://www.farmtransparency.org/kb/abattoirs/48-age-animals-slaughtered">farmtransparency.org/kb/abattoirs/48-age-animals-slaughtered</a></p>
+</div>
+<div class="quote">
+<blockquote>
+<p>Most animals are slaughtered as babies, at a very small portion of their natural life span, regardless of whether they are raised conventionally or in operations that are labelled “humane”, “sustainable”, “natural”, “free range”, “cage free”, “heritage bred”, “grass fed”, “local” or “organic”.</p>
+</blockquote>
+</div>
+</div>
+<div id="visualising-the-data" class="section level3">
+<h3>📈 Visualising the data</h3>
+<p>Visualization of <em>Age of animals slaughtered</em>.</p>
+<p>Note: we have rounded numbers using the following patterns:</p>
+<ul>
+<li>We took the upper number when availabe (for example, in <code>6-8 years</code>, we kept <code>8</code>)</li>
+<li>Months are rounded to 30 days</li>
+<li>Every entry was transformed to a number of seconds, then divided by <code>86400 * 365.25</code> to get the value un year.</li>
+</ul>
+<p>This visualization displays the mean amount of greenhouse gas emission for 2,000kcal of a given diet (either ).</p>
+<p><img src="/post/2020-11-29-livespan_files/figure-html/unnamed-chunk-3-1.png" width="1152" /></p>
+<details closed>
+<p><summary> <span title="Click to Expand"> Show the data </span> </summary></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+Animal
+</th>
+<th style="text-align:right;">
+Natural Life Span
+</th>
+<th style="text-align:right;">
+Typical Slaughter Age
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Chickens (male in egg industry)
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+0.0027379
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+“Veal” calves
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+0.4599589
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Chickens (broilers / meat breeds)
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+0.1341547
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Ducks
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+0.1533196
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Rabbits
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:right;">
+0.2299795
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Goats
+</td>
+<td style="text-align:right;">
+14
+</td>
+<td style="text-align:right;">
+0.3832991
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Geese
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+0.3832991
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Turkeys
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+0.4106776
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pigs
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:right;">
+0.4928131
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Lambs
+</td>
+<td style="text-align:right;">
+14
+</td>
+<td style="text-align:right;">
+0.6570842
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+“Beef” cattle
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+1.4784394
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Chickens (egg laying hens)
+</td>
+<td style="text-align:right;">
+8
+</td>
+<td style="text-align:right;">
+1.4784394
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pigs (breeding sows)
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:right;">
+5.0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Dairy cows
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+4.0000000
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<p><br></p>
+<div class="code">
+<p>Code behind this post is available <a href="https://github.com/vegviz/2020-11-29-livespan.Rmd">here</a>.</p>
+</div>
+</div>

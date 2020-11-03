@@ -1,0 +1,38 @@
+{{ partial "header" . }}
+
+<main>
+
+    <div>
+        <h2>{{ .Title }}</h2>
+        <h5>{{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006") }}</h5>
+        {{ partial "tags" . }}
+    </div>
+
+    <div align="start" class="content">{{ .Content }}</div>
+    
+    <div>
+        <div>
+            Share this article!
+        </div>
+        <div>
+            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-via="datavizvg" data-hashtags="datavizvg" data-related="_ColinFay" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+        </div>
+        </div>
+
+    <!-- Related posts -->
+    {{ $related := first 3 (where (where (where .Site.Pages.ByDate.Reverse ".Type" "==" "post") ".Params.tags" "intersect" .Params.tags) "Permalink" "!=" .Permalink) }}
+    {{ if $related }}
+        <h4 class="page-header">Related</h4>
+        {{ range $related }} {{ partial "list-item" . }} {{ end }}
+    {{ end }}
+
+    <!-- Disquis comments -->
+    {{ if and .Site.DisqusShortname (not .Params.disableComments) }}
+        <h4 class="page-header">Comments</h4>
+        {{ template "_internal/disqus.html" . }}
+    {{ end }}
+
+</main>
+
+{{ partial "footer" . }}

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on DATAVIZ.VG</title>
+    <link>https://dataviz.vg/tags/</link>
+    <description>Recent content in Tags on DATAVIZ.VG</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 02 Nov 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://dataviz.vg/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ecology</title>
+      <link>https://dataviz.vg/tags/ecology/</link>
+      <pubDate>Mon, 02 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dataviz.vg/tags/ecology/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>environment</title>
+      <link>https://dataviz.vg/tags/environment/</link>
+      <pubDate>Mon, 02 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dataviz.vg/tags/environment/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>greenhouse</title>
+      <link>https://dataviz.vg/tags/greenhouse/</link>
+      <pubDate>Mon, 02 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dataviz.vg/tags/greenhouse/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

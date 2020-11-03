@@ -1,0 +1,187 @@
+---
+title: "Greenhouse gas emissions for food commodities"
+author: "Colin Fay"
+date: 2020-11-15
+slug: "greenhouse-by-food-commodities"
+categories: ["environment"]
+tags: ["greenhouse", "ecology", "environment"]
+draft: true
+params:
+  table: greenhousebyfoodcommodities.csv
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE, 
+  echo = FALSE, 
+  warning = FALSE, 
+  message = FALSE
+)
+library(vegviz)
+```
+
+```{r}
+library(tidyverse)
+library(vegviz)
+
+if (!file.exists(
+  params$table
+)){
+  library(rvest)
+  read_html("https://link.springer.com/article/10.1007/s10584-014-1169-1/tables/4") %>%
+    html_table() %>%
+    purrr::pluck(1) %>% 
+    mutate(
+      type = case_when(
+        `Food category` == 'Alcoholic Beverages' ~ 'Vegan',
+        `Food category` == 'Animal Fats' ~ 'Meat',
+        `Food category` == 'Apples' ~ 'Vegan',
+        `Food category` == 'Aquatic Animals, Others' ~ 'Meat',
+        `Food category` == 'Aquatic Plants' ~ 'Vegan',
+        `Food category` == 'Aquatic Products, Other' ~ 'Meat',
+        `Food category` == 'Bananas' ~ 'Vegan',
+        `Food category` == 'Barley' ~ 'Vegan',
+        `Food category` == 'Beans' ~ 'Vegan',
+        `Food category` == 'Beer' ~ 'Vegan',
+        `Food category` == 'Beverages, Alcoholic' ~ 'Vegan',
+        `Food category` == 'Beverages, Fermented' ~ 'Vegan',
+        `Food category` == 'Bovine Meat' ~ 'Meat',
+        `Food category` == 'Butter, Ghee' ~ 'Vegetarian',
+        `Food category` == 'Cephalopods' ~ 'Meat',
+        `Food category` == 'Cereals - Excluding Beer' ~ 'Vegan',
+        `Food category` == 'Cereals, Other' ~ 'Vegan',
+        `Food category` == 'Citrus, Other' ~ 'Vegan',
+        `Food category` == 'Cocoa Beans' ~ 'Vegan',
+        `Food category` == 'Coconut Oil' ~ 'Vegan',
+        `Food category` == 'Coconuts - Incl Copra' ~ 'Vegan',
+        `Food category` == 'Coffee' ~ 'Vegan',
+        `Food category` == 'Cream' ~ 'Vegetarian',
+        `Food category` == 'Crustaceans' ~ 'Meat',
+        `Food category` == 'Dates' ~ 'Vegan',
+        `Food category` == 'Demersal Fish' ~ 'Meat',
+        `Food category` == 'Eggs' ~ 'Vegetarian',
+        `Food category` == 'Fats, Animals, Raw' ~ 'Meat',
+        `Food category` == 'Fish, Body Oil' ~ 'Meat',
+        `Food category` == 'Fish, Liver Oil' ~ 'Meat',
+        `Food category` == 'Fish, Seafood' ~ 'Meat',
+        `Food category` == 'Freshwater Fish' ~ 'Meat',
+        `Food category` == 'Fruits - Excluding Wine' ~ 'Vegan',
+        `Food category` == 'Fruits, Other' ~ 'Vegan',
+        `Food category` == 'Grapefruit' ~ 'Vegan',
+        `Food category` == 'Grapes' ~ 'Vegan',
+        `Food category` == 'Groundnut Oil' ~ 'Vegan',
+        `Food category` == 'Groundnuts (Shelled Eq)' ~ 'Vegan',
+        `Food category` == 'Honey' ~ 'Vegetarian',
+        `Food category` == 'Lemons, Limes' ~ 'Vegan',
+        `Food category` == 'Maize' ~ 'Vegan',
+        `Food category` == 'Maize Germ Oil' ~ 'Vegan',
+        `Food category` == 'Marine Fish, Other' ~ 'Meat',
+        `Food category` == 'Meat' ~ 'Meat',
+        `Food category` == 'Meat, Other' ~ 'Meat',
+        `Food category` == 'Milk - Excluding Butter' ~ 'Vegetarian',
+        `Food category` == 'Molluscs, Other' ~ 'Meat',
+        `Food category` == 'Mutton & Goat Meat' ~ 'Meat',
+        `Food category` == 'Oats' ~ 'Vegan',
+        `Food category` == 'Offals' ~ 'Meat',
+        `Food category` == 'Oilcrops' ~ 'Vegan',
+        `Food category` == 'Oilcrops Oil, Other' ~ 'Vegan',
+        `Food category` == 'Oilcrops, Other' ~ 'Vegan',
+        `Food category` == 'Olive Oil' ~ 'Vegan',
+        `Food category` == 'Olives' ~ 'Vegan',
+        `Food category` == 'Onions' ~ 'Vegan',
+        `Food category` == 'Oranges, Mandarines' ~ 'Vegan',
+        `Food category` == 'Palm Oil' ~ 'Vegan',
+        `Food category` == 'Palmkernel Oil' ~ 'Vegan',
+        `Food category` == 'Peas' ~ 'Vegan',
+        `Food category` == 'Pelagic Fish' ~ 'Meat',
+        `Food category` == 'Pepper' ~ 'Vegan',
+        `Food category` == 'Pigmeat' ~ 'Meat',
+        `Food category` == 'Pimento' ~ 'Vegan',
+        `Food category` == 'Pineapples' ~ 'Vegan',
+        `Food category` == 'Plantains' ~ 'Vegan',
+        `Food category` == 'Potatoes' ~ 'Vegan',
+        `Food category` == 'Poultry Meat' ~ 'Meat',
+        `Food category` == 'Pulses' ~ 'Vegan',
+        `Food category` == 'Pulses, Other' ~ 'Vegan',
+        `Food category` == 'Rape and Mustard Oil' ~ 'Vegan',
+        `Food category` == 'Rape and Mustardseed' ~ 'Vegan',
+        `Food category` == 'Rice (Milled Equivalent)' ~ 'Vegan',
+        `Food category` == 'Rye' ~ 'Vegan',
+        `Food category` == 'Sesameseed' ~ 'Vegan',
+        `Food category` == 'Sesameseed Oil' ~ 'Vegan',
+        `Food category` == 'Soyabean Oil' ~ 'Vegan',
+        `Food category` == 'Soyabeans' ~ 'Vegan',
+        `Food category` == 'Spices' ~ 'Vegan',
+        `Food category` == 'Spices, Other' ~ 'Vegan',
+        `Food category` == 'Starchy Roots' ~ 'Vegan',
+        `Food category` == 'Stimulants' ~ 'NA',
+        `Food category` == 'Sugar & Sweeteners' ~ 'Vegan',
+        `Food category` == 'Sugar (Raw Equivalent)' ~ 'Vegan',
+        `Food category` == 'Sunflowerseed Oil' ~ 'Vegan',
+        `Food category` == 'Sweeteners, Other' ~ 'Vegan',
+        `Food category` == 'Tea' ~ 'Vegan',
+        `Food category` == 'Tomatoes' ~ 'Vegan',
+        `Food category` == 'Treenuts' ~ 'Vegan',
+        `Food category` == 'Vegetable Oils' ~ 'Vegan',
+        `Food category` == 'Vegetables' ~ 'Vegan',
+        `Food category` == 'Vegetables, Other' ~ 'Vegan',
+        `Food category` == 'Wheat' ~ 'Vegan',
+        `Food category` == 'Wine' ~ 'Vegan'
+      )
+    ) %>% 
+    arrange(desc(`UK GHG emissions (kgCO2e/kg)`)) %>% 
+    #filter(`UK GHG emissions (kgCO2e/kg)` > 0) %>%
+    top_n(25, `UK GHG emissions (kgCO2e/kg)`) %>%
+    mutate(
+      `Food category` = reorder(`Food category`, `UK GHG emissions (kgCO2e/kg)`)
+    )%>%
+    readr::write_csv(params$table)
+}
+
+```
+
+### `r emo::ji("mag_right")` About the source 
+
+::: {.source}
+Dietary greenhouse gas emissions of meat-eaters, fish-eaters, vegetarians and vegans in the UK
+::: 
+
+::: {.link}
+[link.springer.com/article/10.1007/s10584-014-1169-1](https://link.springer.com/article/10.1007/s10584-014-1169-1)
+:::
+
+::: {.quote}
+> The production of animal-based foods is associated with higher greenhouse gas (GHG) emissions than plant-based foods. The objective of this study was to estimate the difference in dietary GHG emissions between self-selected meat-eaters, fish-eaters, vegetarians and vegans in the UK.
+:::
+
+::: {.count}
+> The source document for GHG parameters was Audsley et al. [(2009)](https://dspace.lib.cranfield.ac.uk/handl), which estimates comparable GHG emissions for 94 food commodities consumed in the UK. These parameters incorporate the life cycle of food commodities from the earliest stages of production to the retail distribution centre. Different parameters are estimated for foods produced in the UK, the EU and outside the EU. 
+:::
+
+```{r}
+adjusted_table <- readr::read_csv(params$table) 
+```
+
+
+```{r fig.dim = c(12, 10)}
+# library(tidyverse)
+adjusted_table %>% 
+  ggplot(aes(reorder(`Food category`, `UK GHG emissions (kgCO2e/kg)`), `UK GHG emissions (kgCO2e/kg)`, fill = type)) + 
+  geom_col() + 
+  coord_flip() + 
+  labs(
+    title = "Meat tends to produce more GHG emissions (kgCO2e/kg)\n than vegan or vegetarian food", 
+    subtitle = "From: 'Dietary greenhouse gas emissions of meat-eaters, fish-eaters, vegetarians and vegans in the UK'\nhttps://link.springer.com/article/10.1007/s10584-014-1169-1", 
+    x = " ", 
+    y = "UK GHG emissions (kgCO2e/kg)", 
+    caption = "Via @VegViz"
+  ) + 
+  scale_fill_viridis_d(option = "C") +
+  ggtheme() 
+```
+
+`r details::details(knitr::kable(adjusted_table, format = "html"), summary = "Show the data",lang  = NULL)`
+
+::: {.code}
+Code behind this post is available `r build_link(knitr::current_input())`. 
+:::
