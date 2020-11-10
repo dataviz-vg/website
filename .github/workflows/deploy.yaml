@@ -21,7 +21,7 @@ jobs:
       - uses: r-lib/actions/setup-pandoc@v1
       - name: Install dependencies
         run: |
-          install.packages(c("remotes", "rcmdcheck"))
+          install.packages(c("remotes", "rcmdcheck", "blogdown"))
           remotes::install_github('datavizvg/vegviz')
         shell: Rscript {0}
       - name: Install Hugo
