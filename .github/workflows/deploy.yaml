@@ -28,3 +28,15 @@ jobs:
         run: Rscript -e 'blogdown::install_hugo()'
       - name: Build site
         run: Rscript -e 'blogdown::build_site()'
+  checkout-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@master
+    - name: Deploy to GitHub Pages
+      uses: Cecilapp/GitHub-Pages-deploy@master
+      env:
+        EMAIL: contact@colinfay.me
+        GH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        BUILD_DIR: public
+        
