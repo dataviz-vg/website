@@ -1,11 +1,10 @@
 ---
-title: "Worlwide Meat Production over the Years"
+title: "Worlwide Meat Production — 1961-2018"
 author: "Colin Fay"
 date: 2020-11-08
-slug: "worldwide-meat-production-over-years"
+slug: "worldwide-meat-production-1961-2018"
 categories: ["industry"]
 tags: ["livestock", "production", "industry"]
-draft: true
 params:
   table: meat-over-years.csv
 ---
@@ -28,10 +27,6 @@ Food and Agriculture Organization of the United Nations - _Livestock Primary_ da
 
 ::: {.link}
 [fao.org/faostat/en/#data/QL](https://www.fao.org/faostat/en/#data/QL)
-:::
-
-::: {.quote}
-> 
 :::
 
 ::: {.count}
@@ -107,11 +102,8 @@ adjust_and_draw <- function(
     ggplot(aes(Year, Head)) + 
     geom_col(fill = viridis::viridis(6)[color]) + 
     labs(
-      x = tools::toTitleCase(item), 
-      y = sprintf(
-        "Production in %s", 
-        "tonnes"
-      ), 
+      x = " ", 
+      y = " ", 
       caption = "Via dataviz.vg",
       subtitle = "From: fao.org/faostat"
     ) +
@@ -126,16 +118,16 @@ adjust_and_draw <- function(
 ```
 
 
-These visualizations will display the evolution of the production in tonnes of various livestock, from 1960 to 2018.
+These visualizations will display the evolution of the total production in tonnes, then of various livestock, from 1961 to 2018.
 
 #### Global meat production in tonnes
 
-```{r fig.dim = c(12, 6)}
+```{r meat-over-years, fig.dim = c(12, 6)}
 # VIZ
 df <- adjust_and_draw("meat, total", color = 2, filter_total = FALSE)
 df$gg + 
   labs(
-    title = "Meat production over the years"
+    title = "Meat production (in tonnes) — 1961-2018"
   )
 ```
 
@@ -156,7 +148,7 @@ df <- source_table %>%
 
 ::: {.animated}
 
-```{r evol-animated}
+```{r meat-over-years-animated}
 library(gganimate)
 x <- df %>%
   ggplot(aes(Year, Head, group = Item, color = Item)) + 
@@ -166,12 +158,9 @@ x <- df %>%
   xlim(1960, 2030) + 
   guides(color = FALSE) + 
   labs(
-    title = "Evolution of the meat production of 6 species",
-    x = "Year", 
-    y = sprintf(
-      "Production in %s",
-      "tonnes"
-    ),
+    title = "Evolution of the meat production (in tonnes) of 6 species — 1961-2018",
+    x = " ", 
+    y = " ",
     subtitle = "From: fao.org/faostat", 
     caption = "Via dataviz.vg"
   ) +
