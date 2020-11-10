@@ -38,4 +38,4 @@ jobs:
           branch: 'gh-page'
           commit_message: 'Build main'
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Required
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }} # Required
