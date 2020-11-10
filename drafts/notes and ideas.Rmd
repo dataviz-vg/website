@@ -1,0 +1,328 @@
+---
+title: "Data source / ideas"
+author: "Colin Fay"
+date: "11/5/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(vegviz)
+library(tidyverse)
+```
+
+## to read 
+
++ Position of the Academy of Nutrition and Dietetics: Vegetarian Diets - https://www.eatrightpro.org/-/media/eatrightpro-files/practice/position-and-practice-papers/position-papers/vegetarian-diet.pdf
+
++ https://adventisthealthstudy.org/studies
+
++ https://pubs.acs.org/doi/pdf/10.1021/es702969f
+
++ Role of Life-style and Dietary Habits in Risk of Cancer among Seventh-Day Adventists https://cancerres.aacrjournals.org/content/35/11_Part_2/3513.long
+
+
+## HOW MANY ADULTS IN THE U.S ARE VEGETARIAN AND VEGAN?
+
+https://www.vrg.org/nutshell/Polls/2016_adults_veg.htm
+
+## Animal vs world pop
+
+```{r}
+
+# population
+fls <- tempfile(fileext = ".zip")
+  download.file("http://fenixservices.fao.org/faostat/static/bulkdownloads/Population_E_All_Area_Groups.zip", fls)
+  unzip(fls,exdir = dirname(fls))
+ list.files(dirname(fls)) 
+pop <- readr::read_csv(
+  file.path(
+      dirname(fls), "Population_E_All_Area_Groups_NOFLAG.csv"
+    )
+  ) %>% 
+  filter(Element == "Total Population - Both sexes", Area == "World") %>%
+    pivot_longer(
+      names_to = "Year", 
+      values_to = "Count", 
+      cols = tidyselect::matches("Y....$")
+    ) %>%
+  mutate(Count = Count * 1000, 
+         Year = gsub("Y", "", Year), 
+         Year = as.numeric(Year))
+
+
+
+
+fls <- tempfile(fileext = ".zip")
+  download.file("http://fenixservices.fao.org/faostat/static/bulkdownloads/Production_LivestockPrimary_E_All_Data.zip", fls)
+  unzip(fls,exdir = dirname(fls))
+df <- readr::read_csv(
+    file.path(
+      dirname(fls), "Production_LivestockPrimary_E_All_Data.csv"
+    )
+  )
+
+# CHICKEN
+
+chicken <- df %>%
+    select(-matches("Y....F$")) %>%
+    select(-matches("Code")) %>%
+    mutate(Item = tolower(Item)) %>%
+    filter(grepl("meat, chicken", Item)) %>%
+    filter( Unit == "1000 Head") %>% 
+    select(-Element, - Unit) %>%
+    pivot_longer(
+      names_to = "Year", 
+      values_to = "Head", 
+      cols = tidyselect::matches("Y....$")
+    ) %>%
+    mutate(
+      Head = Head * 1000, 
+      Year = gsub("Y(....)", "\\1", Year), 
+      Year = as.numeric(Year)
+    ) %>%
+    group_by(Year, Item) %>%
+    summarize(
+      Head = sum(Head, na.rm = TRUE)
+    )
+
+
+comparison_chicken <- pop %>%
+  left_join(
+    chicken, by = "Year"
+  ) %>%
+  select(Year, Count, Head) %>%
+  drop_na() %>%
+  pivot_longer(
+      names_to = "Type", 
+      values_to = "Count", 
+      cols = c("Count", "Head")
+    ) %>%
+  mutate(Type = case_when(
+    Type == "Count" ~ "Human", 
+    TRUE ~ "Chicken"
+  )) 
+
+comparison %>%
+  ggplot(aes(Year, Count, color = Type)) + 
+  geom_line() + 
+  ggtheme() +
+  scale_y_continuous(labels = scales::comma) 
+
+library(ggplot2)
+library(emoGG)
+
+pop %>%
+  left_join(
+    chicken, by = "Year"
+  ) %>%
+  select(Year, Count, Head) %>%
+  drop_na() %>%
+  filter(Year %% 5 == 0) %>%
+  mutate(
+    one_man_has = Head / Count, 
+    #browser(),
+    one_man_has_stacked = purrr::map(one_man_has, ~ 1:round(.x))
+  ) %>% 
+  unnest(cols = c(one_man_has_stacked)) %>%
+  ggplot(aes(as.character(Year), one_man_has_stacked)) + 
+  geom_emoji(emoji="1f425", size = 0.03) + 
+  coord_flip() + 
+  ggtheme()
+
+## 
+
+pigs <- df %>%
+    select(-matches("Y....F$")) %>%
+    select(-matches("Code")) %>%
+    mutate(Item = tolower(Item)) %>%
+    filter(grepl("meat, total", Item)) %>%
+    filter( Unit == "tonnes") %>% 
+    select(-Element, - Unit) %>%
+    pivot_longer(
+      names_to = "Year", 
+      values_to = "Tonnes", 
+      cols = tidyselect::matches("Y....$")
+    ) %>%
+    mutate(
+      #Head = Head * 1000, 
+      Year = gsub("Y(....)", "\\1", Year), 
+      Year = as.numeric(Year)
+    ) %>%
+    group_by(Year, Item) %>%
+    summarize(
+      Tonnes = sum(Tonnes, na.rm = TRUE)
+    ) %>%
+  mutate(Tonnes = Tonnes * 1000)
+
+
+comparison_pigs <- pop %>%
+  left_join(
+    pigs, by = "Year"
+  ) %>%
+  select(Year, Count, Tonnes) %>%
+  drop_na() %>%
+  pivot_longer(
+      names_to = "Type", 
+      values_to = "Count", 
+      cols = c("Count", "Tonnes")
+    ) %>%
+  mutate(Type = case_when(
+    Type == "Count" ~ "Human", 
+    TRUE ~ "Meat (kg)"
+  )) 
+
+comparison_pigs %>%
+  ggplot(aes(Year, Count, color = Type)) + 
+  geom_line() + 
+  ggtheme() +
+  scale_y_continuous(labels = scales::comma) 
+
+library(ggplot2)
+library(emoGG)
+
+pop %>%
+  left_join(
+    pigs, by = "Year"
+  ) %>%
+  select(Year, Count, Tonnes) %>%
+  drop_na() %>%
+  filter(Year %% 5 == 0) %>%
+  mutate(
+    one_man_has = Tonnes / Count, 
+    #browser(),
+    one_man_has_stacked = purrr::map(one_man_has, ~ 1:round(.x))
+  ) %>% 
+  unnest(cols = c(one_man_has_stacked)) %>%
+  ggplot(aes(as.character(Year), one_man_has_stacked)) + 
+  geom_emoji(emoji="1f969", size = 0.05) + 
+  coord_flip() + 
+  ggtheme()
+
+
+```
+
+
+## table Ciqual étendue pour le calcul des apport nutritionnels CALNUT 2020
+
++  https://ciqual.anses.fr/#/cms/download/node/20
+
+```{r}
+library(tidyverse)
+fls <- tempfile(fileext = ".xls")
+download.file("https://ciqual.anses.fr/cms/sites/default/files/inline-files/Table%20Ciqual%202020_ENG_2020%2007%2007.xls", fls)
+df <- readxl::read_excel(fls)
+```
+
+```{r}
+library(magrittr)
+which_one <- "Salt (g/100g)"
+df  %>%
+  select(alim_nom_eng, {{which_one}}, alim_grp_nom_eng) %>% 
+  mutate(`Salt (g/100g)` = as.numeric(`Salt (g/100g)`)) %>%
+  #filter(`Cholesterol (mg/100g)` != 100) %>%
+  top_n(25,`Salt (g/100g)`) %>%
+  # count(alim_grp_nom_eng)
+  #select(`Fat (g/100g)`)
+  arrange(desc(`Salt (g/100g)`)) %>%
+  
+  ggplot(aes(reorder(alim_nom_eng, `FA saturated (g/100g)`), `FA saturated (g/100g)`, fill = alim_grp_nom_eng)) +
+  geom_col() + 
+  coord_flip()
+
+```
+
+## Water footprints of farm animals and animal products (1996-2005)
+
+> Reference: Mekonnen, M.M. & Hoekstra, A.Y. (2011) The green, blue and grey water footprint of crops and derived crop products, Hydrology and Earth System Sciences, 15(5): 1577-1600.
+
+```{r}
+library(tidyverse)
+fls <- tempfile(fileext = ".zip")
+download.file("https://www.waterfootprint.org/media/downloads/Report48-Appendix-V.zip", fls)
+untar(fls, exdir = file.path(dirname(fls), "unzipped"))
+list.files(file.path(dirname(fls), "unzipped"))
+df <- readxl::read_excel(
+  list.files(file.path(dirname(fls), "unzipped"), full.names = TRUE),
+  2)
+source_table <- readxl::read_excel(
+  list.files(file.path(dirname(fls), "unzipped"), full.names = TRUE),
+  2, skip = 2)
+adjusted_table <- source_table %>%
+  slice(-1) %>% 
+  fill(`Product description (SITC)`) %>%
+  select(`Product description (SITC)`, `World Average`) %>% 
+  group_by(`Product description (SITC)`) %>%
+  summarise(
+    `World Average` = sum(as.numeric(`World Average`))
+  ) %>%
+  mutate(
+    `Product description (SITC)` = reorder(`Product description (SITC)`, `World Average`)
+  )
+```
+
+## Sector by sector: where do global greenhouse gas emissions come from?
+
+
+> Reference: Mekonnen, M.M. & Hoekstra, A.Y. (2011) The green, blue and grey water footprint of crops and derived crop products, Hydrology and Earth System Sciences, 15(5): 1577-1600.
+
+https://ourworldindata.org/emissions-by-sector
+
+https://github.com/owid/co2-data
+
+```{r}
+# df <- read_csv("https://raw.githubusercontent.com/owid/co2-data/master/owid-co2-data.csv")
+```
+
+## Methane (CH4) emissions by sector
+
+
+```{r}
+library(tidyverse)
+df <- read_csv("data/methane-emissions-by-sector (1).csv")
+df %>%
+  pivot_longer(names_to = "sector", values_to = "amount", cols = 4:9) %>%
+  group_by(Year, sector) %>%
+  summarise(
+    consumption = sum(amount, na.rm = TRUE)
+  ) %>%
+  ggplot(aes(Year, consumption, color = sector, group = sector)) + 
+  geom_line(size = 2) + 
+  scale_colour_viridis_d() + 
+  theme_minimal() 
+
+```
+
+## Nitrous oxide (N2O) emissions by sector
+
+```{r}
+library(tidyverse)
+df <- read_csv("data/nitrous-oxide-emissions-by-sector.csv")
+df %>%
+  pivot_longer(names_to = "sector", values_to = "amount", cols = 4:9) %>%
+  group_by(Year, sector) %>%
+  summarise(
+    consumption = sum(amount, na.rm = TRUE)
+  ) %>%
+  ggplot(aes(Year, consumption, color = sector, group = sector)) + 
+  geom_line(size = 2) + 
+  scale_colour_viridis_d() + 
+  theme_minimal()
+```
+
+## Per capita N2O: where do our emissions come from?
+
+```{r}
+library(tidyverse)
+df <- read_csv("data/per-capita-nitrous-oxide-sector.csv")
+df %>%
+  pivot_longer(names_to = "sector", values_to = "amount", cols = 4:7) %>%
+  group_by(Year, sector) %>%
+  summarise(
+    consumption = sum(amount, na.rm = TRUE)
+  ) %>%
+  ggplot(aes(Year, consumption, color = sector, group = sector)) + 
+  geom_line(size = 2) + 
+  scale_colour_viridis_d() + 
+  theme_minimal()
+```

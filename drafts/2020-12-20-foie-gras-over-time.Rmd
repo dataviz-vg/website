@@ -1,13 +1,13 @@
 ---
-title: "Worlwide Milk Production over the Years"
+title: "Worlwide Cheese Production — 1961-2014"
 author: "Colin Fay"
-date: 2020-12-06
-slug: "worldwide-milk-production-over-years"
+date: 2020-11-22
+slug: "worldwide-cheese-production-1961-2014"
 categories: ["industry"]
 tags: ["livestock", "production", "industry"]
 draft: true
 params:
-  table: milk-over-years.csv
+  table: foie-gras-over-years.csv
 ---
 
 ```{r setup, include=FALSE}
@@ -17,21 +17,16 @@ knitr::opts_chunk$set(
   warning = FALSE, 
   message = FALSE
 )
-library(vegviz)
 ```
 
 ### `r emo::ji("mag_right")` About the source 
 
 ::: {.source}
-Food and Agriculture Organization of the United Nations - _Livestock Primary_ dataset.
+Food and Agriculture Organization of the United Nations - _Livestock Processed_ dataset.
 ::: 
 
 ::: {.link}
-[fao.org/faostat/en/#data/QL](https://www.fao.org/faostat/en/#data/QL)
-:::
-
-::: {.quote}
-> 
+[fao.org/faostat/en/#data/QP](https://www.fao.org/faostat/en/#data/QP)
 :::
 
 ::: {.count}
@@ -40,22 +35,22 @@ Food and Agriculture Organization of the United Nations - _Livestock Primary_ da
 
 ```{r}
 library(tidyverse)
-library(magrittr)
+library(vegviz)
 if (!file.exists(
   params$table
 )){
   # READ DATA HERE
   fls <- tempfile(fileext = ".zip")
-  download.file("http://fenixservices.fao.org/faostat/static/bulkdownloads/Production_LivestockProcessed_E_All_Data.zip", fls)
+  download.file("http://fenixservices.fao.org/faostat/static/bulkdownloads/Trade_Crops_Livestock_E_All_Data.zip", fls)
   unzip(fls,exdir = dirname(fls))
   readr::read_csv(
     file.path(
-      dirname(fls), "Production_LivestockProcessed_E_All_Data.csv"
+      dirname(fls), "Trade_Crops_Livestock_E_All_Data.csv"
     )
-  ) %>%    
+  ) df %>%    
     select(-matches("Y....F$")) %>%
     select(-matches("Code")) %>%
-    mutate(Item = tolower(Item)) %>%
+    #mutate(Item = tolower(Item)) %>%
     pivot_longer(
       names_to = "Year", 
       values_to = "Head", 
@@ -73,7 +68,13 @@ if (!file.exists(
     ) %>%
     select(-Item) %>%
     readr::write_csv(params$table)
+  unlink(
+    file.path(
+      dirname(fls), "Production_LivestockProcessed_E_All_Data.csv"
+    )
+  )
 }
+
 ```
 
 
@@ -85,23 +86,22 @@ The data is filtered by Item, then the Production in tonnes is kept, grouped by 
 ```{r}
 # DATA MANIP
 adjusted_table <- readr::read_csv(params$table)
-
 ```
 
 
-These visualizations will display the evolution of the production in tonnes of various livestock, from 1960 to 2018.
+These visualizations will display the evolution of the production in tonnes from 1960 to 2018.
 
-#### Milk production in tonnes
+#### Global production in tonnes
 
-```{r fig.dim = c(12, 6)}
+```{r cheese-over-years, fig.dim = c(12, 6)}
 # VIZ
 adjusted_table %>%
   ggplot(aes(Year, Head)) + 
-  geom_col(fill = viridis::viridis(6)[2]) + 
+  geom_col(fill = viridis::viridis(6)[4]) + 
   scale_y_continuous(labels = scales::comma) + 
   ggtheme() + 
   labs(
-    title = "Global production (in tonnes) of mil over the years", 
+    title = "Global production (in tonnes) of cheese — 1961-2014", 
     x = "", 
     y = "", 
     caption = "Via dataviz.vg",
@@ -109,7 +109,7 @@ adjusted_table %>%
   )
 ```
 
-`r details::details(knitr::kable(df$tbl, format = "html"), summary = "Show the data",lang  = NULL)`
+`r details::details(knitr::kable(adjusted_table, format = "html"), summary = "Show the data",lang  = NULL)`
 
 
 ::: {.code}
