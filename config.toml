@@ -16,7 +16,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     highlight = true
     highlightStyle = "default"
     highlightLanguages = ["go", "haskell", "kotlin", "scala", "swift"]
-    favicon = "/favicon.png"
+    favicon = "/favicon.ico"
 
 [[menu.main]]
     url = "/"
@@ -48,7 +48,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     weight = 1
 
 [[menu.icon]]
-    url = "https://github.com/dataviz-vg"
+    url = "https://github.com/datavizvg"
     name = "github"
     weight = 2
 
@@ -56,3 +56,8 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     url = "https://twitter.com/datavizvg/"
     name = "twitter"
     weight = 3
+
+[[menu.icon]]
+    url = "https://instagram.com/datavizvg/"
+    name = "instagram"
+    weight = 4
