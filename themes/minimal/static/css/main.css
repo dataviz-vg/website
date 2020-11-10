@@ -175,7 +175,7 @@ details {
     text-align: right;
 }
 
-a{
+p > a{
   word-break: break-all;
 }
 
