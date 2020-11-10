@@ -30,8 +30,8 @@ jobs:
         run: Rscript -e 'blogdown::build_site()'
       - name: Push to built branch
         uses: Automattic/action-commit-to-branch@master
-          with:
-            branch: 'gh-page'
-            commit_message: 'Build main'
+        with:
+          branch: 'gh-page'
+          commit_message: 'Build main'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Required
