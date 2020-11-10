@@ -13,29 +13,31 @@ on:
 name: R-CMD-check
 
 jobs:
-  build:
-    runs-on: macOS-latest
+  checkout-and-deploy:
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@master
+        with:
+          persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
+          fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
       - uses: r-lib/actions/setup-r@v1
       - uses: r-lib/actions/setup-pandoc@v1
       - name: Install dependencies
         run: |
-          install.packages(c("remotes", "rcmdcheck", "blogdown"))
+          install.packages(c("remotes", "blogdown"))
           remotes::install_github('datavizvg/vegviz')
         shell: Rscript {0}
       - name: Install Hugo
         run: Rscript -e 'blogdown::install_hugo()'
       - name: Build site
         run: Rscript -e 'blogdown::build_site()'
-  checkout-and-deploy:
-   runs-on: ubuntu-latest
-   needs: build
-   steps:
-      - name: Push to built branch
-        uses: Automattic/action-commit-to-branch@master
-        with:
-          branch: 'gh-page'
-          commit_message: 'Build main'
-        env:
-          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }} # Required
+    - name: Commit files
+      run: |
+        git config --local user.email "contact@colinfay.me"
+        git config --local user.name "GitHub Action"
+        git commit -m "Built" -a
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.ACCESS_TOKEN }}
+        branch: "gh-page"
