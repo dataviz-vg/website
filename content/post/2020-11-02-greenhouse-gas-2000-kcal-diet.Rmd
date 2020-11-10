@@ -67,7 +67,7 @@ adjusted_table <- readr::read_csv(params$table)
 
 This visualization displays the mean amount of greenhouse gas emission for 2,000kcal of a given diet (either `r knitr::combine_words(adjusted_table$Diet, and = "or ")`).
 
-```{r fig.dim = c(12, 8)}
+```{r greenhousebydiet2000kcal, fig.dim = c(12, 8)}
 
 col_vals <- viridis::viridis(6)
 names(col_vals) <- c("High meat-eaters ( ≥ 100 g/day)", "Medium meat-eaters (50–99 g/day)", "Low meat-eaters ( < 50 g/day)", "Fish-eaters", "Vegetarians", "Vegans")
@@ -107,5 +107,5 @@ adjusted_table %>%
 `r details::details(knitr::kable(adjusted_table, format = "html"), summary = "Show the data",lang  = NULL)`
 
 ::: {.code}
-Code behind this post is available `r build_link(knitr::current_input())`. 
+Code behind this post is available `r build_link()`. 
 :::
