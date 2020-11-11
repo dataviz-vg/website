@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DATAVIZ.VG</title>
+    <link>https://dataviz.vg/</link>
+    <description>Recent content on DATAVIZ.VG</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://dataviz.vg/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>https://dataviz.vg/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dataviz.vg/about/</guid>
+      <description>About DataViz.vg wants to make data related to food and nutrition more available by providing easy to read visualizations of the data (data-visualization, or dataviz in short). All articles are related to the Vegetarian/Vegan lifestyle.
+In each post, we will provide the source of the dataset, a link to it, a key quote (when it&amp;rsquo;s an article), and how the data were collected, if ever the information is available. The dataset used to build the visualization is also available under each dataviz.</description>
+    </item>
+    
+    <item>
+      <title>Resources</title>
+      <link>https://dataviz.vg/resources/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dataviz.vg/resources/</guid>
+      <description>Read Cookbook   Thug Kitchen: The Official Cookbook: Eat Like You Give a F*ck (Thug Kitchen Cookbooks)
+  Vegan 100: Over 100 Incredible Recipes from Avant-Garde Vegan
+  Vegan for Everybody: Foolproof Plant-Based Recipes for Breakfast, Lunch, Dinner, and In-Between
+  Plant-Based on a Budget: Delicious Vegan Recipes for Under $30 a Week, in Less Than 30 Minutes a Meal
+  The Plant-Based Diet for Beginners: The Health Benefits of Eating a Plant-Based Diet.</description>
+    </item>
+    
+  </channel>
+</rss>
