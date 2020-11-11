@@ -1,7 +1,6 @@
 sudo apt update && sudo apt install -y libcurl4-openssl-dev
 
-git remote set-url origin https://colinfay:${{ secrets.ACCESS_TOKEN }}@https://github.com/datavizvg/website.git
-git branch --set-upstream-to=upstream/netlify
+git remote set-url origin https://datavizvg:${{ secrets.ACCESS_TOKEN }}@https://github.com/datavizvg/website.git
 
 echo "options(repos = c(CRAN = 'https://packagemanager.rstudio.com/all/latest'), download.file.method = 'libcurl', Ncpus = 4)" >> /usr/local/lib/R/etc/Rprofile.site
 
@@ -11,9 +10,9 @@ Rscript -e 'blogdown::install_hugo()'
 
 Rscript -e 'blogdown::build_site()'
 
-git config --local user.email "contact@colinfay.me"
-git config --local user.name "Colin Fay"
+git config --global user.name "contact@colinfay.me"
+git config --global user.email "Colin Fay"
 git add .
 git commit -m "Built" -a
 
-git push --force 
+git push --force origin netlify
