@@ -42,7 +42,7 @@ jobs:
       - name: Push to built branch
         uses: Automattic/action-commit-to-branch@master
         with:
-          branch: 'gh-pages'
+          branch: 'netlify'
           commit_message: 'Build master'
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }} # Required
