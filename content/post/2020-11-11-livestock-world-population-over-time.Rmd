@@ -1,0 +1,207 @@
+---
+title: "Worlwide Meat Production compared to Population Growth — 1965-2015"
+author: "Colin Fay"
+date: 2020-11-11
+slug: "worldwide-meat-production-vs-population-growth-1965-2015"
+categories: ["industry"]
+tags: ["livestock", "production", "industry"]
+params:
+  table: meat-and-pop-over-years.csv
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE, 
+  echo = FALSE, 
+  warning = FALSE, 
+  message = FALSE
+)
+library(vegviz)
+```
+
+> This post is a complementary view of our [Worlwide Meat Production — 1961-2018](https://dataviz.vg/post/greenhouse-by-diet-2000kcal/) blogpost.
+In this post, we will compare meat production with the evolution of the population worldwide, notably answering the question: 
+"For a given year, how many kilograms of meat are produced for one human?"
+
+### `r emo::ji("mag_right")` About the source 
+
+::: {.source}
+1. Food and Agriculture Organization of the United Nations - _Livestock Primary_ dataset.
+
+2. Food and Agriculture Organization of the United Nations - _Annual population_ dataset.
+::: 
+
+::: {.link}
++ [fao.org/faostat/en/#data/QL](https://www.fao.org/faostat/en/#data/QL)
+
++ [fao.org/faostat/en/#data/OA](http://www.fao.org/faostat/en/#data/OA)
+:::
+
+::: {.count}
+> 1. The data on livestock numbers are intended to cover all domestic animals irrespective of their age and the place or purpose of their breeding. Estimates have been made for non-reporting countries as well as for countries reporting incomplete data. However, in certain countries, data for chickens, ducks and turkeys do not yet seem to represent the total number of these birds. Certain other countries give a single figure for all poultry; data for these countries are shown under “Chickens”.
+
+> 2. The FAOSTAT Population module contains time series data on population, by sex and urban/rural. The series consist of both estimates and projections for different periods as available from the original sources, namely:1. Population data refers to the World Population Prospects: The 2019 Revision from the UN Population Division.2. Urban/rural population data refers to the World Urbanization Prospects: The 2018 Revision from the UN Population Division.
+:::
+
+Side note: the FAO 'Livestock Primary' comes in two flavors, the one with
+
+```{r}
+library(tidyverse)
+library(emoGG)
+if (!file.exists(
+  params$table
+)){
+  # READ DATA HERE
+  # Reding the dat
+  fls <- tempfile(fileext = ".zip")
+  download.file("http://fenixservices.fao.org/faostat/static/bulkdownloads/Population_E_All_Area_Groups.zip", fls)
+  unzip(fls,exdir = dirname(fls))
+  list.files(dirname(fls)) 
+  
+  worldwide_pop <- readr::read_csv(
+    file.path(
+      dirname(fls), "Population_E_All_Area_Groups_NOFLAG.csv"
+    )
+  ) %>%
+    # We only want to keep the total population for the world
+    # This should return a 1 row df
+    filter(Element == "Total Population - Both sexes", Area == "World") %>%
+    # Pivoting to a long format
+    pivot_longer(
+      names_to = "Year", 
+      values_to = "Count", 
+      cols = tidyselect::matches("Y....$")
+    ) %>%
+    # As the unit is 1000 person, we turn it to a real count
+    # Also, we turn the year to a numeric
+    mutate(
+      Count = Count * 1000, 
+      Year = gsub("Y", "", Year), 
+      Year = as.numeric(Year)
+    )
+  
+  
+  # Reading the data for the production
+  # Reading the data for the production
+  fls <- tempfile(fileext = ".zip")
+  download.file("http://fenixservices.fao.org/faostat/static/bulkdownloads/Production_LivestockPrimary_E_All_Area_Groups.zip", fls)
+  unzip(fls,exdir = dirname(fls))
+  
+  meat_over_year_all_meats <- readr::read_csv(
+    file.path(
+      dirname(fls), "Production_LivestockPrimary_E_All_Area_Groups.csv"
+    )
+  ) %>%
+    filter(Area == "World") %>%
+    # Removing the columns that matches the pattern Y....F$, and which are encoded
+    select(-matches("Y....F$")) %>%
+    select(-matches("Code")) %>%
+    # Turning the item column to lower for easier manipulation
+    mutate(Item = tolower(Item)) %>%
+    # keeping only the meat elements, with the production in tonnes
+    filter(grepl('meat', Item)) %>%
+    filter(Element == "Production", Unit == "tonnes") %>% 
+    # Removing these two columns
+    select(-Element, - Unit) %>%
+    # We turn the wide df to a long one
+    pivot_longer(
+      names_to = "Year", 
+      values_to = "Head", 
+      cols = tidyselect::matches("Y....$")
+    ) %>%
+    # Removing the Y from the year name so that we can use it as a numeric
+    mutate(
+      Year = gsub("Y(....)", "\\1", Year), 
+      Year = as.numeric(Year)
+    ) %>%
+    # For each Year and item, we do a total of Head (the production in tonnes)
+    group_by(Year, Item) %>%
+    summarize(
+      Head = sum(Head, na.rm = TRUE)
+    )
+  
+  # Joining the two table
+  comparison_meat <- meat_over_year_all_meats %>%
+    filter(Item == "meat, total") %>%
+    left_join(
+      worldwide_pop, 
+      by = "Year"
+    ) %>%
+    select(Year, Count, Head) %>%
+    drop_na()  %>%
+    select(Year, Human = Count, Meat = Head)
+  
+  comparison_meat %>%
+    readr::write_csv(params$table)
+  
+  unlink(
+    file.path(
+      dirname(fls), "Production_LivestockPrimary_E_All_Data.csv"
+    )
+  )
+}
+source_table <- readr::read_csv(params$table) %>%
+  filter(Year %% 5 == 0) %>%
+  mutate(
+    Meat = Meat * 1000
+  ) %>%
+  # Computing the number of kilogram by human
+  mutate(
+    one_man_has = Meat / Human
+  )
+
+```
+
+
+### `r emo::ji("chart_with_upwards_trend")` Visualising the data
+
+#### Method
+
+In this visualization, we have taken both the datasets (Livestock Primary and Annual Population) and joined them by year, then only kept the date each 5 years. 
+Then, the `Meat` column (expressed in kilograms) is divided by the `Population` column (expressed in number of humans). 
+That gives us an estimation of how many kilograms of meats are produced on these given years for each human.
+
+```{r}
+format <- purrr::partial(format, big.mark = ",", scientific = FALSE)
+```
+
+
+For example, in `r source_table$Year[1]`, the volume of meat produced worldwide was `r source_table$Meat[1] %>% format()`, and the worldwide population `r source_table$Human[1] %>% format()`, making an estimate of `r source_table$one_man_has[1] %>% format()` kilogram of meat by human on earth. 
+
+In `r source_table$Year[nrow(source_table)]`, the volume of meat produced worldwide was `r source_table$Meat[nrow(source_table)] %>% format()`, and the worldwide population `r source_table$Human[nrow(source_table)] %>% format()`, making an estimate of `r source_table$one_man_has[nrow(source_table)] %>% format()` kilogram of meat by human on earth. 
+
+
+```{r meat-over-years, fig.dim = c(12, 8)}
+# VIZ
+#df <- adjust_and_draw("meat, total", color = 2, filter_total = FALSE)
+source_table %>%
+  mutate(
+    one_man_has_stacked = purrr::map(one_man_has, ~ 1:round(.x))
+  ) %>% 
+  unnest(cols = c(one_man_has_stacked)) %>%
+  ggplot(aes(as.character(Year), one_man_has_stacked)) + 
+  geom_emoji(emoji="1f969", size = 0.08) + 
+  geom_text(
+    nudge_y = 3,
+    size = 6,
+    data = source_table, 
+    aes(
+      y = one_man_has, 
+      label = ceiling(one_man_has)
+    )
+  ) + 
+  labs(
+    title = "How many kilograms of meat is produced during \na given year for one human? 1965-2015",
+    caption = "Via dataviz.vg",
+    subtitle = "From: fao.org/faostat",
+    x = "",
+    y = ""
+  ) +  
+  ggtheme()
+```
+
+`r details::details(knitr::kable(mutate_at(source_table, vars(Human, Meat), format), format = "html"), summary = "Show the data",lang  = NULL)`
+
+::: {.code}
+Code behind this post is available `r build_link(knitr::current_input())`. 
+:::

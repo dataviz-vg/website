@@ -23,15 +23,19 @@ if (!file.exists(
   params$table
 )){
   library(rvest)
+  # Reading and extracting the table
   read_html("https://link.springer.com/article/10.1007/s10584-014-1169-1/tables/3") %>%
     html_table() %>%
     purrr::pluck(1) %>% 
     thinkr::clean_names() %>%
+    # Need to take only the rows 3 to 8
     slice(3:8) %>%
+    # Turning the col to numeric, then reordering the first column based on adjusted_for_age_and_sex
     mutate(
       adjusted_for_age_and_sex = as.numeric(adjusted_for_age_and_sex), 
       x = reorder(x, adjusted_for_age_and_sex)
     ) %>% 
+    # Keeping only the columns we need
     select(Diet = x, `Mean dietary GHG emissions (kgCO2e)` = adjusted_for_age_and_sex) %>%
     readr::write_csv(params$table)
 }

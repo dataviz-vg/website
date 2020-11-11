@@ -22,8 +22,10 @@ library(vegviz)
 ### `r emo::ji("mag_right")` About the source 
 
 ::: {.source}
-Food and Agriculture Organization of the United Nations - _Livestock Primary_ dataset.
+Food and Agriculture Organization of the United Nations - _Livestock Primary_ dataset, 'All Area Groups'.
 ::: 
+
+_Note: in a first version of this article, we were using the 'All Data' dataset, then switched to the 'All Area Groups' dataset, that already countains the worldwide aggregated data._
 
 ::: {.link}
 [fao.org/faostat/en/#data/QL](https://www.fao.org/faostat/en/#data/QL)
@@ -40,40 +42,46 @@ if (!file.exists(
   params$table
 )){
   # READ DATA HERE
+  # Reading the data for the production
   fls <- tempfile(fileext = ".zip")
-  download.file("http://fenixservices.fao.org/faostat/static/bulkdownloads/Production_LivestockPrimary_E_All_Data.zip", fls)
+  download.file("http://fenixservices.fao.org/faostat/static/bulkdownloads/Production_LivestockPrimary_E_All_Area_Groups.zip", fls)
   unzip(fls,exdir = dirname(fls))
-  readr::read_csv(
+  
+  meat_over_year_all_meats <- readr::read_csv(
     file.path(
-      dirname(fls), "Production_LivestockPrimary_E_All_Data.csv"
+      dirname(fls), "Production_LivestockPrimary_E_All_Area_Groups.csv"
     )
   ) %>%
+    filter(Area == "World") %>%
+    # Removing the columns that matches the pattern Y....F$, and which are encoded
     select(-matches("Y....F$")) %>%
     select(-matches("Code")) %>%
+    # Turning the item column to lower for easier manipulation
     mutate(Item = tolower(Item)) %>%
+    # keeping only the meat elements, with the production in tonnes
     filter(grepl('meat', Item)) %>%
     filter(Element == "Production", Unit == "tonnes") %>% 
+    # Removing these two columns
     select(-Element, - Unit) %>%
+    # We turn the wide df to a long one
     pivot_longer(
       names_to = "Year", 
       values_to = "Head", 
       cols = tidyselect::matches("Y....$")
     ) %>%
+    # Removing the Y from the year name so that we can use it as a numeric
     mutate(
-      #Head = Head * 1000, 
       Year = gsub("Y(....)", "\\1", Year), 
       Year = as.numeric(Year)
     ) %>%
+    # For each Year and item, we do a total of Head (the production in tonnes)
     group_by(Year, Item) %>%
     summarize(
       Head = sum(Head, na.rm = TRUE)
-    ) %>%
-    readr::write_csv(params$table)
-  unlink(
-    file.path(
-      dirname(fls), "Production_LivestockPrimary_E_All_Data.csv"
     )
-  )
+  
+  meat_over_year_all_meats %>%
+    readr::write_csv(params$table)
 }
 source_table <- readr::read_csv(params$table)
 
@@ -89,14 +97,10 @@ The data is filtered by Item, then the Production in tonnes is kept, grouped by 
 # DATA MANIP
 adjust_and_draw <- function(
   item, 
-  color = 1, 
-  filter_total = TRUE
+  color = 1
 ){
   adjusted_table <- source_table %>%  
     filter(grepl(item, Item))
-  if (filter_total){
-    adjusted_table <- adjusted_table %>% filter(!grepl('total', Item))
-  }
   
   gg <- adjusted_table %>%
     ggplot(aes(Year, Head)) + 
@@ -124,7 +128,7 @@ These visualizations will display the evolution of the total production in tonne
 
 ```{r meat-over-years, fig.dim = c(12, 6)}
 # VIZ
-df <- adjust_and_draw("meat, total", color = 2, filter_total = FALSE)
+df <- adjust_and_draw("meat, total", color = 2)
 df$gg + 
   labs(
     title = "Meat production (in tonnes) — 1961-2018"
@@ -139,10 +143,11 @@ df$gg +
 # VIZ
 df <- source_table %>%  
   mutate(Item = tolower(Item)) %>%
+  # Keeping our species of interest
   filter(grepl("(duck)|(pig)|(chicken)|(poultry)|(sheep)|(cattle)", Item)) %>%
-  #filter(Element == 'Production' & Unit == 'tonnes') %>% 
-  #filter(grepl('meat', Item)) %>% 
+  # Removing indigenous counts
   filter(!grepl('indigenous', Item)) %>% 
+  # Removing the total
   filter(!grepl('total', Item))
 ```
 
