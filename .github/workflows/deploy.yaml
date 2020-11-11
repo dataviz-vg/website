@@ -22,27 +22,5 @@ jobs:
           fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
       - uses: r-lib/actions/setup-r@v1
       - uses: r-lib/actions/setup-pandoc@v1
-      - name: Install sysreq
-        run: sudo apt update && sudo apt install -y libcurl4-openssl-dev
-      - name: Install dependencies
-        run: |
-          install.packages(c("remotes", "blogdown"))
-          remotes::install_github('datavizvg/vegviz')
-        shell: Rscript {0}
-      - name: Install Hugo
-        run: Rscript -e 'blogdown::install_hugo()'
-      - name: Build site
-        run: Rscript -e 'blogdown::build_site()'
-      - name: Commit files
-        run: |
-          git config --local user.email "contact@colinfay.me"
-          git config --local user.name "GitHub Action"
-          git add .
-          git commit -m "Built" -a
-      - name: Push to built branch
-        uses: Automattic/action-commit-to-branch@master
-        with:
-          branch: 'netlify'
-          commit_message: 'Build master'
-        env:
-          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }} # Required
+      - name: build and deploy
+        run: bash ./deploy.sh
