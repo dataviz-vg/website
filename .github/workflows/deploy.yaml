@@ -24,7 +24,7 @@ jobs:
       - uses: r-lib/actions/setup-pandoc@v1
       - name: Install deps
         run: |
-          Rscript -e 'options(repos = c(CRAN = "https://packagemanager.rstudio.com/all/latest"), download.file.method = "libcurl", Ncpus = 4);install.packages(c("remotes", "blogdown", "rmarkdown"));remotes::install_github("datavizvg/vegviz")'
+          Rscript -e 'options(repos = c(CRAN = "https://packagemanager.rstudio.com/all/latest"), download.file.method = "libcurl", Ncpus = 4);install.packages(c("remotes", "blogdown");devtools::install_github('rstudio/blogdown');remotes::install_github("datavizvg/vegviz")'
       - name: Install blogdown and build site
         run: |
           Rscript -e 'blogdown::install_hugo(extended = TRUE);blogdown::build_site()'
