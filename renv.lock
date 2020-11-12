@@ -268,6 +268,19 @@
       "Repository": "CRAN",
       "Hash": "fd2844b3a43ae2d27e70ece2df1b4e2a"
     },
+    "emo": {
+      "Package": "emo",
+      "Version": "0.0.0.9000",
+      "Source": "GitHub",
+      "Remotes": "tidyverse/glue",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteRepo": "emo",
+      "RemoteUsername": "hadley",
+      "RemoteRef": "master",
+      "RemoteSha": "02a520689861c3354f7c6b575e309280b2a3a172",
+      "Hash": "871ad14b8536568d0355c5c2467d6b4c"
+    },
     "emoGG": {
       "Package": "emoGG",
       "Version": "0.0.2",
