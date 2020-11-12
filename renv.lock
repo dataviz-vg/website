@@ -1005,8 +1005,14 @@
     "vegviz": {
       "Package": "vegviz",
       "Version": "0.0.0.9000",
-      "Source": "unknown",
-      "Hash": "cb5c1cf841fccabd7773c0b716ca73c7"
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteRepo": "vegviz",
+      "RemoteUsername": "datavizvg",
+      "RemoteRef": "HEAD",
+      "RemoteSha": "166c1695b60f3aebc711a363ee5951ff699d3f88",
+      "Hash": "42df380f4604b4346a7c60c940920973"
     },
     "viridis": {
       "Package": "viridis",
