@@ -9,4 +9,4 @@ git config --global user.email "Colin Fay"
 git add .
 git commit -m "Built" -a
 
-git push --force origin netlify
+git push --force origin HEAD:netlify
