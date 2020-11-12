@@ -24,3 +24,5 @@ jobs:
       - uses: r-lib/actions/setup-pandoc@v1
       - name: build and deploy
         run: bash ./deploy.sh
+        env:
+          ENVIRONMENT_VARIABLE_NAME: ${{ secrets.ACCESS_TOKEN }}

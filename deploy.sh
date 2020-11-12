@@ -1,4 +1,4 @@
-git remote add origin https://datavizvg:${{ secrets.ACCESS_TOKEN }}@https://github.com/datavizvg/website.git
+git remote add origin https://datavizvg:${ACCESS_TOKEN}@https://github.com/datavizvg/website.git
 
 git show-ref
 
