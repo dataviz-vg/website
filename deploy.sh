@@ -12,4 +12,4 @@ git config --global user.email "Colin Fay"
 git add .
 git commit -m "Built" -a
 
-git push --force origin refs/remotes/origin/netlify
+git push --force origin HEAD:refs/heads/netlify
