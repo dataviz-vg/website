@@ -24,7 +24,7 @@ jobs:
       - uses: r-lib/actions/setup-pandoc@v1
       - name: Deploy
         run: |
-          sudo aptitude install libcurl4-openssl-dev && Rscript deploy.R
+          sudo apt-get install libcurl4-openssl-dev && Rscript deploy.R
       - name: Commit files
         run: |
           git config --local user.email "action@github.com"
