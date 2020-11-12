@@ -86,13 +86,6 @@
       "Repository": "CRAN",
       "Hash": "50c838a310445e954bc13f26f26a6ecf"
     },
-    "attachment": {
-      "Package": "attachment",
-      "Version": "0.1.0",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "9f87673bfca2344df71186f5e41be796"
-    },
     "backports": {
       "Package": "backports",
       "Version": "1.1.10",
