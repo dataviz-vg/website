@@ -22,12 +22,9 @@ jobs:
           fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
       - uses: r-lib/actions/setup-r@v1
       - uses: r-lib/actions/setup-pandoc@v1
-      - name: Install deps
+      - name: Deploy
         run: |
-          Rscript -e 'options(repos = c(CRAN = "https://packagemanager.rstudio.com/all/latest"), download.file.method = "libcurl", Ncpus = 4);install.packages(c("remotes", "blogdown"));remotes::install_github("datavizvg/vegviz");remotes::install_cran("fs")'      
-      - name: Install blogdown and build site
-        run: |
-          Rscript -e 'blogdown::install_hugo(extended = TRUE);blogdown::build_site(build_rmd = TRUE);fs::dir_tree();'
+          Rscript deploy.R
       - name: Commit files
         run: |
           git config --local user.email "action@github.com"
