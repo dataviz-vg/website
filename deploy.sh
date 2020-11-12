@@ -1,5 +1,5 @@
 git remote rm origin
-git remote add origin https://datavizvg:${ACCESS_TOKEN}@github.com/datavizvg/website.git
+git remote add origin https://colinfay:${ACCESS_TOKEN}@github.com/datavizvg/website.git
 
 git show-ref
 
