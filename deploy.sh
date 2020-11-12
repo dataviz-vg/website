@@ -1,11 +1,11 @@
 git remote rm origin
-git remote add origin https://datavizvg:${ACCESS_TOKEN}@https://github.com/datavizvg/website.git
+git remote add origin https://datavizvg:${ACCESS_TOKEN}@github.com/datavizvg/website.git
 
 git show-ref
 
-Rscript -e 'options(repos = c(CRAN = "https://packagemanager.rstudio.com/all/latest"), download.file.method = "libcurl", Ncpus = 4);install.packages(c("remotes", "blogdown"));remotes::install_github("datavizvg/vegviz")'
+#Rscript -e 'options(repos = c(CRAN = "https://packagemanager.rstudio.com/all/latest"), download.file.method = "libcurl", Ncpus = 4);install.packages(c("remotes", "blogdown"));remotes::install_github("datavizvg/vegviz")'
 
-Rscript -e 'blogdown::install_hugo();blogdown::build_site()'
+#Rscript -e 'blogdown::install_hugo();blogdown::build_site()'
 
 git config --global user.name "contact@colinfay.me"
 git config --global user.email "Colin Fay"
