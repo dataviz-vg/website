@@ -14,7 +14,7 @@ name: R-CMD-check
 
 jobs:
   checkout-and-deploy:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
         with:
@@ -22,8 +22,6 @@ jobs:
           fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
       - uses: r-lib/actions/setup-r@v1
       - uses: r-lib/actions/setup-pandoc@v1
-      - name: xquartz
-        run: brew install xquartz
       - name: Deploy
         run: |
           Rscript deploy.R
