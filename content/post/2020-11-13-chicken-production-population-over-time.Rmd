@@ -1,12 +1,12 @@
 ---
-title: "Worlwide Meat Production compared to Population Growth — 1965-2015"
+title: "Worlwide Chicken Production compared to Population Growth — 1965-2015"
 author: "Colin Fay"
-date: 2020-11-11
-slug: "worldwide-meat-production-vs-population-growth-1965-2015"
+date: 2020-11-13
+slug: "worldwide-chicken-production-vs-population-growth-1965-2015"
 categories: ["industry"]
 tags: ["livestock", "production", "industry"]
 params:
-  table: meat-and-pop-over-years.csv
+  table: chicken-and-pop-over-years.csv
 ---
 
 ```{r setup, include=FALSE}
@@ -14,8 +14,7 @@ knitr::opts_chunk$set(
   collapse = TRUE, 
   echo = FALSE, 
   warning = FALSE, 
-  message = FALSE, 
-  cache = TRUE
+  message = FALSE
 )
 library(vegviz)
 ```
@@ -100,8 +99,8 @@ if (!file.exists(
     # Turning the item column to lower for easier manipulation
     mutate(Item = tolower(Item)) %>%
     # keeping only the meat elements, with the production in tonnes
-    filter(grepl('meat', Item)) %>%
-    filter(Element == "Production", Unit == "tonnes") %>% 
+    filter(grepl('meat, chicken', Item)) %>%
+    filter(Unit == "1000 Head") %>% 
     # Removing these two columns
     select(-Element, - Unit) %>%
     # We turn the wide df to a long one
@@ -123,14 +122,13 @@ if (!file.exists(
   
   # Joining the two table
   comparison_meat <- meat_over_year_all_meats %>%
-    filter(Item == "meat, total") %>%
     left_join(
       worldwide_pop, 
       by = "Year"
     ) %>%
     select(Year, Count, Head) %>%
     drop_na()  %>%
-    select(Year, Human = Count, Meat = Head)
+    select(Year, Human = Count, Chicken = Head)
   
   comparison_meat %>%
     readr::write_csv(params$table)

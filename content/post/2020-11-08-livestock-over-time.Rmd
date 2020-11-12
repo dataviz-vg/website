@@ -14,7 +14,8 @@ knitr::opts_chunk$set(
   collapse = TRUE, 
   echo = FALSE, 
   warning = FALSE, 
-  message = FALSE
+  message = FALSE, 
+  cache = TRUE
 )
 library(vegviz)
 ```
@@ -84,7 +85,6 @@ if (!file.exists(
     readr::write_csv(params$table)
 }
 source_table <- readr::read_csv(params$table)
-
 ```
 
 
