@@ -1,4 +1,4 @@
-git remote add origin https://datavizvg:${ACCESS_TOKEN}@https://github.com/datavizvg/website.git
+git remote add deploy https://datavizvg:${ACCESS_TOKEN}@https://github.com/datavizvg/website.git
 
 git show-ref
 
@@ -11,4 +11,4 @@ git config --global user.email "Colin Fay"
 git add .
 git commit -m "Built" -a
 
-git push --force origin HEAD:netlify
+git push --force deploy netlify
