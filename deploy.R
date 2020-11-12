@@ -5,6 +5,8 @@ remotes::install_cran("renv")
 
 renv::restore()
 
+remotes::install_cran("details")
+
 blogdown::install_hugo(extended = TRUE)
 blogdown::build_site(build_rmd = TRUE)
 fs::dir_tree()
