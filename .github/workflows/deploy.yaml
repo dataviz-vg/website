@@ -27,6 +27,7 @@ jobs:
           sudo apt-get -y install libcurl4-openssl-dev libgit2-dev && Rscript deploy.R
       - name: Commit files
         run: |
+          Rscript -e "fs::dir_tree()"
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add .
