@@ -31,5 +31,3 @@ purrr::map(fls, rmarkdown::yaml_front_matter) %>%
   blogdown::build_site(
     build_rmd = .
   )
-
-fs::dir_tree()
