@@ -30,7 +30,7 @@ Feel free to browse the [full license](https://creativecommons.org/licenses/by/4
 
 This site is built using: 
 
-+ [Blogdown and Hugo](https://bookdown.org/yihui/blogdown/)
++ [Blogdown and Hugo](https://bookdown.org/yihui/blogdown/), see [the repository](https://github.com/datavizvg) for more info about the tech configuration. 
 + [R and RMarkdown](https://www.r-project.org/)
 + [A modified version of the `minimal` hugo template ](https://themes.gohugo.io/theme/minimal/)
 
