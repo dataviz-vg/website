@@ -13,13 +13,21 @@ renv::restore()
 remotes::install_cran("details")
 
 blogdown::install_hugo(extended = TRUE)
-blogdown::build_site(
-  build_rmd = list.files(
-    "content/post/", 
-    pattern = ".*Rmd$", 
-    full.names = TRUE, 
-    recursive = TRUE
-  )
+
+fls <- list.files(
+  "content/post/", 
+  pattern = ".*Rmd$", 
+  full.names = TRUE, 
+  recursive = TRUE
 )
+
+purrr::map(fls, rmarkdown::yaml_front_matter) %>%
+  purrr::set_names(fls) %>%
+  purrr::map("draft") %>%
+  discard(isTRUE) %>% 
+  names() %>%
+  blogdown::build_site(
+    build_rmd = .
+  )
 
 fs::dir_tree()
