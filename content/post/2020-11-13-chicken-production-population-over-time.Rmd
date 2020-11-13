@@ -5,6 +5,7 @@ date: 2020-11-13
 slug: "worldwide-chicken-production-vs-population-growth-1965-2015"
 categories: ["industry"]
 tags: ["livestock", "production", "industry"]
+draft: true
 params:
   table: chicken-and-pop-over-years.csv
 ---
@@ -170,7 +171,7 @@ For example, in `r source_table$Year[1]`, the volume of meat produced worldwide 
 In `r source_table$Year[nrow(source_table)]`, the volume of meat produced worldwide was `r source_table$Meat[nrow(source_table)] %>% format()`, and the worldwide population `r source_table$Human[nrow(source_table)] %>% format()`, making an estimate of `r source_table$one_man_has[nrow(source_table)] %>% format()` kilogram of meat by human on earth. 
 
 
-```{r meat-over-years, fig.dim = c(12, 8)}
+```{r meat-over-years-by-human, fig.dim = c(12, 8)}
 # VIZ
 #df <- adjust_and_draw("meat, total", color = 2, filter_total = FALSE)
 source_table %>%

@@ -75,7 +75,14 @@ This visualization displays the mean amount of greenhouse gas emission for 2,000
 ```{r greenhousebydiet2000kcal, fig.dim = c(12, 8)}
 
 col_vals <- viridis::viridis(6)
-names(col_vals) <- c("High meat-eaters ( ≥ 100 g/day)", "Medium meat-eaters (50–99 g/day)", "Low meat-eaters ( < 50 g/day)", "Fish-eaters", "Vegetarians", "Vegans")
+names(col_vals) <- c(
+  "High meat-eaters ( ≥ 100 g/day)", 
+  "Medium meat-eaters (50–99 g/day)", 
+  "Low meat-eaters ( < 50 g/day)",
+  "Fish-eaters", 
+  "Vegetarians", 
+  "Vegans"
+)
 
 adjusted_table %>%
   ggplot(
@@ -105,8 +112,10 @@ adjusted_table %>%
     fill = "Diet type",
     caption = "Via dataviz.vg"
   ) + 
-  theme(axis.text.y = element_blank(),
-        axis.ticks.y = element_blank())
+  theme(
+    axis.text.y = element_blank(),
+    axis.ticks.y = element_blank()
+  )
 ```
 
 `r details::details(knitr::kable(adjusted_table, format = "html"), summary = "Show the data",lang  = NULL)`
