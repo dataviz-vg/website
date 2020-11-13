@@ -54,7 +54,7 @@ if (!file.exists(
 )){
   # READ DATA HERE
   # Reding the dat
-  fls <- tempfile(fileext = ".zip")
+fls <- tempfile(fileext = ".zip")
   download.file("http://fenixservices.fao.org/faostat/static/bulkdownloads/Population_E_All_Area_Groups.zip", fls)
   unzip(fls,exdir = dirname(fls))
   list.files(dirname(fls)) 
@@ -84,11 +84,11 @@ if (!file.exists(
   
   # Reading the data for the production
   # Reading the data for the production
-  fls <- tempfile(fileext = ".zip")
+   fls <- tempfile(fileext = ".zip")
   download.file("http://fenixservices.fao.org/faostat/static/bulkdownloads/Production_LivestockPrimary_E_All_Area_Groups.zip", fls)
   unzip(fls,exdir = dirname(fls))
   
-  meat_over_year_all_meats <- readr::read_csv(
+  meat_over_year_chicken <- readr::read_csv(
     file.path(
       dirname(fls), "Production_LivestockPrimary_E_All_Area_Groups.csv"
     )
@@ -103,7 +103,7 @@ if (!file.exists(
     filter(grepl('meat, chicken', Item)) %>%
     filter(Unit == "1000 Head") %>% 
     # Removing these two columns
-    select(-Element, - Unit) %>%
+    select(-Element) %>%
     # We turn the wide df to a long one
     pivot_longer(
       names_to = "Year", 
@@ -118,11 +118,12 @@ if (!file.exists(
     # For each Year and item, we do a total of Head (the production in tonnes)
     group_by(Year, Item) %>%
     summarize(
+      Unit = Unit,
       Head = sum(Head, na.rm = TRUE)
     )
   
   # Joining the two table
-  comparison_meat <- meat_over_year_all_meats %>%
+  comparison_meat <- meat_over_year_chicken %>%
     left_join(
       worldwide_pop, 
       by = "Year"
@@ -143,11 +144,11 @@ if (!file.exists(
 source_table <- readr::read_csv(params$table) %>%
   filter(Year %% 5 == 0) %>%
   mutate(
-    Meat = Meat * 1000
+    Chicken = Chicken * 1000
   ) %>%
   # Computing the number of kilogram by human
   mutate(
-    one_man_has = Meat / Human
+    one_man_has = Chicken / Human
   )
 
 ```
@@ -166,9 +167,9 @@ format <- purrr::partial(format, big.mark = ",", scientific = FALSE)
 ```
 
 
-For example, in `r source_table$Year[1]`, the volume of meat produced worldwide was `r source_table$Meat[1] %>% format()`, and the worldwide population `r source_table$Human[1] %>% format()`, making an estimate of `r source_table$one_man_has[1] %>% format()` kilogram of meat by human on earth. 
+For example, in `r source_table$Year[1]`, the volume of meat produced worldwide was `r source_table$Chicken[1] %>% format()`, and the worldwide population `r source_table$Human[1] %>% format()`, making an estimate of `r source_table$one_man_has[1] %>% format()` kilogram of meat by human on earth. 
 
-In `r source_table$Year[nrow(source_table)]`, the volume of meat produced worldwide was `r source_table$Meat[nrow(source_table)] %>% format()`, and the worldwide population `r source_table$Human[nrow(source_table)] %>% format()`, making an estimate of `r source_table$one_man_has[nrow(source_table)] %>% format()` kilogram of meat by human on earth. 
+In `r source_table$Year[nrow(source_table)]`, the volume of meat produced worldwide was `r source_table$Chicken[nrow(source_table)] %>% format()`, and the worldwide population `r source_table$Human[nrow(source_table)] %>% format()`, making an estimate of `r source_table$one_man_has[nrow(source_table)] %>% format()` kilogram of meat by human on earth. 
 
 
 ```{r meat-over-years-by-human, fig.dim = c(12, 8)}
@@ -180,18 +181,18 @@ source_table %>%
   ) %>% 
   unnest(cols = c(one_man_has_stacked)) %>%
   ggplot(aes(as.character(Year), one_man_has_stacked)) + 
-  geom_emoji(emoji="1f969", size = 0.08) + 
+  geom_emoji(emoji="1f424", size = 0.1) + 
   geom_text(
-    nudge_y = 3,
+    nudge_y = 1,
     size = 6,
     data = source_table, 
     aes(
       y = one_man_has, 
-      label = ceiling(one_man_has)
+      label = round(one_man_has)
     )
   ) + 
   labs(
-    title = "How many kilograms of meat is produced during \na given year for one human? 1965-2015",
+    title = "How many chickens is produced during \na given year for one human? 1965-2015",
     caption = "Via dataviz.vg",
     subtitle = "From: fao.org/faostat",
     x = "",
