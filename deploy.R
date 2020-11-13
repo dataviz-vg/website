@@ -21,10 +21,12 @@ fls <- list.files(
   recursive = TRUE
 )
 
+library(magrittr)
+
 purrr::map(fls, rmarkdown::yaml_front_matter) %>%
   purrr::set_names(fls) %>%
   purrr::map("draft") %>%
-  discard(isTRUE) %>% 
+  purrr::discard(isTRUE) %>% 
   names() %>%
   blogdown::build_site(
     build_rmd = .

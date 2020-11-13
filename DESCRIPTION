@@ -31,7 +31,8 @@ Imports:
     blogdown (>= 0.21),
     ggridges (>= 0.5.2),
     emo (>= 0.0.0.9000),
-    details (>= 0.2.1)
+    details (>= 0.2.1),
+    rmarkdown (>= 2.4)
 Remotes: 
     dill/emoGG,
     datavizvg/vegviz

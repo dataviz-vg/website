@@ -11,6 +11,7 @@ desc::desc_set_dep("tidyverse")
 usethis::use_package("blogdown")
 usethis::use_package("ggridges")
 usethis::use_package("details")
+usethis::use_package("rmarkdown")
 
 usethis::use_latest_dependencies()
 
