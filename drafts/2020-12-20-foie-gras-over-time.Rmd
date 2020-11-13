@@ -47,7 +47,8 @@ if (!file.exists(
     file.path(
       dirname(fls), "Trade_Crops_Livestock_E_All_Data.csv"
     )
-  ) df %>%    
+  ) 
+  df %>%    
     select(-matches("Y....F$")) %>%
     select(-matches("Code")) %>%
     #mutate(Item = tolower(Item)) %>%

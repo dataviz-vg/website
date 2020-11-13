@@ -17,7 +17,6 @@ knitr::opts_chunk$set(
   warning = FALSE, 
   message = FALSE
 )
-library(vegviz)
 ```
 
 ### `r emo::ji("mag_right")` About the source 
@@ -37,9 +36,7 @@ Farm Transparency Project - Age of animals slaughtered
 
 ```{r}
 # READ DATA HERE
-
 library(tidyverse)
-library(magrittr)
 library(vegviz)
 if (!file.exists(
   params$table
@@ -118,16 +115,15 @@ Note: we have rounded numbers using the following patterns:
 
 ```{r}
 # DATA MANIP
-library(tidyverse)
-adjusted_table <- readr::read_csv(params$table) 
+source_table <- readr::read_csv(params$table) 
 ```
 
 
-This visualization displays the mean amount of greenhouse gas emission for 2,000kcal of a given diet (either `r knitr::combine_words(adjusted_table$x, and = "or ")`).
+This visualization compare typical slaughter age (on the left, in green) to the natural lifespan of `r nrow(source_table)` animals: `r knitr::combine_words(source_table$Animal, and = "or ")`.
 
-```{r fig.dim = c(12, 8)}
+```{r lifespan-natural-slaughter, fig.dim = c(12, 8)}
 # VIZ
-adjusted_table %>%
+source_table %>%
   ggplot() +
   geom_segment(
     aes(
@@ -165,7 +161,7 @@ adjusted_table %>%
 
 ```
 
-`r details::details(knitr::kable(adjusted_table, format = "html"), summary = "Show the data",lang  = NULL)`
+`r details::details(knitr::kable(source_table, format = "html"), summary = "Show the data",lang  = NULL)`
 
 ::: {.code}
 Code behind this post is available `r build_link(knitr::current_input())`. 

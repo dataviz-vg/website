@@ -17,7 +17,6 @@ knitr::opts_chunk$set(
   warning = FALSE, 
   message = FALSE
 )
-library(vegviz)
 ```
 
 ```{r}
@@ -151,7 +150,7 @@ Dietary greenhouse gas emissions of meat-eaters, fish-eaters, vegetarians and ve
 :::
 
 ::: {.quote}
-> The production of animal-based foods is associated with higher greenhouse gas (GHG) emissions than plant-based foods. The objective of this study was to estimate the difference in dietary GHG emissions between self-selected meat-eaters, fish-eaters, vegetarians and vegans in the UK.
+> The production of animal-based foods is associated with higher greenhouse gas (GHG) emissions than plant-based foods. 
 :::
 
 ::: {.count}
@@ -163,7 +162,7 @@ adjusted_table <- readr::read_csv(params$table)
 ```
 
 
-```{r fig.dim = c(12, 10)}
+```{r greenhousebyfoodcommodities, fig.dim = c(12, 10)}
 # library(tidyverse)
 adjusted_table %>% 
   ggplot(aes(reorder(`Food category`, `UK GHG emissions (kgCO2e/kg)`), `UK GHG emissions (kgCO2e/kg)`, fill = type)) + 

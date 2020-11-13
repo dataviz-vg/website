@@ -5,11 +5,14 @@ attachment::att_from_rmds("content/") %>%
 
 usethis::use_dev_package("emoGG")
 usethis::use_dev_package("vegviz")
+usethis::use_dev_package("emo")
+
 desc::desc_set_dep("tidyverse")
 usethis::use_package("blogdown")
 usethis::use_package("ggridges")
+usethis::use_package("details")
 
 usethis::use_latest_dependencies()
 
-renv::snapshot(type = "explicit")
+renv::snapshot(type = "explicit", force = TRUE)
 

@@ -30,7 +30,8 @@ Imports:
     tidyverse (>= 1.3.0),
     blogdown (>= 0.21),
     ggridges (>= 0.5.2),
-    emo (>= 0.0.0.9000)
+    emo (>= 0.0.0.9000),
+    details (>= 0.2.1)
 Remotes: 
     dill/emoGG,
     datavizvg/vegviz

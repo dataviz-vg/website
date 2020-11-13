@@ -1,0 +1,135 @@
+---
+title: "Saturated Fat by Diet"
+author: "Colin Fay"
+date: 2020-12-06
+slug: "saturated-intake"
+categories: ["health"]
+tags: ["health", "food", "fat"]
+draft: true
+params:
+  table: intake-diet.csv
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE, 
+  echo = FALSE, 
+  warning = FALSE, 
+  message = FALSE
+)
+```
+
+### `r emo::ji("mag_right")` About the source 
+
+::: {.source}
+Scarborough, P., Appleby, P.N., Mizdrak, A. et al. _Dietary greenhouse gas emissions of meat-eaters, fish-eaters, vegetarians and vegans in the UK_. Climatic Change 125, 179–192 (2014). https://doi.org/10.1007/s10584-014-1169-1
+::: 
+
+::: {.link}
+[link.springer.com/article/10.1007/s10584-014-1169-1](https://link.springer.com/article/10.1007/s10584-014-1169-1)
+:::
+
+::: {.quote}
+> Assuming an ordered categorisation (high meat → medium meat → low meat → fish-eaters → vegetarians → vegans), there were significant trends towards lower total fat, saturated fat and protein consumption and higher carbohydrate, total sugar, fibre and fruit and vegetables consumption as animal-based food consumption decreased.
+:::
+
+::: {.count}
+> The diets of 2,041 vegans, 15,751 vegetarians, 8,123 fish-eaters and 29,589 meat-eaters aged 20–79 were assessed using a validated food frequency questionnaire. Comparable GHG emissions parameters were developed for the underlying food codes using a dataset of GHG emissions for 94 food commodities in the UK, with a weighting for the global warming potential of each component gas.
+:::
+
+```{r}
+library(tidyverse)
+library(vegviz)
+if (!file.exists(
+  params$table
+)){
+  library(rvest)
+  read_html("https://link.springer.com/article/10.1007/s10584-014-1169-1/tables/2") %>%
+    html_table() %>%
+    purrr::pluck(1) %>% 
+    thinkr::clean_names() %>%
+    filter(x == "Mean (SD) saturated fat (% energy)") %>%
+    pivot_longer(names_to = "Diet", values_to = 'Mean (SD) saturated fat (% energy)', cols = 2:9) %>%
+    mutate(
+      `Mean (SD) saturated fat (% energy)` = gsub("(.*.).(.) .*", "\\1.\\2", `Mean (SD) saturated fat (% energy)`)
+    ) %>%
+    filter(Diet != "p_for_trend") %>%
+    filter(Diet != "meat_eaters") %>%
+    mutate(
+      `Mean (SD) saturated fat (% energy)` = as.numeric(`Mean (SD) saturated fat (% energy)`), 
+      Diet = gsub("[^_]_a*$", "\\1", Diet)
+    ) %>%
+    select(-x) %>%
+    mutate(
+      Diet = case_when(
+        Diet == "high_meat_consumer" ~ "High meat-eaters ( ≥ 100 g/day)",
+        Diet == "medium_meat_consumer" ~ "Medium meat-eaters (50–99 g/day)",
+        Diet == "low_meat_consumer" ~ "Low meat-eaters ( < 50 g/day)",
+        Diet == "fish_eaters" ~ "Fish-eaters",
+        Diet == "vegetarians" ~ "Vegetarians",
+        Diet == "vegans" ~ "Vegans"
+      )
+    )%>%
+    readr::write_csv(params$table)
+}
+
+
+```
+
+
+### `r emo::ji("chart_with_upwards_trend")` Visualising the data
+
+Visualization of _Table 2 Descriptive statistics_.
+
+```{r}
+# DATA MANIP
+source_table <- readr::read_csv(params$table)
+```
+
+
+This visualization displays the mean amount of saturated fat eaten every days for a given diet (either `r knitr::combine_words(source_table$Diet, and = "or ")`).
+Units are expressed in `% energy`.
+
+```{r saturated-intake, fig.dim = c(12, 8)}
+col_vals <- viridis::viridis(6)
+names(col_vals) <- c("High meat-eaters ( ≥ 100 g/day)", "Medium meat-eaters (50–99 g/day)", "Low meat-eaters ( < 50 g/day)", "Fish-eaters", "Vegetarians", "Vegans")
+
+source_table  %>%
+  ggplot(
+    aes(
+      reorder(Diet, `Mean (SD) saturated fat (% energy)`),
+      `Mean (SD) saturated fat (% energy)`, 
+      fill = Diet, 
+      label = Diet
+    )
+  ) + 
+  geom_col(alpha = .9) + 
+  geom_text(
+    aes(y = 0.2,label = Diet, hjust = 0), 
+    size = rel(6)
+  ) + 
+  coord_flip() + 
+  scale_fill_viridis_d(option = "D") + 
+  guides(
+    fill = FALSE
+  )  +
+  ggtheme() +
+  labs(
+    title = "The more meat, the more saturated fat every day", 
+    subtitle = "From: 'Dietary greenhouse gas emissions of meat-eaters, fish-eaters, vegetarians and vegans in the UK'\nhttps://link.springer.com/article/10.1007/s10584-014-1169-1", 
+    x = " ", 
+    y = "Mean saturated fat (% energy)	", 
+    fill = "Diet type",
+    caption = "Via dataviz.vg"
+  ) + 
+  theme(axis.text.y = element_blank(),
+        axis.ticks.y = element_blank())
+
+
+```
+
+`r details::details(knitr::kable(source_table, format = "html"), summary = "Show the data",lang  = NULL)`
+
+::: {.code}
+Code behind this post is available `r build_link(knitr::current_input())`. 
+:::

@@ -1,8 +1,8 @@
 ---
-title: "Worlwide Cheese Production over Time"
+title: "Worlwide Cheese Production — 1961-2014"
 author: "Colin Fay"
 date: 2020-11-22
-slug: "worldwide-cheese-production-over-time"
+slug: "worldwide-cheese-production-1961-2014"
 categories: ["industry"]
 tags: ["livestock", "production", "industry"]
 draft: true
@@ -17,7 +17,6 @@ knitr::opts_chunk$set(
   warning = FALSE, 
   message = FALSE
 )
-library(vegviz)
 ```
 
 ### `r emo::ji("mag_right")` About the source 
@@ -30,17 +29,13 @@ Food and Agriculture Organization of the United Nations - _Livestock Processed_ 
 [fao.org/faostat/en/#data/QP](https://www.fao.org/faostat/en/#data/QP)
 :::
 
-::: {.quote}
-> 
-:::
-
 ::: {.count}
 > The data on livestock numbers are intended to cover all domestic animals irrespective of their age and the place or purpose of their breeding. Estimates have been made for non-reporting countries as well as for countries reporting incomplete data. However, in certain countries, data for chickens, ducks and turkeys do not yet seem to represent the total number of these birds. Certain other countries give a single figure for all poultry; data for these countries are shown under “Chickens”.
 :::
 
 ```{r}
 library(tidyverse)
-library(magrittr)
+library(vegviz)
 if (!file.exists(
   params$table
 )){
@@ -73,6 +68,11 @@ if (!file.exists(
     ) %>%
     select(-Item) %>%
     readr::write_csv(params$table)
+  unlink(
+    file.path(
+      dirname(fls), "Production_LivestockProcessed_E_All_Data.csv"
+    )
+  )
 }
 
 ```
@@ -93,15 +93,15 @@ These visualizations will display the evolution of the production in tonnes from
 
 #### Global production in tonnes
 
-```{r fig.dim = c(12, 8)}
+```{r cheese-over-years, fig.dim = c(12, 6)}
 # VIZ
 adjusted_table %>%
   ggplot(aes(Year, Head)) + 
-  geom_col(fill = viridis::viridis(6)[2]) + 
+  geom_col(fill = viridis::viridis(6)[4]) + 
   scale_y_continuous(labels = scales::comma) + 
   ggtheme() + 
   labs(
-    title = "Global production (in tonnes) of cheese over the years", 
+    title = "Global production (in tonnes) of cheese — 1961-2014", 
     x = "", 
     y = "", 
     caption = "Via dataviz.vg",

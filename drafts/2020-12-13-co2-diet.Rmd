@@ -1,0 +1,120 @@
+---
+title: "Embodied Food GHG emissions According to Dietary Pattern"
+author: "Colin Fay"
+date: 2020-12-13
+slug: "embodied-food-ghg-dietary-pattern"
+categories: ["environment"]
+tags: ["greenhouse", "ecology", "environment"]
+draft: true
+params:
+  table: embodied-food-ghg-dietary-pattern.csv
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE, 
+  echo = FALSE, 
+  warning = FALSE, 
+  message = FALSE
+)
+```
+
+> Note: we already have another article about [GHG emissions and Diet](https://dataviz.vg/post/greenhouse-by-diet-2000kcal/). 
+This new post relies on another source.
+
+### `r emo::ji("mag_right")` About the source 
+
+::: {.source}
+Climate change mitigation and health effects of varied dietary patterns in real-life settings throughout North America, 
+::: 
+
+::: {.link}
+[academic.oup.com/ajcn/article/100/suppl_1/490S/4576703](https://academic.oup.com/ajcn/article/100/suppl_1/490S/4576703)
+:::
+
+::: {.quote}
+> With the nonvegetarian diet as reference, the mean percentage change in total GHGEs and change in annual emissions were −29.2% and −325 kg CO2e for the vegetarian and −21.6% and −241 kg CO2e for semivegetarian diets, respectively.
+:::
+
+::: {.count}
+> Data from the Adventist Health Study 2 (AHS-2) were used to characterize and quantify the dietary patterns assessed. The AHS-2 is a large prospective cohort study of Seventh-day Adventists spread throughout the United States and Canada. Dietary intake was assessed by a self-administered food-frequency questionnaire of 210 food items including fruit, vegetables, legumes, grains, oils, dairy, fish, eggs, meat, beverages, and commercially prepared products such as dietary supplements, dry cereals, and vegetarian protein products. Dietary patterns were determined according to the reported combined intake of all meats, including fish. Vegetarians rarely or never consumed meats (<1 time/mo), semivegetarians consumed meats >1 time/mo but <1 time/wk, and nonvegetarians consumed meats at least 1 time/wk.
+:::
+
+```{r}
+library(tidyverse)
+library(vegviz)
+if (!file.exists(
+  params$table
+)){
+  library(rvest)
+  res <- read_html("https://academic.oup.com/ajcn/article/100/suppl_1/490S/4576703") %>%
+    html_table() %>% 
+    .[[9]] 
+  names(res) <- res[1, ]
+  res <- res[3:5, ]
+  res %>%
+    mutate(
+      `Mean ± SD` = gsub("(....).*", "\\1", `Mean ± SD`), 
+      `Mean ± SD` = as.numeric(`Mean ± SD`)
+    ) %>%
+    select(`Dietary pattern`, `Mean GHG Emission` = `Mean ± SD`) %>%
+    # WRITE
+    readr::write_csv(params$table)
+}
+
+
+```
+
+
+### `r emo::ji("chart_with_upwards_trend")` Visualising the data
+
+Visualization of _Embodied food greenhouse gas emissions, adjusted to 2000 kcal, according to dietary pattern_.
+
+```{r}
+# DATA MANIP
+source_table <- readr::read_csv(params$table)
+```
+
+
+Three dietary patterns are studied (either `r knitr::combine_words(source_table[["Dietary pattern"]], and = "or ")`).
+
+```{r fig.dim = c(12, 8)}
+# VIZ
+source_table %>%
+  ggplot(
+    aes(
+      reorder(`Dietary pattern`, `Mean GHG Emission`),
+      `Mean GHG Emission`, 
+      fill = `Dietary pattern`, 
+      label = `Dietary pattern`
+    )
+  ) + 
+  geom_col(alpha = .9) + 
+  geom_text(
+    aes(y = 0.2,label = `Dietary pattern`, hjust = 0), 
+    size = rel(6)
+  ) + 
+  coord_flip() + 
+  scale_fill_viridis_d(option = "D") + 
+  guides(
+    fill = FALSE
+  )  +
+  ggtheme() +
+  labs(
+    title = "A Vegetarian Diet produces -29.2% less GHG every year", 
+    subtitle = "From: 'Climate change mitigation and health effects of varied dietary patterns in real-life settings throughout North America '\nhttps://academic.oup.com/ajcn/article/100/suppl_1/490S/4576703", 
+    x = " ", 
+    y = "Embodied food greenhouse gas emissions (kgCO2e) per 2,000 kcal of food", 
+    fill = "Diet pattern",
+    caption = "Via dataviz.vg"
+  ) + 
+  theme(axis.text.y = element_blank(),
+        axis.ticks.y = element_blank())
+  
+```
+
+`r details::details(knitr::kable(source_table, format = "html"), summary = "Show the data",lang  = NULL)`
+
+::: {.code}
+Code behind this post is available `r build_link(knitr::current_input())`. 
+:::

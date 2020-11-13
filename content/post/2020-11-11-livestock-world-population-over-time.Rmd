@@ -18,6 +18,8 @@ knitr::opts_chunk$set(
   cache = TRUE
 )
 library(vegviz)
+library(tidyverse)
+library(emoGG)
 ```
 
 > This post is a complementary view of our [Worlwide Meat Production — 1961-2018](https://dataviz.vg/post/greenhouse-by-diet-2000kcal/) blogpost.
@@ -47,8 +49,6 @@ In this post, we will compare meat production with the evolution of the populati
 Side note: the FAO 'Livestock Primary' comes in two flavors, the one with
 
 ```{r}
-library(tidyverse)
-library(emoGG)
 if (!file.exists(
   params$table
 )){
