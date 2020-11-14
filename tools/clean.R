@@ -15,3 +15,4 @@ list.files(
   map(unlink, TRUE, TRUE)
 unlink("blogdown/", TRUE, TRUE)
 unlink("static", TRUE, TRUE)
+unlink("public", TRUE, TRUE)
