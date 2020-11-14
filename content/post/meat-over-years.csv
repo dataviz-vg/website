@@ -1,5 +1,5 @@
-Year,Item,Head
-1961,beef and buffalo meat,28755714
+"Year","Item","Head"
+1961,"beef and buffalo meat",28755714
 1961,"meat indigenous, ass",19452
 1961,"meat indigenous, bird nes",7502
 1961,"meat indigenous, buffalo",1004696
@@ -19,7 +19,7 @@ Year,Item,Head
 1961,"meat indigenous, sheep",4960006
 1961,"meat indigenous, total",71325556
 1961,"meat indigenous, turkey",898015
-1961,meat nes,875179
+1961,"meat nes",875179
 1961,"meat, ass",19201
 1961,"meat, bird nes",10002
 1961,"meat, buffalo",1071154
@@ -40,8 +40,8 @@ Year,Item,Head
 1961,"meat, sheep",4930306
 1961,"meat, total",71362169
 1961,"meat, turkey",898076
-1961,sheep and goat meat,6032191
-1962,beef and buffalo meat,30307673
+1961,"sheep and goat meat",6032191
+1962,"beef and buffalo meat",30307673
 1962,"meat indigenous, ass",22067
 1962,"meat indigenous, bird nes",7622
 1962,"meat indigenous, buffalo",1034090
@@ -61,7 +61,7 @@ Year,Item,Head
 1962,"meat indigenous, sheep",5053225
 1962,"meat indigenous, total",74527463
 1962,"meat indigenous, turkey",809246
-1962,meat nes,938240
+1962,"meat nes",938240
 1962,"meat, ass",21829
 1962,"meat, bird nes",10222
 1962,"meat, buffalo",1104344
@@ -82,8 +82,8 @@ Year,Item,Head
 1962,"meat, sheep",5039647
 1962,"meat, total",74654264
 1962,"meat, turkey",808341
-1962,sheep and goat meat,6166781
-1963,beef and buffalo meat,31976185
+1962,"sheep and goat meat",6166781
+1963,"beef and buffalo meat",31976185
 1963,"meat indigenous, ass",21656
 1963,"meat indigenous, bird nes",7593
 1963,"meat indigenous, buffalo",1042445
@@ -103,7 +103,7 @@ Year,Item,Head
 1963,"meat indigenous, sheep",5052205
 1963,"meat indigenous, total",78423689
 1963,"meat indigenous, turkey",842085
-1963,meat nes,903831
+1963,"meat nes",903831
 1963,"meat, ass",21377
 1963,"meat, bird nes",10293
 1963,"meat, buffalo",1120445
@@ -124,8 +124,8 @@ Year,Item,Head
 1963,"meat, sheep",5038051
 1963,"meat, total",78830480
 1963,"meat, turkey",842031
-1963,sheep and goat meat,6163326
-1964,beef and buffalo meat,32437146
+1963,"sheep and goat meat",6163326
+1964,"beef and buffalo meat",32437146
 1964,"meat indigenous, ass",22948
 1964,"meat indigenous, bird nes",7718
 1964,"meat indigenous, buffalo",1080788
@@ -145,7 +145,7 @@ Year,Item,Head
 1964,"meat indigenous, sheep",5031119
 1964,"meat indigenous, total",80158822
 1964,"meat indigenous, turkey",904029
-1964,meat nes,912869
+1964,"meat nes",912869
 1964,"meat, ass",22618
 1964,"meat, bird nes",10518
 1964,"meat, buffalo",1160552
@@ -166,8 +166,8 @@ Year,Item,Head
 1964,"meat, sheep",5016465
 1964,"meat, total",80414414
 1964,"meat, turkey",903893
-1964,sheep and goat meat,6158124
-1965,beef and buffalo meat,33040548
+1964,"sheep and goat meat",6158124
+1965,"beef and buffalo meat",33040548
 1965,"meat indigenous, ass",25996
 1965,"meat indigenous, bird nes",7689
 1965,"meat indigenous, buffalo",1099395
@@ -187,7 +187,7 @@ Year,Item,Head
 1965,"meat indigenous, sheep",5063232
 1965,"meat indigenous, total",84265087
 1965,"meat indigenous, turkey",954057
-1965,meat nes,884595
+1965,"meat nes",884595
 1965,"meat, ass",25698
 1965,"meat, bird nes",10589
 1965,"meat, buffalo",1182078
@@ -208,8 +208,8 @@ Year,Item,Head
 1965,"meat, sheep",5039501
 1965,"meat, total",84465228
 1965,"meat, turkey",952993
-1965,sheep and goat meat,6212144
-1966,beef and buffalo meat,34754098
+1965,"sheep and goat meat",6212144
+1966,"beef and buffalo meat",34754098
 1966,"meat indigenous, ass",26937
 1966,"meat indigenous, bird nes",7543
 1966,"meat indigenous, buffalo",1114288
@@ -229,7 +229,7 @@ Year,Item,Head
 1966,"meat indigenous, sheep",5258813
 1966,"meat indigenous, total",88066460
 1966,"meat indigenous, turkey",1071454
-1966,meat nes,883600
+1966,"meat nes",883600
 1966,"meat, ass",26732
 1966,"meat, bird nes",10543
 1966,"meat, buffalo",1199698
@@ -250,8 +250,8 @@ Year,Item,Head
 1966,"meat, sheep",5110365
 1966,"meat, total",88129575
 1966,"meat, turkey",1069256
-1966,sheep and goat meat,6317857
-1967,beef and buffalo meat,36497312
+1966,"sheep and goat meat",6317857
+1967,"beef and buffalo meat",36497312
 1967,"meat indigenous, ass",27591
 1967,"meat indigenous, bird nes",6593
 1967,"meat indigenous, buffalo",1141209
@@ -271,7 +271,7 @@ Year,Item,Head
 1967,"meat indigenous, sheep",5289210
 1967,"meat indigenous, total",92093022
 1967,"meat indigenous, turkey",1180818
-1967,meat nes,921146
+1967,"meat nes",921146
 1967,"meat, ass",27352
 1967,"meat, bird nes",9493
 1967,"meat, buffalo",1228088
@@ -292,8 +292,8 @@ Year,Item,Head
 1967,"meat, sheep",5271257
 1967,"meat, total",92268694
 1967,"meat, turkey",1175517
-1967,sheep and goat meat,6493821
-1968,beef and buffalo meat,38228120
+1967,"sheep and goat meat",6493821
+1968,"beef and buffalo meat",38228120
 1968,"meat indigenous, ass",28229
 1968,"meat indigenous, bird nes",6620
 1968,"meat indigenous, buffalo",1177338
@@ -313,7 +313,7 @@ Year,Item,Head
 1968,"meat indigenous, sheep",5432897
 1968,"meat indigenous, total",94966462
 1968,"meat indigenous, turkey",1079999
-1968,meat nes,951719
+1968,"meat nes",951719
 1968,"meat, ass",27987
 1968,"meat, bird nes",9620
 1968,"meat, buffalo",1262915
@@ -334,8 +334,8 @@ Year,Item,Head
 1968,"meat, sheep",5428243
 1968,"meat, total",95209630
 1968,"meat, turkey",1075243
-1968,sheep and goat meat,6672625
-1969,beef and buffalo meat,39212224
+1968,"sheep and goat meat",6672625
+1969,"beef and buffalo meat",39212224
 1969,"meat indigenous, ass",28245
 1969,"meat indigenous, bird nes",6597
 1969,"meat indigenous, buffalo",1196890
@@ -355,7 +355,7 @@ Year,Item,Head
 1969,"meat indigenous, sheep",5390709
 1969,"meat indigenous, total",96815346
 1969,"meat indigenous, turkey",1105961
-1969,meat nes,1031212
+1969,"meat nes",1031212
 1969,"meat, ass",28005
 1969,"meat, bird nes",9397
 1969,"meat, buffalo",1283146
@@ -376,8 +376,8 @@ Year,Item,Head
 1969,"meat, sheep",5375128
 1969,"meat, total",96981068
 1969,"meat, turkey",1104008
-1969,sheep and goat meat,6650206
-1970,beef and buffalo meat,39662457
+1969,"sheep and goat meat",6650206
+1970,"beef and buffalo meat",39662457
 1970,"meat indigenous, ass",29024
 1970,"meat indigenous, bird nes",6508
 1970,"meat indigenous, buffalo",1227720
@@ -397,7 +397,7 @@ Year,Item,Head
 1970,"meat indigenous, sheep",5553608
 1970,"meat indigenous, total",100434369
 1970,"meat indigenous, turkey",1221594
-1970,meat nes,1022027
+1970,"meat nes",1022027
 1970,"meat, ass",28780
 1970,"meat, bird nes",9408
 1970,"meat, buffalo",1313001
@@ -418,8 +418,8 @@ Year,Item,Head
 1970,"meat, sheep",5536456
 1970,"meat, total",100669144
 1970,"meat, turkey",1219027
-1970,sheep and goat meat,6830942
-1971,beef and buffalo meat,39414287
+1970,"sheep and goat meat",6830942
+1971,"beef and buffalo meat",39414287
 1971,"meat indigenous, ass",31652
 1971,"meat indigenous, bird nes",7516
 1971,"meat indigenous, buffalo",1247406
@@ -439,7 +439,7 @@ Year,Item,Head
 1971,"meat indigenous, sheep",5643503
 1971,"meat indigenous, total",104492074
 1971,"meat indigenous, turkey",1310606
-1971,meat nes,1007576
+1971,"meat nes",1007576
 1971,"meat, ass",31490
 1971,"meat, bird nes",10516
 1971,"meat, buffalo",1341044
@@ -460,8 +460,8 @@ Year,Item,Head
 1971,"meat, sheep",5634239
 1971,"meat, total",104832550
 1971,"meat, turkey",1301430
-1971,sheep and goat meat,6961677
-1972,beef and buffalo meat,39899373
+1971,"sheep and goat meat",6961677
+1972,"beef and buffalo meat",39899373
 1972,"meat indigenous, ass",32230
 1972,"meat indigenous, bird nes",6463
 1972,"meat indigenous, buffalo",1264497
@@ -481,7 +481,7 @@ Year,Item,Head
 1972,"meat indigenous, sheep",5652725
 1972,"meat indigenous, total",107384322
 1972,"meat indigenous, turkey",1409505
-1972,meat nes,1036496
+1972,"meat nes",1036496
 1972,"meat, ass",31974
 1972,"meat, bird nes",9563
 1972,"meat, buffalo",1360291
@@ -502,8 +502,8 @@ Year,Item,Head
 1972,"meat, sheep",5660347
 1972,"meat, total",107778961
 1972,"meat, turkey",1405256
-1972,sheep and goat meat,7018105
-1973,beef and buffalo meat,40260716
+1972,"sheep and goat meat",7018105
+1973,"beef and buffalo meat",40260716
 1973,"meat indigenous, ass",30079
 1973,"meat indigenous, bird nes",5601
 1973,"meat indigenous, buffalo",1321056
@@ -523,7 +523,7 @@ Year,Item,Head
 1973,"meat indigenous, sheep",5415487
 1973,"meat indigenous, total",108100685
 1973,"meat indigenous, turkey",1505414
-1973,meat nes,1035417
+1973,"meat nes",1035417
 1973,"meat, ass",29946
 1973,"meat, bird nes",8502
 1973,"meat, buffalo",1421249
@@ -544,8 +544,8 @@ Year,Item,Head
 1973,"meat, sheep",5401305
 1973,"meat, total",108542087
 1973,"meat, turkey",1504328
-1973,sheep and goat meat,6785120
-1974,beef and buffalo meat,43311973
+1973,"sheep and goat meat",6785120
+1974,"beef and buffalo meat",43311973
 1974,"meat indigenous, ass",29800
 1974,"meat indigenous, bird nes",4932
 1974,"meat indigenous, buffalo",1359159
@@ -565,7 +565,7 @@ Year,Item,Head
 1974,"meat indigenous, sheep",5164242
 1974,"meat indigenous, total",113721870
 1974,"meat indigenous, turkey",1550592
-1974,meat nes,1026188
+1974,"meat nes",1026188
 1974,"meat, ass",29710
 1974,"meat, bird nes",7932
 1974,"meat, buffalo",1461588
@@ -586,8 +586,8 @@ Year,Item,Head
 1974,"meat, sheep",5143378
 1974,"meat, total",114039095
 1974,"meat, turkey",1544247
-1974,sheep and goat meat,6561829
-1975,beef and buffalo meat,45198729
+1974,"sheep and goat meat",6561829
+1975,"beef and buffalo meat",45198729
 1975,"meat indigenous, ass",29486
 1975,"meat indigenous, bird nes",4830
 1975,"meat indigenous, buffalo",1357275
@@ -607,7 +607,7 @@ Year,Item,Head
 1975,"meat indigenous, sheep",5335513
 1975,"meat indigenous, total",115693326
 1975,"meat indigenous, turkey",1461547
-1975,meat nes,1017160
+1975,"meat nes",1017160
 1975,"meat, ass",29370
 1975,"meat, bird nes",7930
 1975,"meat, buffalo",1463913
@@ -628,8 +628,8 @@ Year,Item,Head
 1975,"meat, sheep",5307306
 1975,"meat, total",115820268
 1975,"meat, turkey",1455288
-1975,sheep and goat meat,6791671
-1976,beef and buffalo meat,47582912
+1975,"sheep and goat meat",6791671
+1976,"beef and buffalo meat",47582912
 1976,"meat indigenous, ass",29981
 1976,"meat indigenous, bird nes",4752
 1976,"meat indigenous, buffalo",1385389
@@ -649,7 +649,7 @@ Year,Item,Head
 1976,"meat indigenous, sheep",5340255
 1976,"meat indigenous, total",118407236
 1976,"meat indigenous, turkey",1636341
-1976,meat nes,988441
+1976,"meat nes",988441
 1976,"meat, ass",29966
 1976,"meat, bird nes",7652
 1976,"meat, buffalo",1491582
@@ -670,8 +670,8 @@ Year,Item,Head
 1976,"meat, sheep",5315834
 1976,"meat, total",118704716
 1976,"meat, turkey",1630315
-1976,sheep and goat meat,6819910
-1977,beef and buffalo meat,47986751
+1976,"sheep and goat meat",6819910
+1977,"beef and buffalo meat",47986751
 1977,"meat indigenous, ass",28689
 1977,"meat indigenous, bird nes",4439
 1977,"meat indigenous, buffalo",1393528
@@ -691,7 +691,7 @@ Year,Item,Head
 1977,"meat indigenous, sheep",5342716
 1977,"meat indigenous, total",122132305
 1977,"meat indigenous, turkey",1670346
-1977,meat nes,965388
+1977,"meat nes",965388
 1977,"meat, ass",28690
 1977,"meat, bird nes",7839
 1977,"meat, buffalo",1500322
@@ -712,8 +712,8 @@ Year,Item,Head
 1977,"meat, sheep",5336575
 1977,"meat, total",122614594
 1977,"meat, turkey",1668091
-1977,sheep and goat meat,6884345
-1978,beef and buffalo meat,48514097
+1977,"sheep and goat meat",6884345
+1978,"beef and buffalo meat",48514097
 1978,"meat indigenous, ass",28991
 1978,"meat indigenous, bird nes",4583
 1978,"meat indigenous, buffalo",1412088
@@ -733,7 +733,7 @@ Year,Item,Head
 1978,"meat indigenous, sheep",5459130
 1978,"meat indigenous, total",127323501
 1978,"meat indigenous, turkey",1738059
-1978,meat nes,953125
+1978,"meat nes",953125
 1978,"meat, ass",28989
 1978,"meat, bird nes",7283
 1978,"meat, buffalo",1524325
@@ -754,8 +754,8 @@ Year,Item,Head
 1978,"meat, sheep",5416032
 1978,"meat, total",127501337
 1978,"meat, turkey",1731756
-1978,sheep and goat meat,7044103
-1979,beef and buffalo meat,47357186
+1978,"sheep and goat meat",7044103
+1979,"beef and buffalo meat",47357186
 1979,"meat indigenous, ass",28266
 1979,"meat indigenous, bird nes",4344
 1979,"meat indigenous, buffalo",1455855
@@ -775,7 +775,7 @@ Year,Item,Head
 1979,"meat indigenous, sheep",5421205
 1979,"meat indigenous, total",132269142
 1979,"meat indigenous, turkey",1885468
-1979,meat nes,1016335
+1979,"meat nes",1016335
 1979,"meat, ass",28265
 1979,"meat, bird nes",7144
 1979,"meat, buffalo",1572082
@@ -796,8 +796,8 @@ Year,Item,Head
 1979,"meat, sheep",5386272
 1979,"meat, total",132735348
 1979,"meat, turkey",1878749
-1979,sheep and goat meat,7044175
-1980,beef and buffalo meat,47172698
+1979,"sheep and goat meat",7044175
+1980,"beef and buffalo meat",47172698
 1980,"meat indigenous, ass",28089
 1980,"meat indigenous, bird nes",4628
 1980,"meat indigenous, buffalo",1484770
@@ -817,7 +817,7 @@ Year,Item,Head
 1980,"meat indigenous, sheep",5748072
 1980,"meat indigenous, total",136534667
 1980,"meat indigenous, turkey",2058192
-1980,meat nes,956310
+1980,"meat nes",956310
 1980,"meat, ass",28089
 1980,"meat, bird nes",7528
 1980,"meat, buffalo",1605914
@@ -838,8 +838,8 @@ Year,Item,Head
 1980,"meat, sheep",5647384
 1980,"meat, total",136738269
 1980,"meat, turkey",2047150
-1980,sheep and goat meat,7341533
-1981,beef and buffalo meat,47634473
+1980,"sheep and goat meat",7341533
+1981,"beef and buffalo meat",47634473
 1981,"meat indigenous, ass",29199
 1981,"meat indigenous, bird nes",5946
 1981,"meat indigenous, buffalo",1554417
@@ -859,7 +859,7 @@ Year,Item,Head
 1981,"meat indigenous, sheep",5947238
 1981,"meat indigenous, total",139025261
 1981,"meat indigenous, turkey",2168948
-1981,meat nes,960221
+1981,"meat nes",960221
 1981,"meat, ass",29199
 1981,"meat, bird nes",8946
 1981,"meat, buffalo",1680284
@@ -880,8 +880,8 @@ Year,Item,Head
 1981,"meat, sheep",5866889
 1981,"meat, total",139364094
 1981,"meat, turkey",2148004
-1981,sheep and goat meat,7621505
-1982,beef and buffalo meat,47727644
+1981,"sheep and goat meat",7621505
+1982,"beef and buffalo meat",47727644
 1982,"meat indigenous, ass",30830
 1982,"meat indigenous, bird nes",8101
 1982,"meat indigenous, buffalo",1684155
@@ -901,7 +901,7 @@ Year,Item,Head
 1982,"meat indigenous, sheep",5959894
 1982,"meat indigenous, total",140411811
 1982,"meat indigenous, turkey",2186882
-1982,meat nes,907736
+1982,"meat nes",907736
 1982,"meat, ass",30831
 1982,"meat, bird nes",11201
 1982,"meat, buffalo",1812532
@@ -922,8 +922,8 @@ Year,Item,Head
 1982,"meat, sheep",5887957
 1982,"meat, total",140662104
 1982,"meat, turkey",2174970
-1982,sheep and goat meat,7712227
-1983,beef and buffalo meat,48999507
+1982,"sheep and goat meat",7712227
+1983,"beef and buffalo meat",48999507
 1983,"meat indigenous, ass",31757
 1983,"meat indigenous, bird nes",10315
 1983,"meat indigenous, buffalo",1710242
@@ -943,7 +943,7 @@ Year,Item,Head
 1983,"meat indigenous, sheep",6156482
 1983,"meat indigenous, total",145030079
 1983,"meat indigenous, turkey",2293371
-1983,meat nes,960030
+1983,"meat nes",960030
 1983,"meat, ass",31757
 1983,"meat, bird nes",13515
 1983,"meat, buffalo",1838735
@@ -964,8 +964,8 @@ Year,Item,Head
 1983,"meat, sheep",6081255
 1983,"meat, total",145313846
 1983,"meat, turkey",2301060
-1983,sheep and goat meat,7993433
-1984,beef and buffalo meat,50395178
+1983,"sheep and goat meat",7993433
+1984,"beef and buffalo meat",50395178
 1984,"meat indigenous, ass",30679
 1984,"meat indigenous, bird nes",11453
 1984,"meat indigenous, buffalo",1764377
@@ -985,7 +985,7 @@ Year,Item,Head
 1984,"meat indigenous, sheep",6176937
 1984,"meat indigenous, total",149961061
 1984,"meat indigenous, turkey",2321609
-1984,meat nes,978088
+1984,"meat nes",978088
 1984,"meat, ass",30679
 1984,"meat, bird nes",14753
 1984,"meat, buffalo",1910284
@@ -1006,8 +1006,8 @@ Year,Item,Head
 1984,"meat, sheep",6102073
 1984,"meat, total",149438648
 1984,"meat, turkey",2321329
-1984,sheep and goat meat,8072131
-1985,beef and buffalo meat,51304055
+1984,"sheep and goat meat",8072131
+1985,"beef and buffalo meat",51304055
 1985,"meat indigenous, ass",30480
 1985,"meat indigenous, bird nes",11495
 1985,"meat indigenous, buffalo",1854717
@@ -1027,7 +1027,7 @@ Year,Item,Head
 1985,"meat indigenous, sheep",6282014
 1985,"meat indigenous, total",154129068
 1985,"meat indigenous, turkey",2450975
-1985,meat nes,1019460
+1985,"meat nes",1019460
 1985,"meat, ass",30480
 1985,"meat, bird nes",14695
 1985,"meat, buffalo",1995979
@@ -1048,8 +1048,8 @@ Year,Item,Head
 1985,"meat, sheep",6220515
 1985,"meat, total",154493243
 1985,"meat, turkey",2440339
-1985,sheep and goat meat,8248783
-1986,beef and buffalo meat,53086455
+1985,"sheep and goat meat",8248783
+1986,"beef and buffalo meat",53086455
 1986,"meat indigenous, ass",32456
 1986,"meat indigenous, bird nes",11836
 1986,"meat indigenous, buffalo",1959791
@@ -1069,7 +1069,7 @@ Year,Item,Head
 1986,"meat indigenous, sheep",6271861
 1986,"meat indigenous, total",158802420
 1986,"meat indigenous, turkey",2688558
-1986,meat nes,892358
+1986,"meat nes",892358
 1986,"meat, ass",32456
 1986,"meat, bird nes",14936
 1986,"meat, buffalo",2101747
@@ -1090,8 +1090,8 @@ Year,Item,Head
 1986,"meat, sheep",6223229
 1986,"meat, total",159156452
 1986,"meat, turkey",2684984
-1986,sheep and goat meat,8335775
-1987,beef and buffalo meat,53048483
+1986,"sheep and goat meat",8335775
+1987,"beef and buffalo meat",53048483
 1987,"meat indigenous, ass",32845
 1987,"meat indigenous, bird nes",12205
 1987,"meat indigenous, buffalo",1967285
@@ -1111,7 +1111,7 @@ Year,Item,Head
 1987,"meat indigenous, sheep",6444100
 1987,"meat indigenous, total",164734003
 1987,"meat indigenous, turkey",3020792
-1987,meat nes,925935
+1987,"meat nes",925935
 1987,"meat, ass",32842
 1987,"meat, bird nes",15205
 1987,"meat, buffalo",2107527
@@ -1132,8 +1132,8 @@ Year,Item,Head
 1987,"meat, sheep",6351798
 1987,"meat, total",164889372
 1987,"meat, turkey",3016520
-1987,sheep and goat meat,8650214
-1988,beef and buffalo meat,53542670
+1987,"sheep and goat meat",8650214
+1988,"beef and buffalo meat",53542670
 1988,"meat indigenous, ass",34866
 1988,"meat indigenous, bird nes",12280
 1988,"meat indigenous, buffalo",2062641
@@ -1153,7 +1153,7 @@ Year,Item,Head
 1988,"meat indigenous, sheep",6739624
 1988,"meat indigenous, total",170785728
 1988,"meat indigenous, turkey",3159082
-1988,meat nes,938564
+1988,"meat nes",938564
 1988,"meat, ass",34863
 1988,"meat, bird nes",15480
 1988,"meat, buffalo",2202040
@@ -1174,8 +1174,8 @@ Year,Item,Head
 1988,"meat, sheep",6651204
 1988,"meat, total",171087100
 1988,"meat, turkey",3156810
-1988,sheep and goat meat,9053236
-1989,beef and buffalo meat,53765572
+1988,"sheep and goat meat",9053236
+1989,"beef and buffalo meat",53765572
 1989,"meat indigenous, ass",36019
 1989,"meat indigenous, bird nes",12660
 1989,"meat indigenous, buffalo",2059122
@@ -1195,7 +1195,7 @@ Year,Item,Head
 1989,"meat indigenous, sheep",6943667
 1989,"meat indigenous, total",173489381
 1989,"meat indigenous, turkey",3382665
-1989,meat nes,951737
+1989,"meat nes",951737
 1989,"meat, ass",35989
 1989,"meat, bird nes",15960
 1989,"meat, buffalo",2206962
@@ -1216,8 +1216,8 @@ Year,Item,Head
 1989,"meat, sheep",6835390
 1989,"meat, total",173667526
 1989,"meat, turkey",3382293
-1989,sheep and goat meat,9380976
-1990,beef and buffalo meat,55296249
+1989,"sheep and goat meat",9380976
+1990,"beef and buffalo meat",55296249
 1990,"meat indigenous, ass",36664
 1990,"meat indigenous, bird nes",12912
 1990,"meat indigenous, buffalo",2263597
@@ -1237,7 +1237,7 @@ Year,Item,Head
 1990,"meat indigenous, sheep",7115626
 1990,"meat indigenous, total",179968717
 1990,"meat indigenous, turkey",3710655
-1990,meat nes,858876
+1990,"meat nes",858876
 1990,"meat, ass",36392
 1990,"meat, bird nes",16590
 1990,"meat, buffalo",2266851
@@ -1258,8 +1258,8 @@ Year,Item,Head
 1990,"meat, sheep",7033484
 1990,"meat, total",179492556
 1990,"meat, turkey",3717810
-1990,sheep and goat meat,9700135
-1991,beef and buffalo meat,55889747
+1990,"sheep and goat meat",9700135
+1991,"beef and buffalo meat",55889747
 1991,"meat indigenous, ass",37995
 1991,"meat indigenous, bird nes",13126
 1991,"meat indigenous, buffalo",2333048
@@ -1279,7 +1279,7 @@ Year,Item,Head
 1991,"meat indigenous, sheep",7211333
 1991,"meat indigenous, total",184241454
 1991,"meat indigenous, turkey",3823658
-1991,meat nes,744373
+1991,"meat nes",744373
 1991,"meat, ass",37783
 1991,"meat, bird nes",17115
 1991,"meat, buffalo",2334810
@@ -1300,8 +1300,8 @@ Year,Item,Head
 1991,"meat, sheep",7134404
 1991,"meat, total",184495098
 1991,"meat, turkey",3471747
-1991,sheep and goat meat,9891850
-1992,beef and buffalo meat,55095474
+1991,"sheep and goat meat",9891850
+1992,"beef and buffalo meat",55095474
 1992,"meat indigenous, ass",171167
 1992,"meat indigenous, bird nes",13711
 1992,"meat indigenous, buffalo",2395507
@@ -1321,7 +1321,7 @@ Year,Item,Head
 1992,"meat indigenous, sheep",7107516
 1992,"meat indigenous, total",187370448
 1992,"meat indigenous, turkey",4037665
-1992,meat nes,666793
+1992,"meat nes",666793
 1992,"meat, ass",170931
 1992,"meat, bird nes",17807
 1992,"meat, buffalo",2403796
@@ -1342,8 +1342,8 @@ Year,Item,Head
 1992,"meat, sheep",7133410
 1992,"meat, total",188296866
 1992,"meat, turkey",3669111
-1992,sheep and goat meat,10002888
-1993,beef and buffalo meat,54603532
+1992,"sheep and goat meat",10002888
+1993,"beef and buffalo meat",54603532
 1993,"meat indigenous, ass",169452
 1993,"meat indigenous, bird nes",14454
 1993,"meat indigenous, buffalo",2503710
@@ -1363,7 +1363,7 @@ Year,Item,Head
 1993,"meat indigenous, sheep",7132184
 1993,"meat indigenous, total",191313446
 1993,"meat indigenous, turkey",4100153
-1993,meat nes,638028
+1993,"meat nes",638028
 1993,"meat, ass",169247
 1993,"meat, bird nes",18706
 1993,"meat, buffalo",2507575
@@ -1384,8 +1384,8 @@ Year,Item,Head
 1993,"meat, sheep",7151928
 1993,"meat, total",193319677
 1993,"meat, turkey",3730879
-1993,sheep and goat meat,10124567
-1994,beef and buffalo meat,54571303
+1993,"sheep and goat meat",10124567
+1994,"beef and buffalo meat",54571303
 1994,"meat indigenous, ass",168138
 1994,"meat indigenous, bird nes",14370
 1994,"meat indigenous, buffalo",2558331
@@ -1405,7 +1405,7 @@ Year,Item,Head
 1994,"meat indigenous, sheep",7268309
 1994,"meat indigenous, total",197205976
 1994,"meat indigenous, turkey",4252624
-1994,meat nes,624231
+1994,"meat nes",624231
 1994,"meat, ass",168136
 1994,"meat, bird nes",18365
 1994,"meat, buffalo",2620576
@@ -1426,8 +1426,8 @@ Year,Item,Head
 1994,"meat, sheep",7242281
 1994,"meat, total",199875755
 1994,"meat, turkey",3875622
-1994,sheep and goat meat,10323788
-1995,beef and buffalo meat,55374837
+1994,"sheep and goat meat",10323788
+1995,"beef and buffalo meat",55374837
 1995,"meat indigenous, ass",170249
 1995,"meat indigenous, bird nes",14848
 1995,"meat indigenous, buffalo",2644960
@@ -1447,7 +1447,7 @@ Year,Item,Head
 1995,"meat indigenous, sheep",7247909
 1995,"meat indigenous, total",203061731
 1995,"meat indigenous, turkey",4540463
-1995,meat nes,742077
+1995,"meat nes",742077
 1995,"meat, ass",168609
 1995,"meat, bird nes",19104
 1995,"meat, buffalo",2712295
@@ -1468,8 +1468,8 @@ Year,Item,Head
 1995,"meat, sheep",7229340
 1995,"meat, total",209424959
 1995,"meat, turkey",4090268
-1995,sheep and goat meat,10563474
-1996,beef and buffalo meat,56259712
+1995,"sheep and goat meat",10563474
+1996,"beef and buffalo meat",56259712
 1996,"meat indigenous, ass",186541
 1996,"meat indigenous, bird nes",15987
 1996,"meat indigenous, buffalo",2490192
@@ -1489,7 +1489,7 @@ Year,Item,Head
 1996,"meat indigenous, sheep",7075335
 1996,"meat indigenous, total",205565839
 1996,"meat indigenous, turkey",4725726
-1996,meat nes,673016
+1996,"meat nes",673016
 1996,"meat, ass",180750
 1996,"meat, bird nes",20354
 1996,"meat, buffalo",2557061
@@ -1510,8 +1510,8 @@ Year,Item,Head
 1996,"meat, sheep",7075901
 1996,"meat, total",207353824
 1996,"meat, turkey",4292148
-1996,sheep and goat meat,10267761
-1997,beef and buffalo meat,57455189
+1996,"sheep and goat meat",10267761
+1997,"beef and buffalo meat",57455189
 1997,"meat indigenous, ass",165549
 1997,"meat indigenous, bird nes",16757
 1997,"meat indigenous, buffalo",2680507
@@ -1531,7 +1531,7 @@ Year,Item,Head
 1997,"meat indigenous, sheep",7243651
 1997,"meat indigenous, total",210785765
 1997,"meat indigenous, turkey",4841996
-1997,meat nes,684755
+1997,"meat nes",684755
 1997,"meat, ass",160671
 1997,"meat, bird nes",21256
 1997,"meat, buffalo",2705361
@@ -1552,8 +1552,8 @@ Year,Item,Head
 1997,"meat, sheep",7240874
 1997,"meat, total",216370698
 1997,"meat, turkey",4395775
-1997,sheep and goat meat,10630817
-1998,beef and buffalo meat,57018627
+1997,"sheep and goat meat",10630817
+1998,"beef and buffalo meat",57018627
 1998,"meat indigenous, ass",165506
 1998,"meat indigenous, bird nes",16503
 1998,"meat indigenous, buffalo",2714104
@@ -1573,7 +1573,7 @@ Year,Item,Head
 1998,"meat indigenous, sheep",7435015
 1998,"meat indigenous, total",218425149
 1998,"meat indigenous, turkey",4892119
-1998,meat nes,695450
+1998,"meat nes",695450
 1998,"meat, ass",160652
 1998,"meat, bird nes",21197
 1998,"meat, buffalo",2745200
@@ -1594,8 +1594,8 @@ Year,Item,Head
 1998,"meat, sheep",7450429
 1998,"meat, total",224596242
 1998,"meat, turkey",4401643
-1998,sheep and goat meat,11069521
-1999,beef and buffalo meat,58441366
+1998,"sheep and goat meat",11069521
+1999,"beef and buffalo meat",58441366
 1999,"meat indigenous, ass",171192
 1999,"meat indigenous, bird nes",17174
 1999,"meat indigenous, buffalo",2796057
@@ -1615,7 +1615,7 @@ Year,Item,Head
 1999,"meat indigenous, sheep",7557209
 1999,"meat indigenous, total",224335545
 1999,"meat indigenous, turkey",4810268
-1999,meat nes,700153
+1999,"meat nes",700153
 1999,"meat, ass",166438
 1999,"meat, bird nes",42066
 1999,"meat, buffalo",2962161
@@ -1636,8 +1636,8 @@ Year,Item,Head
 1999,"meat, sheep",7518717
 1999,"meat, total",231051512
 1999,"meat, turkey",4395793
-1999,sheep and goat meat,11310310
-2000,beef and buffalo meat,58850260
+1999,"sheep and goat meat",11310310
+2000,"beef and buffalo meat",58850260
 2000,"meat indigenous, ass",179115
 2000,"meat indigenous, bird nes",17604
 2000,"meat indigenous, buffalo",2837887
@@ -1657,7 +1657,7 @@ Year,Item,Head
 2000,"meat indigenous, sheep",7834515
 2000,"meat indigenous, total",230330700
 2000,"meat indigenous, turkey",5079877
-2000,meat nes,612930
+2000,"meat nes",612930
 2000,"meat, ass",171402
 2000,"meat, bird nes",42568
 2000,"meat, buffalo",3014412
@@ -1678,8 +1678,8 @@ Year,Item,Head
 2000,"meat, sheep",7717572
 2000,"meat, total",233440887
 2000,"meat, turkey",5131424
-2000,sheep and goat meat,11620199
-2001,beef and buffalo meat,58290302
+2000,"sheep and goat meat",11620199
+2001,"beef and buffalo meat",58290302
 2001,"meat indigenous, ass",178332
 2001,"meat indigenous, bird nes",17738
 2001,"meat indigenous, buffalo",2751637
@@ -1699,7 +1699,7 @@ Year,Item,Head
 2001,"meat indigenous, sheep",7809625
 2001,"meat indigenous, total",232403400
 2001,"meat indigenous, turkey",5172671
-2001,meat nes,734353
+2001,"meat nes",734353
 2001,"meat, ass",173458
 2001,"meat, bird nes",44751
 2001,"meat, buffalo",2993320
@@ -1720,8 +1720,8 @@ Year,Item,Head
 2001,"meat, sheep",7722231
 2001,"meat, total",236725096
 2001,"meat, turkey",5296840
-2001,sheep and goat meat,11711295
-2002,beef and buffalo meat,59444488
+2001,"sheep and goat meat",11711295
+2002,"beef and buffalo meat",59444488
 2002,"meat indigenous, ass",185288
 2002,"meat indigenous, bird nes",18099
 2002,"meat indigenous, buffalo",2813300
@@ -1741,7 +1741,7 @@ Year,Item,Head
 2002,"meat indigenous, sheep",7898120
 2002,"meat indigenous, total",239491509
 2002,"meat indigenous, turkey",5343595
-2002,meat nes,834756
+2002,"meat nes",834756
 2002,"meat, ass",180547
 2002,"meat, bird nes",47959
 2002,"meat, buffalo",3098642
@@ -1762,8 +1762,8 @@ Year,Item,Head
 2002,"meat, sheep",7591929
 2002,"meat, total",243677478
 2002,"meat, turkey",5478414
-2002,sheep and goat meat,11713628
-2003,beef and buffalo meat,60293480
+2002,"sheep and goat meat",11713628
+2003,"beef and buffalo meat",60293480
 2003,"meat indigenous, ass",185946
 2003,"meat indigenous, bird nes",18718
 2003,"meat indigenous, buffalo",2790262
@@ -1783,7 +1783,7 @@ Year,Item,Head
 2003,"meat indigenous, sheep",7874010
 2003,"meat indigenous, total",245251512
 2003,"meat indigenous, turkey",5040659
-2003,meat nes,871827
+2003,"meat nes",871827
 2003,"meat, ass",184955
 2003,"meat, bird nes",51706
 2003,"meat, buffalo",3141486
@@ -1804,8 +1804,8 @@ Year,Item,Head
 2003,"meat, sheep",7727950
 2003,"meat, total",248927663
 2003,"meat, turkey",5201120
-2003,sheep and goat meat,12045912
-2004,beef and buffalo meat,61991947
+2003,"sheep and goat meat",12045912
+2004,"beef and buffalo meat",61991947
 2004,"meat indigenous, ass",190735
 2004,"meat indigenous, bird nes",18870
 2004,"meat indigenous, buffalo",2912663
@@ -1825,7 +1825,7 @@ Year,Item,Head
 2004,"meat indigenous, sheep",7932000
 2004,"meat indigenous, total",249812617
 2004,"meat indigenous, turkey",5082629
-2004,meat nes,939822
+2004,"meat nes",939822
 2004,"meat, ass",190640
 2004,"meat, bird nes",59219
 2004,"meat, buffalo",3224593
@@ -1846,8 +1846,8 @@ Year,Item,Head
 2004,"meat, sheep",7888131
 2004,"meat, total",254650106
 2004,"meat, turkey",5220197
-2004,sheep and goat meat,12412818
-2005,beef and buffalo meat,62420785
+2004,"sheep and goat meat",12412818
+2005,"beef and buffalo meat",62420785
 2005,"meat indigenous, ass",190940
 2005,"meat indigenous, bird nes",18868
 2005,"meat indigenous, buffalo",2981210
@@ -1867,7 +1867,7 @@ Year,Item,Head
 2005,"meat indigenous, sheep",8169408
 2005,"meat indigenous, total",256966030
 2005,"meat indigenous, turkey",5148672
-2005,meat nes,976791
+2005,"meat nes",976791
 2005,"meat, ass",191285
 2005,"meat, bird nes",58641
 2005,"meat, buffalo",3311512
@@ -1888,8 +1888,8 @@ Year,Item,Head
 2005,"meat, sheep",8124287
 2005,"meat, total",260471710
 2005,"meat, turkey",5228483
-2005,sheep and goat meat,12828021
-2006,beef and buffalo meat,63881178
+2005,"sheep and goat meat",12828021
+2006,"beef and buffalo meat",63881178
 2006,"meat indigenous, ass",196055
 2006,"meat indigenous, bird nes",19169
 2006,"meat indigenous, buffalo",3134354
@@ -1909,7 +1909,7 @@ Year,Item,Head
 2006,"meat indigenous, sheep",8381938
 2006,"meat indigenous, total",263358315
 2006,"meat indigenous, turkey",5141775
-2006,meat nes,1069898
+2006,"meat nes",1069898
 2006,"meat, ass",197311
 2006,"meat, bird nes",67350
 2006,"meat, buffalo",3515807
@@ -1930,8 +1930,8 @@ Year,Item,Head
 2006,"meat, sheep",8341628
 2006,"meat, total",266503190
 2006,"meat, turkey",5186428
-2006,sheep and goat meat,13077202
-2007,beef and buffalo meat,65831135
+2006,"sheep and goat meat",13077202
+2007,"beef and buffalo meat",65831135
 2007,"meat indigenous, ass",190796
 2007,"meat indigenous, bird nes",19600
 2007,"meat indigenous, buffalo",3282923
@@ -1951,7 +1951,7 @@ Year,Item,Head
 2007,"meat indigenous, sheep",8598188
 2007,"meat indigenous, total",272807531
 2007,"meat indigenous, turkey",5391223
-2007,meat nes,1100424
+2007,"meat nes",1100424
 2007,"meat, ass",192088
 2007,"meat, bird nes",73631
 2007,"meat, buffalo",3648121
@@ -1972,8 +1972,8 @@ Year,Item,Head
 2007,"meat, sheep",8664775
 2007,"meat, total",272745189
 2007,"meat, turkey",5462960
-2007,sheep and goat meat,13584426
-2008,beef and buffalo meat,65940010
+2007,"sheep and goat meat",13584426
+2008,"beef and buffalo meat",65940010
 2008,"meat indigenous, ass",190390
 2008,"meat indigenous, bird nes",19790
 2008,"meat indigenous, buffalo",3352432
@@ -1993,7 +1993,7 @@ Year,Item,Head
 2008,"meat indigenous, sheep",8470742
 2008,"meat indigenous, total",280681700
 2008,"meat indigenous, turkey",5627106
-2008,meat nes,1307426
+2008,"meat nes",1307426
 2008,"meat, ass",191979
 2008,"meat, bird nes",24952
 2008,"meat, buffalo",3676665
@@ -2014,8 +2014,8 @@ Year,Item,Head
 2008,"meat, sheep",8588012
 2008,"meat, total",281574938
 2008,"meat, turkey",5707974
-2008,sheep and goat meat,13594780
-2009,beef and buffalo meat,66313389
+2008,"sheep and goat meat",13594780
+2009,"beef and buffalo meat",66313389
 2009,"meat indigenous, ass",201298
 2009,"meat indigenous, bird nes",19841
 2009,"meat indigenous, buffalo",3440796
@@ -2035,7 +2035,7 @@ Year,Item,Head
 2009,"meat indigenous, sheep",8345907
 2009,"meat indigenous, total",285340841
 2009,"meat indigenous, turkey",5394123
-2009,meat nes,1367264
+2009,"meat nes",1367264
 2009,"meat, ass",203037
 2009,"meat, bird nes",24679
 2009,"meat, buffalo",3742603
@@ -2056,8 +2056,8 @@ Year,Item,Head
 2009,"meat, sheep",8565206
 2009,"meat, total",286845462
 2009,"meat, turkey",5389440
-2009,sheep and goat meat,13695071
-2010,beef and buffalo meat,66553535
+2009,"sheep and goat meat",13695071
+2010,"beef and buffalo meat",66553535
 2010,"meat indigenous, ass",202808
 2010,"meat indigenous, bird nes",20014
 2010,"meat indigenous, buffalo",3556672
@@ -2077,7 +2077,7 @@ Year,Item,Head
 2010,"meat indigenous, sheep",8223561
 2010,"meat indigenous, total",293375221
 2010,"meat indigenous, turkey",5463018
-2010,meat nes,1442020
+2010,"meat nes",1442020
 2010,"meat, ass",204547
 2010,"meat, bird nes",24885
 2010,"meat, buffalo",3899147
@@ -2098,8 +2098,8 @@ Year,Item,Head
 2010,"meat, sheep",8484009
 2010,"meat, total",294619190
 2010,"meat, turkey",5518719
-2010,sheep and goat meat,13690948
-2011,beef and buffalo meat,66292175
+2010,"sheep and goat meat",13690948
+2011,"beef and buffalo meat",66292175
 2011,"meat indigenous, ass",211697
 2011,"meat indigenous, bird nes",19911
 2011,"meat indigenous, buffalo",3586028
@@ -2119,7 +2119,7 @@ Year,Item,Head
 2011,"meat indigenous, sheep",8306865
 2011,"meat indigenous, total",296862314
 2011,"meat indigenous, turkey",5529270
-2011,meat nes,1492005
+2011,"meat nes",1492005
 2011,"meat, ass",212857
 2011,"meat, bird nes",24883
 2011,"meat, buffalo",3918117
@@ -2140,8 +2140,8 @@ Year,Item,Head
 2011,"meat, sheep",8575130
 2011,"meat, total",299273657
 2011,"meat, turkey",5613588
-2011,sheep and goat meat,13753596
-2012,beef and buffalo meat,66888242
+2011,"sheep and goat meat",13753596
+2012,"beef and buffalo meat",66888242
 2012,"meat indigenous, ass",211865
 2012,"meat indigenous, bird nes",19809
 2012,"meat indigenous, buffalo",3824186
@@ -2161,7 +2161,7 @@ Year,Item,Head
 2012,"meat indigenous, sheep",8032307
 2012,"meat indigenous, total",302216664
 2012,"meat indigenous, turkey",5682457
-2012,meat nes,1461343
+2012,"meat nes",1461343
 2012,"meat, ass",212306
 2012,"meat, bird nes",21338
 2012,"meat, buffalo",3949320
@@ -2182,8 +2182,8 @@ Year,Item,Head
 2012,"meat, sheep",8680443
 2012,"meat, total",307287366
 2012,"meat, turkey",5839002
-2012,sheep and goat meat,13952613
-2013,beef and buffalo meat,67952557
+2012,"sheep and goat meat",13952613
+2013,"beef and buffalo meat",67952557
 2013,"meat indigenous, ass",211842
 2013,"meat indigenous, bird nes",19809
 2013,"meat indigenous, buffalo",3715622
@@ -2203,7 +2203,7 @@ Year,Item,Head
 2013,"meat indigenous, sheep",8213621
 2013,"meat indigenous, total",308198811
 2013,"meat indigenous, turkey",5596927
-2013,meat nes,1510565
+2013,"meat nes",1510565
 2013,"meat, ass",210574
 2013,"meat, bird nes",22329
 2013,"meat, buffalo",3983724
@@ -2224,8 +2224,8 @@ Year,Item,Head
 2013,"meat, sheep",8923286
 2013,"meat, total",314224806
 2013,"meat, turkey",5652697
-2013,sheep and goat meat,14319846
-2014,beef and buffalo meat,68473337
+2013,"sheep and goat meat",14319846
+2014,"beef and buffalo meat",68473337
 2014,"meat indigenous, ass",0
 2014,"meat indigenous, bird nes",0
 2014,"meat indigenous, buffalo",0
@@ -2245,7 +2245,7 @@ Year,Item,Head
 2014,"meat indigenous, sheep",0
 2014,"meat indigenous, total",3539654
 2014,"meat indigenous, turkey",0
-2014,meat nes,1515506
+2014,"meat nes",1515506
 2014,"meat, ass",212695
 2014,"meat, bird nes",20761
 2014,"meat, buffalo",4002020
@@ -2266,8 +2266,8 @@ Year,Item,Head
 2014,"meat, sheep",9173477
 2014,"meat, total",319799867
 2014,"meat, turkey",5640364
-2014,sheep and goat meat,14717407
-2015,beef and buffalo meat,67979125
+2014,"sheep and goat meat",14717407
+2015,"beef and buffalo meat",67979125
 2015,"meat indigenous, ass",0
 2015,"meat indigenous, bird nes",0
 2015,"meat indigenous, buffalo",0
@@ -2287,7 +2287,7 @@ Year,Item,Head
 2015,"meat indigenous, sheep",0
 2015,"meat indigenous, total",3654256
 2015,"meat indigenous, turkey",0
-2015,meat nes,1600020
+2015,"meat nes",1600020
 2015,"meat, ass",213666
 2015,"meat, bird nes",20411
 2015,"meat, buffalo",4055510
@@ -2308,8 +2308,8 @@ Year,Item,Head
 2015,"meat, sheep",9437101
 2015,"meat, total",325427235
 2015,"meat, turkey",5655963
-2015,sheep and goat meat,15106114
-2016,beef and buffalo meat,68646597
+2015,"sheep and goat meat",15106114
+2016,"beef and buffalo meat",68646597
 2016,"meat indigenous, ass",0
 2016,"meat indigenous, bird nes",0
 2016,"meat indigenous, buffalo",0
@@ -2329,7 +2329,7 @@ Year,Item,Head
 2016,"meat indigenous, sheep",0
 2016,"meat indigenous, total",3676366
 2016,"meat indigenous, turkey",0
-2016,meat nes,1593376
+2016,"meat nes",1593376
 2016,"meat, ass",210267
 2016,"meat, bird nes",19533
 2016,"meat, buffalo",4078593
@@ -2350,8 +2350,8 @@ Year,Item,Head
 2016,"meat, sheep",9567978
 2016,"meat, total",329322389
 2016,"meat, turkey",5994533
-2016,sheep and goat meat,15362559
-2017,beef and buffalo meat,69552871
+2016,"sheep and goat meat",15362559
+2017,"beef and buffalo meat",69552871
 2017,"meat indigenous, ass",0
 2017,"meat indigenous, bird nes",0
 2017,"meat indigenous, buffalo",0
@@ -2371,7 +2371,7 @@ Year,Item,Head
 2017,"meat indigenous, sheep",0
 2017,"meat indigenous, total",3693916
 2017,"meat indigenous, turkey",0
-2017,meat nes,1594690
+2017,"meat nes",1594690
 2017,"meat, ass",213036
 2017,"meat, bird nes",19573
 2017,"meat, buffalo",4137317
@@ -2392,8 +2392,8 @@ Year,Item,Head
 2017,"meat, sheep",9532953
 2017,"meat, total",334837475
 2017,"meat, turkey",5876166
-2017,sheep and goat meat,15415440
-2018,beef and buffalo meat,71601312
+2017,"sheep and goat meat",15415440
+2018,"beef and buffalo meat",71601312
 2018,"meat indigenous, ass",0
 2018,"meat indigenous, bird nes",0
 2018,"meat indigenous, buffalo",0
@@ -2413,7 +2413,7 @@ Year,Item,Head
 2018,"meat indigenous, sheep",0
 2018,"meat indigenous, total",3783441
 2018,"meat indigenous, turkey",0
-2018,meat nes,1658701
+2018,"meat nes",1658701
 2018,"meat, ass",216619
 2018,"meat, bird nes",19345
 2018,"meat, buffalo",4247413
@@ -2434,4 +2434,4 @@ Year,Item,Head
 2018,"meat, sheep",9788315
 2018,"meat, total",342396020
 2018,"meat, turkey",5901071
-2018,sheep and goat meat,15765334
+2018,"sheep and goat meat",15765334

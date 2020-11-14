@@ -17,7 +17,69 @@ knitr::opts_chunk$set(
   message = FALSE, 
   cache = TRUE
 )
+
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(gganimate)
 library(vegviz)
+
+table <- "meat-over-years.csv"
+
+if (!file.exists(
+  table
+)){
+  # READ DATA HERE
+  # Reading the data for the production
+  fls <- tempfile(fileext = ".zip")
+  
+  download.file(
+    "http://fenixservices.fao.org/faostat/static/bulkdownloads/Production_LivestockPrimary_E_All_Area_Groups.zip", 
+    fls
+  )
+  unzip(
+    fls,
+    exdir = dirname(fls)
+  )
+  
+  meat_over_year_all_meats <- read.csv(
+    file.path(
+      dirname(fls), "Production_LivestockPrimary_E_All_Area_Groups.csv"
+    ), 
+    stringsAsFactors = FALSE
+  ) %>%
+    filter(Area == "World") %>%
+    # Removing the columns that matches the pattern Y....F$, and which are encoded
+    select(-matches("Y....F$")) %>%
+    select(-matches("Code")) %>%
+    # Turning the item column to lower for easier manipulation
+    mutate(Item = tolower(Item)) %>%
+    # keeping only the meat elements, with the production in tonnes
+    filter(grepl('meat', Item)) %>%
+    filter(Element == "Production", Unit == "tonnes") %>% 
+    # Removing these two columns
+    select(-Element, - Unit) %>%
+    # We turn the wide df to a long one
+    pivot_longer(
+      names_to = "Year", 
+      values_to = "Head", 
+      cols = matches("Y....$")
+    ) %>%
+    # Removing the Y from the year name so that we can use it as a numeric
+    mutate(
+      Year = gsub("Y(....)", "\\1", Year), 
+      Year = as.numeric(Year)
+    ) %>%
+    # For each Year and item, we do a total of Head (the production in tonnes)
+    group_by(Year, Item) %>%
+    summarize(
+      Head = sum(Head, na.rm = TRUE)
+    )
+  
+  meat_over_year_all_meats %>%
+    write.csv(table, row.names = FALSE)
+}
+source_table <- read.csv(table, stringsAsFactors = FALSE)
 ```
 
 ### `r emo::ji("mag_right")` About the source 
@@ -36,57 +98,6 @@ _Note: in a first version of this article, we were using the 'All Data' dataset,
 > The data on livestock numbers are intended to cover all domestic animals irrespective of their age and the place or purpose of their breeding. Estimates have been made for non-reporting countries as well as for countries reporting incomplete data. However, in certain countries, data for chickens, ducks and turkeys do not yet seem to represent the total number of these birds. Certain other countries give a single figure for all poultry; data for these countries are shown under “Chickens”.
 :::
 
-```{r}
-library(tidyverse)
-library(magrittr)
-if (!file.exists(
-  params$table
-)){
-  # READ DATA HERE
-  # Reading the data for the production
-  fls <- tempfile(fileext = ".zip")
-  download.file("http://fenixservices.fao.org/faostat/static/bulkdownloads/Production_LivestockPrimary_E_All_Area_Groups.zip", fls)
-  unzip(fls,exdir = dirname(fls))
-  
-  meat_over_year_all_meats <- readr::read_csv(
-    file.path(
-      dirname(fls), "Production_LivestockPrimary_E_All_Area_Groups.csv"
-    )
-  ) %>%
-    filter(Area == "World") %>%
-    # Removing the columns that matches the pattern Y....F$, and which are encoded
-    select(-matches("Y....F$")) %>%
-    select(-matches("Code")) %>%
-    # Turning the item column to lower for easier manipulation
-    mutate(Item = tolower(Item)) %>%
-    # keeping only the meat elements, with the production in tonnes
-    filter(grepl('meat', Item)) %>%
-    filter(Element == "Production", Unit == "tonnes") %>% 
-    # Removing these two columns
-    select(-Element, - Unit) %>%
-    # We turn the wide df to a long one
-    pivot_longer(
-      names_to = "Year", 
-      values_to = "Head", 
-      cols = tidyselect::matches("Y....$")
-    ) %>%
-    # Removing the Y from the year name so that we can use it as a numeric
-    mutate(
-      Year = gsub("Y(....)", "\\1", Year), 
-      Year = as.numeric(Year)
-    ) %>%
-    # For each Year and item, we do a total of Head (the production in tonnes)
-    group_by(Year, Item) %>%
-    summarize(
-      Head = sum(Head, na.rm = TRUE)
-    )
-  
-  meat_over_year_all_meats %>%
-    readr::write_csv(params$table)
-}
-source_table <- readr::read_csv(params$table)
-```
-
 
 ### `r emo::ji("chart_with_upwards_trend")` Visualising the data
 
@@ -99,12 +110,24 @@ adjust_and_draw <- function(
   item, 
   color = 1
 ){
+  
+  
+  col_vals <- c(
+    "#440154FF",
+    "#414487FF", 
+    "#2A788EFF", 
+    "#22A884FF", 
+    "#7AD151FF", 
+    "#FDE725FF"
+  )
+  
+  
   adjusted_table <- source_table %>%  
     filter(grepl(item, Item))
   
   gg <- adjusted_table %>%
     ggplot(aes(Year, Head)) + 
-    geom_col(fill = viridis::viridis(6)[color]) + 
+    geom_col(fill = col_vals[color]) + 
     labs(
       x = " ", 
       y = " ", 
@@ -154,7 +177,6 @@ df <- source_table %>%
 ::: {.animated}
 
 ```{r meat-over-years-animated}
-library(gganimate)
 x <- df %>%
   ggplot(aes(Year, Head, group = Item, color = Item)) + 
   geom_line(size = 1.5) + 

@@ -5,8 +5,6 @@ date: 2020-11-11
 slug: "worldwide-meat-production-vs-population-growth-1965-2015"
 categories: ["industry"]
 tags: ["livestock", "production", "industry"]
-params:
-  table: meat-and-pop-over-years.csv
 ---
 
 ```{r setup, include=FALSE}
@@ -17,9 +15,129 @@ knitr::opts_chunk$set(
   message = FALSE, 
   cache = TRUE
 )
+library(dplyr)
+library(tidyr)
+library(ggplot2)
 library(vegviz)
-library(tidyverse)
 library(emoGG)
+
+table <- "meat-and-pop-over-years.csv"
+
+if (!file.exists(
+  table
+)){
+  # READ DATA HERE
+  # Reding the dat
+  fls <- tempfile(
+    fileext = ".zip"
+  )
+  download.file(
+    "http://fenixservices.fao.org/faostat/static/bulkdownloads/Population_E_All_Area_Groups.zip", 
+    fls
+  )
+  unzip(
+    fls,
+    exdir = dirname(fls)
+  )
+  
+  
+  worldwide_pop <- read.csv(
+    file.path(
+      dirname(fls), "Population_E_All_Area_Groups_NOFLAG.csv"
+    ), stringsAsFactors = FALSE
+  ) %>%
+    # We only want to keep the total population for the world
+    # This should return a 1 row df
+    filter(Element == "Total Population - Both sexes", Area == "World") %>%
+    # Pivoting to a long format
+    pivot_longer(
+      names_to = "Year", 
+      values_to = "Count", 
+      cols = matches("Y....$")
+    ) %>%
+    # As the unit is 1000 person, we turn it to a real count
+    # Also, we turn the year to a numeric
+    mutate(
+      Count = Count * 1000, 
+      Year = gsub("Y", "", Year), 
+      Year = as.numeric(Year)
+    )
+  
+  
+  # Reading the data for the production
+  # Reading the data for the production
+  fls <- tempfile(
+    fileext = ".zip"
+  )
+  download.file(
+    "http://fenixservices.fao.org/faostat/static/bulkdownloads/Production_LivestockPrimary_E_All_Area_Groups.zip", 
+    fls
+  )
+  
+  unzip(
+    fls,
+    exdir = dirname(fls)
+  )
+  
+  meat_over_year_all_meats <- read.csv(
+    file.path(
+      dirname(fls), "Production_LivestockPrimary_E_All_Area_Groups.csv"
+    ),
+    stringsAsFactors = FALSE
+  ) %>%
+    filter(Area == "World") %>%
+    # Removing the columns that matches the pattern Y....F$, and which are encoded
+    select(-matches("Y....F$")) %>%
+    select(-matches("Code")) %>%
+    # Turning the item column to lower for easier manipulation
+    mutate(Item = tolower(Item)) %>%
+    # keeping only the meat elements, with the production in tonnes
+    filter(grepl('meat', Item)) %>%
+    filter(Element == "Production", Unit == "tonnes") %>% 
+    # Removing these two columns
+    select(-Element, - Unit) %>%
+    # We turn the wide df to a long one
+    pivot_longer(
+      names_to = "Year", 
+      values_to = "Head", 
+      cols = matches("Y....$")
+    ) %>%
+    # Removing the Y from the year name so that we can use it as a numeric
+    mutate(
+      Year = gsub("Y(....)", "\\1", Year), 
+      Year = as.numeric(Year)
+    ) %>%
+    # For each Year and item, we do a total of Head (the production in tonnes)
+    group_by(Year, Item) %>%
+    summarize(
+      Head = sum(Head, na.rm = TRUE)
+    )
+  
+  # Joining the two table
+  comparison_meat <- meat_over_year_all_meats %>%
+    filter(Item == "meat, total") %>%
+    left_join(
+      worldwide_pop, 
+      by = "Year"
+    ) %>%
+    select(Year, Count, Head) %>%
+    drop_na()  %>%
+    select(Year, Human = Count, Meat = Head)
+  
+  comparison_meat %>%
+    write.csv(table, row.names = FALSE)
+  
+}
+source_table <- read.csv(table, stringsAsFactors = FALSE) %>%
+  filter(Year %% 5 == 0) %>%
+  mutate(
+    Meat = Meat * 1000
+  ) %>%
+  # Computing the number of kilogram by human
+  mutate(
+    one_man_has = Meat / Human
+  )
+
 ```
 
 > This post is a complementary view of our [Worlwide Meat Production — 1961-2018](https://dataviz.vg/post/greenhouse-by-diet-2000kcal/) blogpost.
@@ -45,113 +163,6 @@ In this post, we will compare meat production with the evolution of the populati
 
 > 2. The FAOSTAT Population module contains time series data on population, by sex and urban/rural. The series consist of both estimates and projections for different periods as available from the original sources, namely:1. Population data refers to the World Population Prospects: The 2019 Revision from the UN Population Division.2. Urban/rural population data refers to the World Urbanization Prospects: The 2018 Revision from the UN Population Division.
 :::
-
-Side note: the FAO 'Livestock Primary' comes in two flavors, the one with
-
-```{r}
-if (!file.exists(
-  params$table
-)){
-  # READ DATA HERE
-  # Reding the dat
-  fls <- tempfile(fileext = ".zip")
-  download.file("http://fenixservices.fao.org/faostat/static/bulkdownloads/Population_E_All_Area_Groups.zip", fls)
-  unzip(fls,exdir = dirname(fls))
-  list.files(dirname(fls)) 
-  
-  worldwide_pop <- readr::read_csv(
-    file.path(
-      dirname(fls), "Population_E_All_Area_Groups_NOFLAG.csv"
-    )
-  ) %>%
-    # We only want to keep the total population for the world
-    # This should return a 1 row df
-    filter(Element == "Total Population - Both sexes", Area == "World") %>%
-    # Pivoting to a long format
-    pivot_longer(
-      names_to = "Year", 
-      values_to = "Count", 
-      cols = tidyselect::matches("Y....$")
-    ) %>%
-    # As the unit is 1000 person, we turn it to a real count
-    # Also, we turn the year to a numeric
-    mutate(
-      Count = Count * 1000, 
-      Year = gsub("Y", "", Year), 
-      Year = as.numeric(Year)
-    )
-  
-  
-  # Reading the data for the production
-  # Reading the data for the production
-  fls <- tempfile(fileext = ".zip")
-  download.file("http://fenixservices.fao.org/faostat/static/bulkdownloads/Production_LivestockPrimary_E_All_Area_Groups.zip", fls)
-  unzip(fls,exdir = dirname(fls))
-  
-  meat_over_year_all_meats <- readr::read_csv(
-    file.path(
-      dirname(fls), "Production_LivestockPrimary_E_All_Area_Groups.csv"
-    )
-  ) %>%
-    filter(Area == "World") %>%
-    # Removing the columns that matches the pattern Y....F$, and which are encoded
-    select(-matches("Y....F$")) %>%
-    select(-matches("Code")) %>%
-    # Turning the item column to lower for easier manipulation
-    mutate(Item = tolower(Item)) %>%
-    # keeping only the meat elements, with the production in tonnes
-    filter(grepl('meat', Item)) %>%
-    filter(Element == "Production", Unit == "tonnes") %>% 
-    # Removing these two columns
-    select(-Element, - Unit) %>%
-    # We turn the wide df to a long one
-    pivot_longer(
-      names_to = "Year", 
-      values_to = "Head", 
-      cols = tidyselect::matches("Y....$")
-    ) %>%
-    # Removing the Y from the year name so that we can use it as a numeric
-    mutate(
-      Year = gsub("Y(....)", "\\1", Year), 
-      Year = as.numeric(Year)
-    ) %>%
-    # For each Year and item, we do a total of Head (the production in tonnes)
-    group_by(Year, Item) %>%
-    summarize(
-      Head = sum(Head, na.rm = TRUE)
-    )
-  
-  # Joining the two table
-  comparison_meat <- meat_over_year_all_meats %>%
-    filter(Item == "meat, total") %>%
-    left_join(
-      worldwide_pop, 
-      by = "Year"
-    ) %>%
-    select(Year, Count, Head) %>%
-    drop_na()  %>%
-    select(Year, Human = Count, Meat = Head)
-  
-  comparison_meat %>%
-    readr::write_csv(params$table)
-  
-  unlink(
-    file.path(
-      dirname(fls), "Production_LivestockPrimary_E_All_Data.csv"
-    )
-  )
-}
-source_table <- readr::read_csv(params$table) %>%
-  filter(Year %% 5 == 0) %>%
-  mutate(
-    Meat = Meat * 1000
-  ) %>%
-  # Computing the number of kilogram by human
-  mutate(
-    one_man_has = Meat / Human
-  )
-
-```
 
 
 ### `r emo::ji("chart_with_upwards_trend")` Visualising the data

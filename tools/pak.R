@@ -1,4 +1,4 @@
-library(tidyverse)
+library(magrittr)
 attachment::att_from_rmds("content/") %>%
   purrr::discard(~ .x == "tidyverse") %>%
   purrr::map(usethis::use_package)
@@ -7,7 +7,7 @@ usethis::use_dev_package("emoGG")
 usethis::use_dev_package("vegviz")
 usethis::use_dev_package("emo")
 
-desc::desc_set_dep("tidyverse")
+usethis::use_package("magick")
 usethis::use_package("blogdown")
 usethis::use_package("ggridges")
 usethis::use_package("details")

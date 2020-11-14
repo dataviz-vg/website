@@ -5,8 +5,6 @@ date: 2020-11-02
 slug: "greenhouse-by-diet-2000kcal"
 categories: ["environment"]
 tags: ["greenhouse", "ecology", "environment"]
-params:
-  table: greenhousebydiet2000kcal.csv
 ---
 
 ```{r setup, include=FALSE}
@@ -17,29 +15,41 @@ knitr::opts_chunk$set(
   message = FALSE, 
   cache = TRUE
 )
-library(tidyverse)
+
+library(dplyr)
+library(ggplot2)
 library(vegviz)
 
+table <- "greenhousebydiet2000kcal.csv"
+
 if (!file.exists(
-  params$table
+  table
 )){
   library(rvest)
   # Reading and extracting the table
-  read_html("https://link.springer.com/article/10.1007/s10584-014-1169-1/tables/3") %>%
+  tbl <- read_html(
+    "https://link.springer.com/article/10.1007/s10584-014-1169-1/tables/3"
+  ) %>%
     html_table() %>%
-    purrr::pluck(1) %>% 
-    thinkr::clean_names() %>%
-    # Need to take only the rows 3 to 8
+    .[[1]] 
+  
+  names(tbl) <- make.names(names(tbl), unique = TRUE)
+  # Need to take only the rows 3 to 8
+  tbl %>%
     slice(3:8) %>%
     # Turning the col to numeric, then reordering the first column based on adjusted_for_age_and_sex
     mutate(
-      adjusted_for_age_and_sex = as.numeric(adjusted_for_age_and_sex), 
-      x = reorder(x, adjusted_for_age_and_sex)
+      adjusted_for_age_and_sex = as.numeric(Adjusted.for.age.and.sex), 
+      X = reorder(X, adjusted_for_age_and_sex)
     ) %>% 
     # Keeping only the columns we need
-    select(Diet = x, `Mean dietary GHG emissions (kgCO2e)` = adjusted_for_age_and_sex) %>%
-    readr::write_csv(params$table)
+    select(
+      Diet = X,
+      `Mean dietary GHG emissions (kgCO2e)` = adjusted_for_age_and_sex
+    ) %>%
+    write.csv(table, row.names = FALSE)
 }
+source_table <- read.csv(table, stringsAsFactors = FALSE)
 ```
 
 ### `r emo::ji("mag_right")` About the source 
@@ -65,16 +75,20 @@ Scarborough, P., Appleby, P.N., Mizdrak, A. et al. _Dietary greenhouse gas emiss
 
 Visualization of _Table 3 Mean greenhouse gas emissions per 2,000 kcal by diet type and sex_ (we are using the aggregated data, i.e. without the sex variable).
 
-```{r}
-adjusted_table <- readr::read_csv(params$table)
-```
 
-
-This visualization displays the mean amount of greenhouse gas emission for 2,000kcal of a given diet (either `r knitr::combine_words(adjusted_table$Diet, and = "or ")`).
+This visualization displays the mean amount of greenhouse gas emission for 2,000kcal of a given diet (either `r knitr::combine_words(source_table$Diet, and = "or ")`).
 
 ```{r greenhousebydiet2000kcal, fig.dim = c(12, 8)}
 
-col_vals <- viridis::viridis(6)
+col_vals <- c(
+  "#440154FF",
+  "#414487FF", 
+  "#2A788EFF", 
+  "#22A884FF", 
+  "#7AD151FF", 
+  "#FDE725FF"
+)
+
 names(col_vals) <- c(
   "High meat-eaters ( ≥ 100 g/day)", 
   "Medium meat-eaters (50–99 g/day)", 
@@ -84,11 +98,11 @@ names(col_vals) <- c(
   "Vegans"
 )
 
-adjusted_table %>%
+source_table %>%
   ggplot(
     aes(
-      reorder(Diet, `Mean dietary GHG emissions (kgCO2e)`),
-      `Mean dietary GHG emissions (kgCO2e)`, 
+      reorder(Diet, Mean.dietary.GHG.emissions..kgCO2e.),
+      Mean.dietary.GHG.emissions..kgCO2e., 
       fill = Diet, 
       label = Diet
     )
@@ -118,7 +132,7 @@ adjusted_table %>%
   )
 ```
 
-`r details::details(knitr::kable(adjusted_table, format = "html"), summary = "Show the data",lang  = NULL)`
+`r details::details(knitr::kable(source_table, format = "html"), summary = "Show the data",lang  = NULL)`
 
 ::: {.code}
 Code behind this post is available `r build_link()`. 
