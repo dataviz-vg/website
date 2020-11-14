@@ -6,8 +6,6 @@ slug: "greenhouse-by-food-commodities"
 categories: ["environment"]
 tags: ["greenhouse", "ecology", "environment"]
 draft: true
-params:
-  table: greenhousebyfoodcommodities.csv
 ---
 
 ```{r setup, include=FALSE}
@@ -20,16 +18,17 @@ knitr::opts_chunk$set(
 ```
 
 ```{r}
-library(tidyverse)
+library(dplyr)
+library(ggplot2)
 library(vegviz)
-
+table <- "greenhousebyfoodcommodities.csv"
 if (!file.exists(
-  params$table
+  table
 )){
   library(rvest)
   read_html("https://link.springer.com/article/10.1007/s10584-014-1169-1/tables/4") %>%
     html_table() %>%
-    purrr::pluck(1) %>% 
+    .[[1]] %>% 
     mutate(
       type = case_when(
         `Food category` == 'Alcoholic Beverages' ~ 'Vegan',
@@ -134,8 +133,10 @@ if (!file.exists(
     mutate(
       `Food category` = reorder(`Food category`, `UK GHG emissions (kgCO2e/kg)`)
     )%>%
-    readr::write_csv(params$table)
+    write.csv(table, row.names = FALSE)
 }
+
+source_table <- read.csv(table, stringsAsFactors = FALSE) 
 
 ```
 
@@ -157,29 +158,33 @@ Dietary greenhouse gas emissions of meat-eaters, fish-eaters, vegetarians and ve
 > The source document for GHG parameters was Audsley et al. [(2009)](https://dspace.lib.cranfield.ac.uk/handl), which estimates comparable GHG emissions for 94 food commodities consumed in the UK. These parameters incorporate the life cycle of food commodities from the earliest stages of production to the retail distribution centre. Different parameters are estimated for foods produced in the UK, the EU and outside the EU. 
 :::
 
-```{r}
-adjusted_table <- readr::read_csv(params$table) 
-```
 
 
 ```{r greenhousebyfoodcommodities, fig.dim = c(12, 10)}
 # library(tidyverse)
-adjusted_table %>% 
-  ggplot(aes(reorder(`Food category`, `UK GHG emissions (kgCO2e/kg)`), `UK GHG emissions (kgCO2e/kg)`, fill = type)) + 
+source_table %>% 
+  ggplot(
+    aes(
+      reorder(`Food.category`, `UK.GHG.emissions..kgCO2e.kg.`), 
+      UK.GHG.emissions..kgCO2e.kg., 
+      fill = type
+    )
+  ) + 
   geom_col() + 
   coord_flip() + 
   labs(
     title = "Meat tends to produce more GHG emissions (kgCO2e/kg)\n than vegan or vegetarian food", 
-    subtitle = "From: 'Dietary greenhouse gas emissions of meat-eaters, fish-eaters, vegetarians and vegans in the UK'\nhttps://link.springer.com/article/10.1007/s10584-014-1169-1", 
+    subtitle = "From: 'Dietary greenhouse gas emissions of meat-eaters, fish-eaters, vegetarians and vegans in the UK'\nhttps://link.springer.com/article/10.1007/s10584-014-1169-1\nTop 25 commodities producing the most GHG emissions (kgCO2e/kg)", 
     x = " ", 
     y = "UK GHG emissions (kgCO2e/kg)", 
-    caption = "Via @VegViz"
+    caption = "Via @VegViz", 
+    fill = "Type"
   ) + 
   scale_fill_viridis_d(option = "C") +
   ggtheme() 
 ```
 
-`r details::details(knitr::kable(adjusted_table, format = "html"), summary = "Show the data",lang  = NULL)`
+`r details::details(knitr::kable(source_table, format = "html"), summary = "Show the data",lang  = NULL)`
 
 ::: {.code}
 Code behind this post is available `r build_link(knitr::current_input())`. 
