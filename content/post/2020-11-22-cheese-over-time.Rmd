@@ -6,8 +6,6 @@ slug: "worldwide-cheese-production-1961-2014"
 categories: ["industry"]
 tags: ["livestock", "production", "industry"]
 draft: true
-params:
-  table: cheese-over-years.csv
 ---
 
 ```{r setup, include=FALSE}
@@ -17,12 +15,63 @@ knitr::opts_chunk$set(
   warning = FALSE, 
   message = FALSE
 )
+
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(vegviz)
+table <- "cheese-over-years.csv"
+
+if (!file.exists(
+  table
+)){
+  # READ DATA HERE
+  fls <- tempfile(
+    fileext = ".zip"
+  )
+  download.file(
+    "http://fenixservices.fao.org/faostat/static/bulkdownloads/Production_LivestockProcessed_E_All_Area_Groups.zip", 
+    fls
+  )
+  
+  unzip(
+    fls,
+    exdir = dirname(fls)
+  )
+  
+  read.csv(
+    file.path(
+      dirname(fls), "Production_LivestockProcessed_E_All_Area_Groups_1.csv"
+    ), stringsAsFactors = FALSE
+  ) %>%    
+    filter(Area == "World", Item == "Cheese (All Kinds)") %>%
+    select(-matches("Y....F$")) %>%
+    select(-matches("Code")) %>%
+    mutate(Item = tolower(Item)) %>%
+    pivot_longer(
+      names_to = "Year", 
+      values_to = "Tonnes", 
+      cols = matches("Y....$")
+    ) %>%
+    mutate(
+      #Head = Head * 1000, 
+      Year = gsub("Y(....)", "\\1", Year), 
+      Year = as.numeric(Year)
+    ) %>%
+    group_by(Year, Item) %>%
+    summarize(
+      Tonnes = sum(Tonnes, na.rm = TRUE)
+    ) %>%
+    select(-Item)  %>%
+    write.csv(table, row.names = FALSE)
+}
+source_table <- read.csv(table, stringsAsFactors = FALSE)
 ```
 
 ### `r emo::ji("mag_right")` About the source 
 
 ::: {.source}
-Food and Agriculture Organization of the United Nations - _Livestock Processed_ dataset.
+Food and Agriculture Organization of the United Nations - _Livestock Processed, All Area Groups_ dataset.
 ::: 
 
 ::: {.link}
@@ -33,71 +82,29 @@ Food and Agriculture Organization of the United Nations - _Livestock Processed_ 
 > The data on livestock numbers are intended to cover all domestic animals irrespective of their age and the place or purpose of their breeding. Estimates have been made for non-reporting countries as well as for countries reporting incomplete data. However, in certain countries, data for chickens, ducks and turkeys do not yet seem to represent the total number of these birds. Certain other countries give a single figure for all poultry; data for these countries are shown under “Chickens”.
 :::
 
-```{r}
-library(tidyverse)
-library(vegviz)
-if (!file.exists(
-  params$table
-)){
-  # READ DATA HERE
-  fls <- tempfile(fileext = ".zip")
-  download.file("http://fenixservices.fao.org/faostat/static/bulkdownloads/Production_LivestockProcessed_E_All_Data.zip", fls)
-  unzip(fls,exdir = dirname(fls))
-  readr::read_csv(
-    file.path(
-      dirname(fls), "Production_LivestockProcessed_E_All_Data.csv"
-    )
-  ) %>%    
-    select(-matches("Y....F$")) %>%
-    select(-matches("Code")) %>%
-    mutate(Item = tolower(Item)) %>%
-    pivot_longer(
-      names_to = "Year", 
-      values_to = "Head", 
-      cols = tidyselect::matches("Y....$")
-    ) %>%
-    mutate(
-      #Head = Head * 1000, 
-      Year = gsub("Y(....)", "\\1", Year), 
-      Year = as.numeric(Year)
-    ) %>%
-    filter(grepl("cheese (all kinds)", Item, fixed = TRUE)) %>%
-    group_by(Year, Item) %>%
-    summarize(
-      Head = sum(Head, na.rm = TRUE)
-    ) %>%
-    select(-Item) %>%
-    readr::write_csv(params$table)
-  unlink(
-    file.path(
-      dirname(fls), "Production_LivestockProcessed_E_All_Data.csv"
-    )
-  )
-}
-
-```
-
 
 ### `r emo::ji("chart_with_upwards_trend")` Visualising the data
 
-Visualization of _Livestock Primary_.
-The data is filtered by Item, then the Production in tonnes is kept, grouped by year, and summed. 
-
-```{r}
-# DATA MANIP
-adjusted_table <- readr::read_csv(params$table)
-```
-
+Visualization of _Livestock Processed_.
+The data is filtered by Item to keep the `Cheese (All kinds)`, then the Production in tonnes is kept, grouped by year, and summed. 
 
 These visualizations will display the evolution of the production in tonnes from 1960 to 2018.
 
 #### Global production in tonnes
 
 ```{r cheese-over-years, fig.dim = c(12, 6)}
+col_vals <- c(
+    "#440154FF",
+    "#414487FF", 
+    "#2A788EFF", 
+    "#22A884FF", 
+    "#7AD151FF", 
+    "#FDE725FF"
+  )
 # VIZ
-adjusted_table %>%
-  ggplot(aes(Year, Head)) + 
-  geom_col(fill = viridis::viridis(6)[4]) + 
+source_table %>%
+  ggplot(aes(Year, Tonnes)) + 
+  geom_col(fill = col_vals[4]) + 
   scale_y_continuous(labels = scales::comma) + 
   ggtheme() + 
   labs(
@@ -109,7 +116,7 @@ adjusted_table %>%
   )
 ```
 
-`r details::details(knitr::kable(adjusted_table, format = "html"), summary = "Show the data",lang  = NULL)`
+`r details::details(knitr::kable(source_table, format = "html"), summary = "Show the data",lang  = NULL)`
 
 
 ::: {.code}
