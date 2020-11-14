@@ -6,8 +6,6 @@ slug: "natural-slaughtered-lifespan-animals"
 categories: ["industry"]
 tags: ["livestock", "production", "industry"]
 draft: true
-params:
-  table: lifespan.csv
 ---
 
 ```{r setup, include=FALSE}
@@ -17,6 +15,77 @@ knitr::opts_chunk$set(
   warning = FALSE, 
   message = FALSE
 )
+# READ DATA HERE
+library(dplyr)
+library(ggplot2)
+library(vegviz)
+
+table <- "lifespan.csv"
+
+if (!file.exists(
+  table
+)){
+  # READ DATA HERE
+  library(rvest)
+  res <- read_html(
+    "https://www.farmtransparency.org/kb/abattoirs/48-age-animals-slaughtered"
+  )
+  
+  tbl <- res %>%
+    html_table() %>%
+    .[[1]]
+  
+  names(tbl) <- c("animal", "Typical Slaughter Age", "Natural Life Span")
+  tbl[-1, ] %>%
+    mutate(
+      s_n = gsub(
+        "(\\d+-)*(\\d+) [a-z]*",
+        "\\2",
+        `Typical Slaughter Age`,
+      ),
+      s_factor = case_when(
+        grepl("day", `Typical Slaughter Age`) ~ lubridate::days(1),
+        grepl("weeks", `Typical Slaughter Age`) ~ lubridate::weeks(1),
+        grepl("months", `Typical Slaughter Age`) ~ lubridate::days(30),
+        grepl("years", `Typical Slaughter Age`) ~ lubridate::years(1)
+      ),
+      s_span = as.numeric(s_n) * s_factor,
+      `Natural Life Span` = gsub(
+        "Up to",
+        "",
+        `Natural Life Span`,
+      ),
+      `Natural Life Span` = gsub(
+        "\\*",
+        "",
+        `Natural Life Span`,
+      ),
+      n_s = gsub(
+        "(\\d+-)*(\\d+) [a-z]*",
+        "\\2",
+        `Natural Life Span`,
+      ),
+      n_factor = case_when(
+        grepl("day", `Natural Life Span`) ~ lubridate::days(1),
+        grepl("weeks", `Natural Life Span`) ~ lubridate::weeks(1),
+        grepl("months", `Natural Life Span`) ~ lubridate::days(30),
+        grepl("years", `Natural Life Span`) ~ lubridate::years(1)
+      ),
+      n_span = as.numeric(n_s) * n_factor
+    ) %>%
+    select(
+      Animal = animal,
+      `Natural Life Span` = n_span,
+      `Typical Slaughter Age` = s_span
+    ) %>%
+    mutate(
+      `Natural Life Span` = as.numeric(`Natural Life Span`) / (86400 * 365.25),
+      `Typical Slaughter Age` = as.numeric(`Typical Slaughter Age`) / (86400 * 365.25)
+    ) %>%
+    write.csv(table, row.names = FALSE)
+}
+source_table <- read.csv(table, stringsAsFactors = FALSE)
+
 ```
 
 ### `r emo::ji("mag_right")` About the source 
@@ -34,75 +103,6 @@ Farm Transparency Project - Age of animals slaughtered
 :::
 
 
-```{r}
-# READ DATA HERE
-library(tidyverse)
-library(vegviz)
-if (!file.exists(
-  params$table
-)){
-  # READ DATA HERE
-  library(rvest)
-  res <- read_html(
-    "https://www.farmtransparency.org/kb/abattoirs/48-age-animals-slaughtered"
-  )
-  
-  tbl <- res %>%
-    html_table() %>%
-    .[[1]]
-  
-  names(tbl) <- c("animal", "Typical Slaughter Age", "Natural Life Span")
-  tbl[-1, ] %>%
-  mutate(
-    s_n = gsub(
-      "(\\d+-)*(\\d+) [a-z]*",
-      "\\2",
-      `Typical Slaughter Age`,
-    ),
-    s_factor = case_when(
-      grepl("day", `Typical Slaughter Age`) ~ lubridate::days(1),
-      grepl("weeks", `Typical Slaughter Age`) ~ lubridate::weeks(1),
-      grepl("months", `Typical Slaughter Age`) ~ lubridate::days(30),
-      grepl("years", `Typical Slaughter Age`) ~ lubridate::years(1)
-    ),
-    s_span = as.numeric(s_n) * s_factor,
-    `Natural Life Span` = gsub(
-      "Up to",
-      "",
-      `Natural Life Span`,
-    ),
-    `Natural Life Span` = gsub(
-      "\\*",
-      "",
-      `Natural Life Span`,
-    ),
-    n_s = gsub(
-      "(\\d+-)*(\\d+) [a-z]*",
-      "\\2",
-      `Natural Life Span`,
-    ),
-    n_factor = case_when(
-      grepl("day", `Natural Life Span`) ~ lubridate::days(1),
-      grepl("weeks", `Natural Life Span`) ~ lubridate::weeks(1),
-      grepl("months", `Natural Life Span`) ~ lubridate::days(30),
-      grepl("years", `Natural Life Span`) ~ lubridate::years(1)
-    ),
-    n_span = as.numeric(n_s) * n_factor
-  ) %>%
-  select(
-    Animal = animal,
-    `Natural Life Span` = n_span,
-    `Typical Slaughter Age` = s_span
-  ) %>%
-  mutate(
-    `Natural Life Span` = as.numeric(`Natural Life Span`) / (86400 * 365.25),
-    `Typical Slaughter Age` = as.numeric(`Typical Slaughter Age`) / (86400 * 365.25)
-  ) %>%
-    readr::write_csv(params$table)
-}
-```
-
-
 ### `r emo::ji("chart_with_upwards_trend")` Visualising the data
 
 Visualization of _Age of animals slaughtered_.
@@ -111,17 +111,13 @@ Note: we have rounded numbers using the following patterns:
 
 + We took the upper number when availabe (for example, in `6-8 years`, we kept `8`)
 + Months are rounded to 30 days 
-+ Every entry was transformed to a number of seconds, then divided by `86400 * 365.25` to get the value un year.
-
-```{r}
-# DATA MANIP
-source_table <- readr::read_csv(params$table) 
-```
++ Every entry was transformed to a number of seconds, then divided by `86400 * 365.25` to get the value in year.
 
 
 This visualization compare typical slaughter age (on the left, in green) to the natural lifespan of `r nrow(source_table)` animals: `r knitr::combine_words(source_table$Animal, and = "or ")`.
 
 ```{r lifespan-natural-slaughter, fig.dim = c(12, 8)}
+
 # VIZ
 source_table %>%
   ggplot() +
@@ -129,26 +125,26 @@ source_table %>%
     aes(
       x = Animal,
       xend = Animal,
-      y = `Natural Life Span`,
-      yend = `Typical Slaughter Age`
+      y = `Natural.Life.Span`,
+      yend = `Typical.Slaughter.Age`
     ),
     color = "grey"
   ) +
   geom_point(
     aes(
       x = Animal,
-      y = `Typical Slaughter Age`,
+      y = `Typical.Slaughter.Age`,
       color = "Typical Slaughter Age"
     ),
     size = 5
   ) +
   geom_point(
-    aes(x = Animal, y = `Natural Life Span`, color = "Natural Life Span"),
+    aes(x = Animal, y = `Natural.Life.Span`, color = "Natural Life Span"),
     size = 5
   ) +
-  scale_color_manual(values = viridis::viridis(3)[1:2]) +
+  scale_color_manual(values = c("#440154FF", "#21908CFF", "#FDE725FF")[1:2]) +
   coord_flip() +
-  vegviz::ggtheme() +
+  ggtheme() +
   # scale_fill_manual(values = viridis::viridis(6)[1:2]) +
   labs(
     title = "Typical Slaughter Age and Natural Life Span of Animals",
