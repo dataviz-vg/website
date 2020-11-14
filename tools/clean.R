@@ -9,7 +9,8 @@ list.files(
 list.files(
   pattern = ".Store$", 
   recursive = TRUE, 
-  full.names = TRUE
+  full.names = TRUE, 
+  all.files = TRUE
 ) %>%
   map(unlink, TRUE, TRUE)
 unlink("blogdown/", TRUE, TRUE)
