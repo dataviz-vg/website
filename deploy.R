@@ -10,8 +10,6 @@ remotes::install_cran("renv")
 
 renv::restore()
 
-remotes::install_cran("details")
-
 blogdown::install_hugo(extended = TRUE)
 
 fls <- list.files(
