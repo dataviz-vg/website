@@ -6,8 +6,6 @@ slug: "food-and-cholesterol"
 categories: ["health"]
 tags: ["food", "nutrition"]
 draft: true
-params:
-  table: food-and-cholesterol.csv
 ---
 
 ```{r setup, include=FALSE}
@@ -17,6 +15,32 @@ knitr::opts_chunk$set(
   warning = FALSE, 
   message = FALSE
 )
+library(dplyr)
+library(ggplot2)
+library(ggridges)
+library(vegviz)
+table <- "food-and-cholesterol.csv"
+if (!file.exists(
+  table
+)){
+  fls <- tempfile(fileext = ".xls")
+  download.file(
+    "https://ciqual.anses.fr/cms/sites/default/files/inline-files/Table%20Ciqual%202020_ENG_2020%2007%2007.xls", 
+    fls
+  )
+  readxl::read_excel(fls) %>%
+    mutate(`Cholesterol (mg/100g)` = as.numeric(`Cholesterol (mg/100g)`)) %>%
+    #filter(`Cholesterol (mg/100g)` != 100) %>%
+    #top_n(30, `Cholesterol (mg/100g)`) %>%
+    # count(alim_grp_nom_eng)
+    #select(`Fat (g/100g)`)
+    arrange(desc(`Cholesterol (mg/100g)`)) %>%
+    select(alim_nom_eng, `Cholesterol (mg/100g)`, alim_grp_nom_eng) %>%
+    write.csv(table, row.names = FALSE)
+  unlink(fls)
+}
+source_table <- read.csv(table, stringsAsFactors = FALSE)
+
 ```
 
 ### `r emo::ji("mag_right")` About the source 
@@ -38,130 +62,33 @@ French Agency for Food, Environmental and Occupational Health & Safety. ANSES-CI
 > ANSES-CIQUAL compiles different data sources to prepare the food composition table. This online version of the table provides the list of data sources which were used to produce the values for each pair food – component. ANSES-CIQUAL launches every year a plan to sample and analyse 60 to 80 foods, in collaboration with a subcontractor laboratory. However, this is not sufficient to update all composition data in the table.
 :::
 
-```{r}
-library(tidyverse)
-library(vegviz)
-if (!file.exists(
-  params$table
-)){
-  fls <- tempfile(fileext = ".xls")
-  download.file("https://ciqual.anses.fr/cms/sites/default/files/inline-files/Table%20Ciqual%202020_ENG_2020%2007%2007.xls", fls)
-  readxl::read_excel(fls) %>%
-    mutate(`Cholesterol (mg/100g)` = as.numeric(`Cholesterol (mg/100g)`)) %>%
-    #filter(`Cholesterol (mg/100g)` != 100) %>%
-    #top_n(30, `Cholesterol (mg/100g)`) %>%
-    # count(alim_grp_nom_eng)
-    #select(`Fat (g/100g)`)
-    arrange(desc(`Cholesterol (mg/100g)`)) %>%
-    select(alim_nom_eng, `Cholesterol (mg/100g)`, alim_grp_nom_eng) %>%
-    # WRITE
-    readr::write_csv(params$table)
-  unlink(fls)
-}
-
-df <- readxl::read_excel(params$table)
-df %>%
-  mutate(`Salt (g/100g)` = as.numeric(`Salt (g/100g)`)) %>%
-  ggplot(aes(x = `Salt (g/100g)`, y = alim_grp_nom_eng, fill = alim_grp_nom_eng)) +
-  geom_density_ridges() +
-  xlim(0,5) +
-  theme_ridges() +
-  theme(legend.position = "none")
-
-```
 
 
 ### `r emo::ji("chart_with_upwards_trend")` Visualising the data
 
-```{r}
-# DATA MANIP
-source_table <- readr::read_csv(params$table)
-```
-
 
 In total, the database contains 3186 aliments. 
-We are displaying there the top 30, i.e. around 1% of the dataset. 
 
 ```{r fig.dim = c(12,14)}
-library(ggridges)
-library(ggplot2)
-
-# Diamonds dataset is provided by R natively
-#head(diamonds)
-
-# basic example
 source_table %>%
-  drop_na() %>%
-  group_by(alim_grp_nom_eng) %>%
-  mutate(m = mean(`Cholesterol (mg/100g)`)) %>%
-  ggplot(
-    aes(x = `Cholesterol (mg/100g)`, 
-        y = reorder(alim_grp_nom_eng, m), 
-        fill = alim_grp_nom_eng
-    )
-  ) +
+  mutate(`Cholesterol..mg.100g.` = as.numeric(`Cholesterol..mg.100g.`)) %>%
+  ggplot(aes(x = `Cholesterol..mg.100g.`, y = alim_grp_nom_eng, fill = alim_grp_nom_eng)) +
   geom_density_ridges() +
-  xlim(0,150) +
   theme_ridges() +
-  guides(fill = FALSE) +
-  labs(y = "") +
-  theme(legend.position = "none") +
-  ggtheme()
+  theme(legend.position = "none")
+```
 
+```{r fig.dim = c(12,14)}
+source_table %>%
+  mutate(`Cholesterol..mg.100g.` = as.numeric(`Cholesterol..mg.100g.`)) %>%
+  filter(Cholesterol..mg.100g. > 100) %>%
+  ggplot(aes(x = `Cholesterol..mg.100g.`, y = alim_grp_nom_eng, fill = alim_grp_nom_eng)) +
+  geom_density_ridges() +
+  theme_ridges() +
+  theme(legend.position = "none")
 ```
 
 `r details::details(knitr::kable(source_table, format = "html"), summary = "Show the data",lang  = NULL)`
-
-```{r}
-# VIZ
-source_table %>%
-  drop_na() %>%
-  filter(`Cholesterol (mg/100g)` > 150) %>%
-  group_by(alim_grp_nom_eng) %>%
-  mutate(m = mean(`Cholesterol (mg/100g)`)) %>%
-  ggplot(
-    aes(x = `Cholesterol (mg/100g)`, 
-        y = reorder(alim_grp_nom_eng, m), 
-        fill = alim_grp_nom_eng
-    )
-  ) +
-  geom_density_ridges()
-
-  geom_col() +
-  coord_flip() +
-  #scale_fill_manual(values = viridis::viridis(3)[1:2]) +
-  ggtheme() +
-  labs(
-    title = "The Top 30 Aliments with the Most Cholesterol (mg/100g) \nare Animal-Based",
-    subtitle = "From: 'ANSES-CIQUAL French food composition table version 2020' https://ciqual.anses.fr/\nTotal records in the database: 3186",
-    x = " ",
-    y = "Cholesterol (mg/100g)",
-    fill = "Group",
-    caption = "Via dataviz.vg"
-  )
-```
-
-```{r}
-# VIZ
-source_table %>%
-  filter(alim_grp_nom_eng == "fats and oils") %>%
-  top_n(10, `Cholesterol (mg/100g)`) %>%
-  ggplot(
-    aes(reorder(alim_nom_eng, `Cholesterol (mg/100g)`), `Cholesterol (mg/100g)`, fill = alim_grp_nom_eng)
-  ) +
-  geom_col() +
-  coord_flip() +
-  scale_fill_manual(values = viridis::viridis(3)[1:2]) +
-  ggtheme() +
-  labs(
-    title = "The Top 30 Aliments with the Most Cholesterol (mg/100g) \nare Animal-Based",
-    subtitle = "From: 'ANSES-CIQUAL French food composition table version 2020' https://ciqual.anses.fr/\nTotal records in the database: 3186",
-    x = " ",
-    y = "Cholesterol (mg/100g)",
-    fill = "Group",
-    caption = "Via dataviz.vg"
-  )
-```
 
 
 ::: {.code}

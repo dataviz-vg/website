@@ -6,8 +6,6 @@ slug: "saturated-intake"
 categories: ["health"]
 tags: ["health", "food", "fat"]
 draft: true
-params:
-  table: intake-diet.csv
 ---
 
 ```{r setup, include=FALSE}
@@ -17,6 +15,7 @@ knitr::opts_chunk$set(
   warning = FALSE, 
   message = FALSE
 )
+table <- "intake-diet.csv"
 ```
 
 ### `r emo::ji("mag_right")` About the source 

@@ -9,11 +9,11 @@ usethis::use_dev_package("emo")
 
 usethis::use_package("magick")
 usethis::use_package("blogdown")
-usethis::use_package("ggridges")
 usethis::use_package("details")
 usethis::use_package("rmarkdown")
 
 usethis::use_latest_dependencies()
+usethis::use_tidy_description()
 
 renv::snapshot(type = "explicit", force = TRUE)
 
