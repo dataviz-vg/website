@@ -1,5 +1,5 @@
 ---
-title: "Greenhouse gas emissions for food commodities"
+title: "Food Commodities and GHG Emissions"
 author: "Colin Fay"
 date: 2020-11-15
 slug: "greenhouse-by-food-commodities"
@@ -172,7 +172,7 @@ source_table %>%
   geom_col() + 
   coord_flip() + 
   labs(
-    title = "Meat tends to produce more GHG emissions (kgCO2e/kg)\n than vegan or vegetarian food", 
+    title = "Animal-based products tendsto produce more GHG emissions (kgCO2e/kg)\n than vegan or vegetarian food", 
     subtitle = "From: 'Dietary greenhouse gas emissions of meat-eaters, fish-eaters, vegetarians and vegans in the UK'\nhttps://link.springer.com/article/10.1007/s10584-014-1169-1\nTop 25 commodities producing the most GHG emissions (kgCO2e/kg)", 
     x = " ", 
     y = "UK GHG emissions (kgCO2e/kg)", 
