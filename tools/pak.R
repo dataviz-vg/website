@@ -7,6 +7,7 @@ usethis::use_dev_package("emoGG")
 usethis::use_dev_package("vegviz")
 usethis::use_dev_package("emo")
 
+usethis::use_package("gifski")
 usethis::use_package("magick")
 usethis::use_package("blogdown")
 usethis::use_package("details")

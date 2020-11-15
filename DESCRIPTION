@@ -19,6 +19,7 @@ Imports:
     gganimate (>= 1.0.5),
     ggplot2 (>= 3.3.0),
     ggridges (>= 0.5.2),
+    gifski (>= 0.8.6),
     knitr (>= 1.30),
     lubridate (>= 1.7.8),
     magick (>= 2.5.2),
