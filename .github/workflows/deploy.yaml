@@ -20,7 +20,7 @@ jobs:
       - uses: r-lib/actions/setup-pandoc@v1
       - name: Deploy
         run: |
-          sudo apt-get upgrade && apt-get -y install libcurl4-openssl-dev libgit2-dev libmagick++-dev && Rscript deploy.R
+          sudo apt-get -y install libcurl4-openssl-dev libgit2-dev libmagick++-dev && Rscript deploy.R
       - name: Commit files
         run: |
           Rscript -e "fs::dir_tree()"
