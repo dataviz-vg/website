@@ -172,7 +172,7 @@ source_table %>%
   geom_col() + 
   coord_flip() + 
   labs(
-    title = "Animal-based products tends to produce more \nGHG emissions (kgCO2e/kg) than vegan or vegetarian food", 
+    title = "Animal-based products tend to produce more \nGHG emissions (kgCO2e/kg) than vegan or vegetarian food", 
     subtitle = "From: 'Dietary greenhouse gas emissions of meat-eaters, fish-eaters, vegetarians and vegans in the UK'\nhttps://link.springer.com/article/10.1007/s10584-014-1169-1\nTop 25 commodities producing the most GHG emissions (kgCO2e/kg)", 
     x = " ", 
     y = "UK GHG emissions (kgCO2e/kg)", 
