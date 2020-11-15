@@ -5,7 +5,6 @@ date: 2020-11-15
 slug: "greenhouse-by-food-commodities"
 categories: ["environment"]
 tags: ["greenhouse", "ecology", "environment"]
-draft: true
 ---
 
 ```{r setup, include=FALSE}
