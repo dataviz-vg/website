@@ -16,6 +16,7 @@ Imports:
     dplyr (>= 1.0.2),
     emo (>= 0.0.0.9000),
     emoGG (>= 0.0.2),
+    fs (>= 1.4.1),
     gganimate (>= 1.0.5),
     ggplot2 (>= 3.3.0),
     ggridges (>= 0.5.2),
