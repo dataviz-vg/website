@@ -5,7 +5,7 @@ date: 2020-12-06
 slug: "embodied-food-ghg-dietary-pattern"
 categories: ["environment"]
 tags: ["greenhouse", "ecology", "environment"]
-draft: true
+
 ---
 
 ```{r setup, include=FALSE}
@@ -39,7 +39,7 @@ if (!file.exists(
 source_table <- read.csv(table, stringsAsFactors = FALSE)
 ```
 
-> Note: we already have another article about [GHG emissions and Diet](https://dataviz.vg/post/greenhouse-by-diet-2000kcal/). 
+> Note: we have another article about [GHG emissions and Diet](https://dataviz.vg/post/greenhouse-by-diet-2000kcal/). 
 This new post relies on another source.
 
 ### `r emo::ji("mag_right")` About the source 
