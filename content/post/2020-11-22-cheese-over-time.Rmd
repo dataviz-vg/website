@@ -86,7 +86,7 @@ Food and Agriculture Organization of the United Nations - _Livestock Processed, 
 ### `r emo::ji("chart_with_upwards_trend")` Visualising the data
 
 Visualization of _Livestock Processed_.
-The data is filtered by Item to keep the `Cheese (All kinds)`, then the Production in tonnes is kept, grouped by year, and summed. 
+The data is filtered by `Item` to keep the `Cheese (All kinds)`, then the Production in tonnes is kept, grouped by year, and summed. 
 
 These visualizations will display the evolution of the production in tonnes from 1960 to 2018.
 
