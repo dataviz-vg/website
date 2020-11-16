@@ -147,7 +147,7 @@ source_table %>%
   ggtheme() +
   # scale_fill_manual(values = viridis::viridis(6)[1:2]) +
   labs(
-    title = "Typical Slaughter Age and Natural Life Span of Animals",
+    title = "Typical Slaughter Age and Natural Life Span of 14 Animals",
     subtitle = "Data from farmtransparency.org",
     caption = "Via dataviz.vg",
     x = "",
