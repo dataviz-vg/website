@@ -157,7 +157,9 @@ Dietary greenhouse gas emissions of meat-eaters, fish-eaters, vegetarians and ve
 > The source document for GHG parameters was Audsley et al. [(2009)](https://dspace.lib.cranfield.ac.uk/handl), which estimates comparable GHG emissions for 94 food commodities consumed in the UK. These parameters incorporate the life cycle of food commodities from the earliest stages of production to the retail distribution centre. Different parameters are estimated for foods produced in the UK, the EU and outside the EU. 
 :::
 
+### `r emo::ji("chart_with_upwards_trend")` Visualising the data
 
+Visualization of [Table 4 Greenhouse gas emissions for the 94 food commodities, weighted for production in the UK, imports from the EU, and imports from outside the EU](https://link.springer.com/article/10.1007/s10584-014-1169-1/tables/4).
 
 ```{r greenhousebyfoodcommodities, fig.dim = c(12, 10)}
 # library(tidyverse)
