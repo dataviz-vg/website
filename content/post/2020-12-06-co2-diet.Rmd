@@ -45,7 +45,7 @@ This new post relies on another source.
 ### `r emo::ji("mag_right")` About the source 
 
 ::: {.source}
-Climate change mitigation and health effects of varied dietary patterns in real-life settings throughout North America, 
+Climate change mitigation and health effects of varied dietary patterns in real-life settings throughout North America
 ::: 
 
 ::: {.link}
@@ -92,7 +92,7 @@ source_table %>%
   ggtheme() +
   labs(
     title = "A Vegetarian Diet produces -29.2% less GHG every year", 
-    subtitle = "From: 'Climate change mitigation and health effects of varied Dietary.patterns in real-life settings throughout North America '\nhttps://academic.oup.com/ajcn/article/100/suppl_1/490S/4576703", 
+    subtitle = "From: 'Climate change mitigation and health effects of varied dietary patterns in real-life settings throughout North America'\nhttps://academic.oup.com/ajcn/article/100/suppl_1/490S/4576703", 
     x = " ", 
     y = "Embodied food greenhouse gas emissions (kgCO2e) per 2,000 kcal of food", 
     fill = "Dietary pattern",
