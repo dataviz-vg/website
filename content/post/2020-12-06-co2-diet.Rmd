@@ -1,5 +1,5 @@
 ---
-title: "Embodied Food GHG emissions According to Dietary.pattern"
+title: "Embodied Food GHG emissions According to Dietary Pattern"
 author: "Colin Fay"
 date: 2020-12-06
 slug: "embodied-food-ghg-dietary-pattern"
@@ -45,7 +45,7 @@ This new post relies on another source.
 ### `r emo::ji("mag_right")` About the source 
 
 ::: {.source}
-Climate change mitigation and health effects of varied Dietary.patterns in real-life settings throughout North America, 
+Climate change mitigation and health effects of varied dietary patterns in real-life settings throughout North America, 
 ::: 
 
 ::: {.link}
@@ -57,16 +57,16 @@ Climate change mitigation and health effects of varied Dietary.patterns in real-
 :::
 
 ::: {.count}
-> Data from the Adventist Health Study 2 (AHS-2) were used to characterize and quantify the Dietary.patterns assessed. The AHS-2 is a large prospective cohort study of Seventh-day Adventists spread throughout the United States and Canada. Dietary intake was assessed by a self-administered food-frequency questionnaire of 210 food items including fruit, vegetables, legumes, grains, oils, dairy, fish, eggs, meat, beverages, and commercially prepared products such as dietary supplements, dry cereals, and vegetarian protein products. Dietary.patterns were determined according to the reported combined intake of all meats, including fish. Vegetarians rarely or never consumed meats (<1 time/mo), semivegetarians consumed meats >1 time/mo but <1 time/wk, and nonvegetarians consumed meats at least 1 time/wk.
+> Data from the Adventist Health Study 2 (AHS-2) were used to characterize and quantify the dietary patterns assessed. The AHS-2 is a large prospective cohort study of Seventh-day Adventists spread throughout the United States and Canada. Dietary intake was assessed by a self-administered food-frequency questionnaire of 210 food items including fruit, vegetables, legumes, grains, oils, dairy, fish, eggs, meat, beverages, and commercially prepared products such as dietary supplements, dry cereals, and vegetarian protein products. Dietary patterns were determined according to the reported combined intake of all meats, including fish. Vegetarians rarely or never consumed meats (<1 time/mo), semivegetarians consumed meats >1 time/mo but <1 time/wk, and nonvegetarians consumed meats at least 1 time/wk.
 :::
 
 
 ### `r emo::ji("chart_with_upwards_trend")` Visualising the data
 
-Visualization of _Embodied food greenhouse gas emissions, adjusted to 2000 kcal, according to Dietary.pattern_.
+Visualization of _Embodied food greenhouse gas emissions, adjusted to 2000 kcal, according to Dietary pattern_.
 
 
-Three Dietary.patterns are studied (either `r knitr::combine_words(source_table[["Dietary.pattern"]], and = "or ")`).
+Three Dietary patterns are studied (either `r knitr::combine_words(source_table[["Dietary.pattern"]], and = "or ")`).
 
 ```{r fig.dim = c(12, 8)}
 # VIZ
@@ -95,7 +95,7 @@ source_table %>%
     subtitle = "From: 'Climate change mitigation and health effects of varied Dietary.patterns in real-life settings throughout North America '\nhttps://academic.oup.com/ajcn/article/100/suppl_1/490S/4576703", 
     x = " ", 
     y = "Embodied food greenhouse gas emissions (kgCO2e) per 2,000 kcal of food", 
-    fill = "Diet pattern",
+    fill = "Dietary pattern",
     caption = "Via dataviz.vg"
   ) + 
   theme(axis.text.y = element_blank(),
