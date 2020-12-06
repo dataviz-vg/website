@@ -5,7 +5,6 @@ date: 2020-12-06
 slug: "embodied-food-ghg-dietary-pattern"
 categories: ["environment"]
 tags: ["greenhouse", "ecology", "environment"]
-
 ---
 
 ```{r setup, include=FALSE}
@@ -17,6 +16,7 @@ knitr::opts_chunk$set(
 )
 library(dplyr)
 library(vegviz)
+library(ggplot2)
 table <- "embodied-food-ghg-dietary-pattern.csv"
 
 if (!file.exists(
