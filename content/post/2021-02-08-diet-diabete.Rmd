@@ -5,7 +5,6 @@ date: 2021-02-08
 slug: "type-diet-type-2-diabet"
 categories: ["health"]
 tags: ["health", "diabete"]
-draft: true
 ---
 
 ```{r setup, include=FALSE}
