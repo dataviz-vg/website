@@ -38,6 +38,7 @@ Type of Vegetarian Diet, Body Weight, and Prevalence of Type 2 Diabetes
 library(dplyr)
 library(ggplot2)
 library(tidyr)
+library(readr)
 library(vegviz)
 table <- paste0("type-diet-type-2-diabet", ".csv")
 if (!file.exists(
@@ -89,7 +90,7 @@ source_table %>%
   )  +
   ggtheme() +
   labs(
-    title = "Vegan and vegetarian diets are associated with a reduction in risk of type 2 diabetes", 
+    title = "Vegan and vegetarian diets are associated \nwith a reduction in risk of type 2 diabetes", 
     subtitle = "From: 'Type of Vegetarian Diet, Body Weight, and Prevalence of Type 2 Diabetes'\nhttps://www.ncbi.nlm.nih.gov/pmc/articles/PMC2671114/", 
     x = " ", 
     y = "Prevalence of type 2 diabetes", 

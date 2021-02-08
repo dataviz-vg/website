@@ -2,3 +2,4 @@
 .RData
 .Rproj.user
 content/post/*.html
+public/
