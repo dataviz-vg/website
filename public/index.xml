@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DATAVIZ.VG</title>
+    <link>https://dataviz.vg/</link>
+    <description>Recent content on DATAVIZ.VG</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 08 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://dataviz.vg/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Type of Vegetarian Diet, Body Weight, and Prevalence of Type 2 Diabetes</title>
+      <link>https://dataviz.vg/post/type-diet-type-2-diabet/</link>
+      <pubDate>Mon, 08 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://dataviz.vg/post/type-diet-type-2-diabet/</guid>
+      <description>🔎 About the source Type of Vegetarian Diet, Body Weight, and Prevalence of Type 2 Diabetes
+ ncbi.nlm.nih.gov/pmc/articles/PMC2671114/
+  Mean BMI was lowest in vegans and incrementally higher in lacto-ovo vegetarians, pesco-vegetarians, semi-vegetarians, and nonvegetarians. Prevalence of type 2 diabetes increased from 2.9% in vegans to 7.6% in nonvegetarians; the prevalence was intermediate in participants consuming lacto-ovo (3.2%), pesco (4.8%), or semi-vegetarian (6.1%) diets. After adjustment (…) vegans, lacto-ovo vegetarians, pesco-vegetarians, and semi-vegetarians had a lower risk of type 2 diabetes than nonvegetarians.</description>
+    </item>
+    
+    <item>
+      <title>Embodied Food GHG emissions According to Dietary Pattern</title>
+      <link>https://dataviz.vg/post/embodied-food-ghg-dietary-pattern/</link>
+      <pubDate>Sun, 06 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dataviz.vg/post/embodied-food-ghg-dietary-pattern/</guid>
+      <description>Note: we have another article about GHG emissions and Diet. This new post relies on another source.
+ 🔎 About the source Climate change mitigation and health effects of varied dietary patterns in real-life settings throughout North America
+ academic.oup.com/ajcn/article/100/suppl_1/490S/4576703
+  With the nonvegetarian diet as reference, the mean percentage change in total GHGEs and change in annual emissions were −29.2% and −325 kg CO2e for the vegetarian and −21.</description>
+    </item>
+    
+    <item>
+      <title>Typical Slaughter Age and Natural Life Span of Animals</title>
+      <link>https://dataviz.vg/post/natural-slaughtered-lifespan-animals/</link>
+      <pubDate>Sun, 29 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dataviz.vg/post/natural-slaughtered-lifespan-animals/</guid>
+      <description>🔎 About the source Farm Transparency Project - Age of animals slaughtered
+ farmtransparency.org/kb/abattoirs/48-age-animals-slaughtered
+  Most animals are slaughtered as babies, at a very small portion of their natural life span, regardless of whether they are raised conventionally or in operations that are labelled “humane”, “sustainable”, “natural”, “free range”, “cage free”, “heritage bred”, “grass fed”, “local” or “organic”.
+   📈 Visualising the data Visualization of Age of animals slaughtered.</description>
+    </item>
+    
+    <item>
+      <title>Worlwide Cheese Production — 1961-2014</title>
+      <link>https://dataviz.vg/post/worldwide-cheese-production-1961-2014/</link>
+      <pubDate>Sun, 22 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dataviz.vg/post/worldwide-cheese-production-1961-2014/</guid>
+      <description>🔎 About the source Food and Agriculture Organization of the United Nations - Livestock Processed, All Area Groups dataset.
+ fao.org/faostat/en/#data/QP
+  The data on livestock numbers are intended to cover all domestic animals irrespective of their age and the place or purpose of their breeding. Estimates have been made for non-reporting countries as well as for countries reporting incomplete data. However, in certain countries, data for chickens, ducks and turkeys do not yet seem to represent the total number of these birds.</description>
+    </item>
+    
+    <item>
+      <title>Food Commodities and GHG Emissions</title>
+      <link>https://dataviz.vg/post/greenhouse-by-food-commodities/</link>
+      <pubDate>Sun, 15 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dataviz.vg/post/greenhouse-by-food-commodities/</guid>
+      <description>🔎 About the source Dietary greenhouse gas emissions of meat-eaters, fish-eaters, vegetarians and vegans in the UK
+ link.springer.com/article/10.1007/s10584-014-1169-1
+  The production of animal-based foods is associated with higher greenhouse gas (GHG) emissions than plant-based foods.
+   The source document for GHG parameters was Audsley et al. (2009), which estimates comparable GHG emissions for 94 food commodities consumed in the UK. These parameters incorporate the life cycle of food commodities from the earliest stages of production to the retail distribution centre.</description>
+    </item>
+    
+    <item>
+      <title>Worlwide Meat Production compared to Population Growth — 1965-2015</title>
+      <link>https://dataviz.vg/post/worldwide-meat-production-vs-population-growth-1965-2015/</link>
+      <pubDate>Wed, 11 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dataviz.vg/post/worldwide-meat-production-vs-population-growth-1965-2015/</guid>
+      <description>This post is a complementary view of our Worlwide Meat Production — 1961-2018 blogpost. In this post, we will compare meat production with the evolution of the population worldwide, notably answering the question: “For a given year, how many kilograms of meat are produced for one human?”
+ 🔎 About the source Food and Agriculture Organization of the United Nations - Livestock Primary dataset.
+ Food and Agriculture Organization of the United Nations - Annual population dataset.</description>
+    </item>
+    
+    <item>
+      <title>Worlwide Meat Production — 1961-2018</title>
+      <link>https://dataviz.vg/post/worldwide-meat-production-1961-2018/</link>
+      <pubDate>Sun, 08 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dataviz.vg/post/worldwide-meat-production-1961-2018/</guid>
+      <description>🔎 About the source Food and Agriculture Organization of the United Nations - Livestock Primary dataset, ‘All Area Groups’.
+ Note: in a first version of this article, we were using the ‘All Data’ dataset, then switched to the ‘All Area Groups’ dataset, that already countains the worldwide aggregated data.
+fao.org/faostat/en/#data/QL
+  The data on livestock numbers are intended to cover all domestic animals irrespective of their age and the place or purpose of their breeding.</description>
+    </item>
+    
+    <item>
+      <title>Greenhouse gas emissions per 2,000 kcal by diet</title>
+      <link>https://dataviz.vg/post/greenhouse-by-diet-2000kcal/</link>
+      <pubDate>Mon, 02 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dataviz.vg/post/greenhouse-by-diet-2000kcal/</guid>
+      <description>🔎 About the source Scarborough, P., Appleby, P.N., Mizdrak, A. et al. Dietary greenhouse gas emissions of meat-eaters, fish-eaters, vegetarians and vegans in the UK. Climatic Change 125, 179–192 (2014). https://doi.org/10.1007/s10584-014-1169-1
+ link.springer.com/article/10.1007/s10584-014-1169-1
+  The production of animal-based foods is associated with higher greenhouse gas (GHG) emissions than plant-based foods.
+   The diets of 2,041 vegans, 15,751 vegetarians, 8,123 fish-eaters and 29,589 meat-eaters aged 20–79 were assessed using a validated food frequency questionnaire.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://dataviz.vg/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dataviz.vg/about/</guid>
+      <description>About DataViz.vg wants to make data related to food and nutrition more available by providing easy to read visualizations of the data (data-visualization, or dataviz in short). All articles are related to the Vegetarian/Vegan lifestyle.
+In each post, we will provide the source of the dataset, a link to it, a key quote (when it&amp;rsquo;s an article), and how the data were collected, if ever the information is available. The dataset used to build the visualization is also available under each dataviz.</description>
+    </item>
+    
+    <item>
+      <title>Resources</title>
+      <link>https://dataviz.vg/resources/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dataviz.vg/resources/</guid>
+      <description>Read Cookbook   Thug Kitchen: The Official Cookbook: Eat Like You Give a F*ck (Thug Kitchen Cookbooks)
+  Vegan 100: Over 100 Incredible Recipes from Avant-Garde Vegan
+  Vegan for Everybody: Foolproof Plant-Based Recipes for Breakfast, Lunch, Dinner, and In-Between
+  Plant-Based on a Budget: Delicious Vegan Recipes for Under $30 a Week, in Less Than 30 Minutes a Meal
+  The Plant-Based Diet for Beginners: The Health Benefits of Eating a Plant-Based Diet.</description>
+    </item>
+    
+  </channel>
+</rss>

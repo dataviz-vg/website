@@ -1,0 +1,5437 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Worlwide Meat Production — 1961-2018</title>
+        
+            <link rel="icon" href="https://dataviz.vg/favicon.ico">
+        
+        <style>
+
+    html body {
+        font-family: 'Raleway', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: green;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://dataviz.vg/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+
+ <meta name="generator" content="Hugo 0.80.0" />
+        
+
+        
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-VC1T236FH5"></script>
+            <script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments)};
+              gtag('js', new Date());
+              gtag('config', 'G-VC1T236FH5');
+            </script>
+        
+
+        
+            <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+            <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+
+        
+
+        
+
+    </head>
+
+    <body>
+        
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand visible-xs" href="#">DATAVIZ.VG</a>
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse">
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/">Home</a></li>
+                            
+                                <li><a href="/post/">Posts</a></li>
+                            
+                                <li><a href="/about/">About</a></li>
+                            
+                                <li><a href="/resources/">Resources</a></li>
+                            
+                        </ul>
+                    
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="https://dataviz.vg/about/#contact"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/datavizvg"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/datavizvg/"><i class="fa fa-twitter"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://instagram.com/datavizvg/"><i class="fa fa-instagram"></i></a></li>
+                            
+                        </ul>
+                    
+                </div>
+            </div>
+        </nav>
+
+
+<main>
+
+    <div>
+        <h2>Worlwide Meat Production — 1961-2018</h2>
+        <h5>November 8, 2020</h5>
+        
+<a href="https://dataviz.vg/tags/livestock"><kbd class="item-tag">livestock</kbd></a>
+
+<a href="https://dataviz.vg/tags/production"><kbd class="item-tag">production</kbd></a>
+
+<a href="https://dataviz.vg/tags/industry"><kbd class="item-tag">industry</kbd></a>
+
+
+    </div>
+
+    <div align="start" class="content">
+
+
+<div id="about-the-source" class="section level3">
+<h3>🔎 About the source</h3>
+<div class="source">
+<p>Food and Agriculture Organization of the United Nations - <em>Livestock Primary</em> dataset, ‘All Area Groups’.</p>
+</div>
+<p><em>Note: in a first version of this article, we were using the ‘All Data’ dataset, then switched to the ‘All Area Groups’ dataset, that already countains the worldwide aggregated data.</em></p>
+<div class="link">
+<p><a href="https://www.fao.org/faostat/en/#data/QL">fao.org/faostat/en/#data/QL</a></p>
+</div>
+<div class="count">
+<blockquote>
+<p>The data on livestock numbers are intended to cover all domestic animals irrespective of their age and the place or purpose of their breeding. Estimates have been made for non-reporting countries as well as for countries reporting incomplete data. However, in certain countries, data for chickens, ducks and turkeys do not yet seem to represent the total number of these birds. Certain other countries give a single figure for all poultry; data for these countries are shown under “Chickens”.</p>
+</blockquote>
+</div>
+</div>
+<div id="visualising-the-data" class="section level3">
+<h3>📈 Visualising the data</h3>
+<p>Visualization of <em>Livestock Primary</em>.
+The data is filtered by Item, then the Production in tonnes is kept, grouped by year, and summed.</p>
+<p>These visualizations will display the evolution of the total production in tonnes, then of various livestock, from 1961 to 2018.</p>
+<div id="global-meat-production-in-tonnes" class="section level4">
+<h4>Global meat production in tonnes</h4>
+<p><img src="/post/2020-11-08-livestock-over-time_files/figure-html/meat-over-years-1.png" width="1152" /></p>
+<details closed>
+<p><summary> <span title="Click to Expand"> Show the data </span> </summary></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right;">
+Year
+</th>
+<th style="text-align:left;">
+Item
+</th>
+<th style="text-align:right;">
+Head
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+1961
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+71362169
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1962
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+74654264
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1963
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+78830480
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1964
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+80414414
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1965
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+84465228
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1966
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+88129575
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1967
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+92268694
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1968
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+95209630
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1969
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+96981068
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1970
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+100669144
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1971
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+104832550
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1972
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+107778961
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1973
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+108542087
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1974
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+114039095
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1975
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+115820268
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1976
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+118704716
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1977
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+122614594
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1978
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+127501337
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1979
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+132735348
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1980
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+136738269
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1981
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+139364094
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1982
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+140662104
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1983
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+145313846
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1984
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+149438648
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1985
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+154493243
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1986
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+159156452
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1987
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+164889372
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1988
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+171087100
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1989
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+173667526
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1990
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+179492556
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1991
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+184495098
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1992
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+188296866
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1993
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+193319677
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1994
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+199875755
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1995
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+209424959
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1996
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+207353824
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1997
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+216370698
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1998
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+224596242
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1999
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+231051512
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2000
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+233440887
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2001
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+236725096
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2002
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+243677478
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2003
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+248927663
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2004
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+254650106
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2005
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+260471710
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2006
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+266503190
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+272745189
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2008
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+281574938
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2009
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+286845462
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2010
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+294619190
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2011
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+299273657
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2012
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+307287366
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2013
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+314224806
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2014
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+319799867
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2015
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+325427235
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2016
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+329322389
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2017
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+334837475
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2018
+</td>
+<td style="text-align:left;">
+meat, total
+</td>
+<td style="text-align:right;">
+342396020
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<p><br></p>
+</div>
+<div id="lets-focus-on-some-species" class="section level4">
+<h4>Le’ts focus on some species:</h4>
+<div class="animated">
+<p><img src="/post/2020-11-08-livestock-over-time_files/figure-html/meat-over-years-animated-1.gif" /><!-- --></p>
+</div>
+<details closed>
+<p><summary> <span title="Click to Expand"> Show the data </span> </summary></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right;">
+Year
+</th>
+<th style="text-align:left;">
+Item
+</th>
+<th style="text-align:right;">
+Head
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+1961
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+27684560
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1961
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+7555908
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1961
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+335922
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1961
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+24748623
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1961
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+8949668
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1961
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+4930306
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1961
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+6032191
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1962
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+29203329
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1962
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+7884451
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1962
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+346045
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1962
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+26055878
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1962
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+9205767
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1962
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+5039647
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1962
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+6166781
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1963
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+30855740
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1963
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+8372615
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1963
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+366765
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1963
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+28017011
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1963
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+9749453
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1963
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+5038051
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1963
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+6163326
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1964
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+31276594
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1964
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+8677496
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1964
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+381957
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1964
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+28678415
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1964
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+10141507
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1964
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+5016465
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1964
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+6158124
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1965
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+31858470
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1965
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+9414814
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1965
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+402146
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1965
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+31285284
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1965
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+10962069
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1965
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+5039501
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1965
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+6212144
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1966
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+33554401
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1966
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+9998587
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1966
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+417095
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1966
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+32412805
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1966
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+11682834
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1966
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+5110365
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1966
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+6317857
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1967
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+35269224
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1967
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+10565237
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1967
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+433902
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1967
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+33864987
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1967
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+12384333
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1967
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+5271257
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1967
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+6493821
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1968
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+36965205
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1968
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+11031843
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1968
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+451276
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1968
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+34402875
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1968
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+12783155
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1968
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+5428243
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1968
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+6672625
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1969
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+37929078
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1969
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+11942458
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1969
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+466106
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1969
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+34122221
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1969
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+13732719
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1969
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+5375128
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1969
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+6650206
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1970
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+38349456
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1970
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+13140445
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1970
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+500841
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1970
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+35796842
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1970
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+15096052
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1970
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+5536456
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1970
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+6830942
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1971
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+38073242
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1971
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+13650413
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1971
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+521801
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1971
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+39418389
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1971
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+15732218
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1971
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+5634239
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1971
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+6961677
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1972
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+38539081
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1972
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+14653581
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1972
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+530516
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1972
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+40624567
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1972
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+16833182
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1972
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+5660347
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1972
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+7018105
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1973
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+38839467
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1973
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+15310782
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1973
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+558946
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1973
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+40471811
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1973
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+17622088
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1973
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+5401305
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1973
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+6785120
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1974
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+41850386
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1974
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+15927752
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1974
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+578956
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1974
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+42431732
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1974
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+18297605
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1974
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+5143378
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1974
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+6561829
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1975
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+43734816
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1975
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+16391227
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1975
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+570701
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1975
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+41671811
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1975
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+18674660
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1975
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+5307306
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1975
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+6791671
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1976
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+46091330
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1976
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+17549680
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1976
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+589995
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1976
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+40752457
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1976
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+20026205
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1976
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+5315834
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1976
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+6819910
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1977
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+46486430
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1977
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+18677902
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1977
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+621924
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1977
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+42950133
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1977
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+21230557
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1977
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+5336575
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1977
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+6884345
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1978
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+46989773
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1978
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+20032972
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1978
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+661252
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1978
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+45643945
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1978
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+22704664
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1978
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+5416032
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1978
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+7044103
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1979
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+45785103
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1979
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+21679775
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1979
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+714188
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1979
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+50086460
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1979
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+24557696
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1979
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+5386272
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1979
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+7044175
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1980
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+45566785
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1980
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+22896829
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1980
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+713113
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1980
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+52676913
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1980
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+25947107
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1980
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+5647384
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1980
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+7341533
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1981
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+45954189
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1981
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+24312100
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1981
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+750035
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1981
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+52992604
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1981
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+27510044
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1981
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+5866889
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1981
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+7621505
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1982
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+45915112
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1982
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+25184501
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1982
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+786844
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1982
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+53198527
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1982
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+28462848
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1982
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+5887957
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1982
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+7712227
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1983
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+47160772
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1983
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+25740904
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1983
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+823462
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1983
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+55479655
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1983
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+29200322
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1983
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+6081255
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1983
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+7993433
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1984
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+48484894
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1984
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+26268734
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1984
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+842435
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1984
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+57489121
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1984
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+29774919
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1984
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+6102073
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1984
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+8072131
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1985
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+49308076
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1985
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+27523787
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1985
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+877300
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1985
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+59967763
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1985
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+31181238
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1985
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+6220515
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1985
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+8248783
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1986
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+50984708
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1986
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+29292243
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1986
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+960756
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1986
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+60722851
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1986
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+33321191
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1986
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+6223229
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1986
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+8335775
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1987
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+50940956
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1987
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+31468679
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1987
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+1055325
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1987
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+63424667
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1987
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+35964327
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1987
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+6351798
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1987
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+8650214
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1988
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+51340629
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1988
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+32913138
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1988
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+1117158
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1988
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+66897433
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1988
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+37728180
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1988
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+6651204
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1988
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+9053236
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1989
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+51558609
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1989
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+33560015
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1989
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+1160024
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1989
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+67976022
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1989
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+38665869
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1989
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+6835390
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1989
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+9380976
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1990
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+53029398
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1990
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+35416215
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1990
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+1239231
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1990
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+69701012
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1990
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+40997366
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1990
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+7033484
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1990
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+9700135
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1991
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+53554937
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1991
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+38210226
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1991
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+1384017
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1991
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+71266032
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1991
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+43840828
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1991
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+7134404
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1991
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+9891850
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1992
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+52691678
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1992
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+39876030
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1992
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+1600472
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1992
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+73323778
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1992
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+46025626
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1992
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+7133410
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1992
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+10002888
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1993
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+52095956
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1993
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+42430003
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1993
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+1824259
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1993
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+75750763
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1993
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+48973672
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1993
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+7151928
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1993
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+10124567
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1994
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+51950727
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1994
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+44804864
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1994
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+1969074
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1994
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+79289791
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1994
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+51719700
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1994
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+7242281
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1994
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+10323788
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1995
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+52662543
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1995
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+47547147
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1995
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+2174388
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1995
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+83963063
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1995
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+55295722
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1995
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+7229340
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1995
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+10563474
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1996
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+53702651
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1996
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+49146734
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1996
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+2235681
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1996
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+79294017
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1996
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+57195245
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1996
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+7075901
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1996
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+10267761
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1997
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+54749829
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1997
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+52266358
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1997
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+2445095
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1997
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+83202001
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1997
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+60766656
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1997
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+7240874
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1997
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+10630817
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1998
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+54273427
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1998
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+54476894
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1998
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+2617016
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1998
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+88793964
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1998
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+63305372
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1998
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+7450429
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1998
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+11069521
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1999
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+55479205
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1999
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+56866260
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1999
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+2913024
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1999
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+90787504
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1999
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+66066913
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1999
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+7518717
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1999
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+11310310
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2000
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+55835848
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2000
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+58676400
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2000
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+2905226
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2000
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+89873292
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2000
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+68638943
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2000
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+7717572
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2000
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+11620199
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2001
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+55296982
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2001
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+61002259
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2001
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+3015062
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2001
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+90761759
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2001
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+71235843
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2001
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+7722231
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2001
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+11711295
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2002
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+56345846
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2002
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+64167650
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2002
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+2969118
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2002
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+93173505
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2002
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+74492723
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2002
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+7591929
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2002
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+11713628
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2003
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+57151994
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2003
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+65840525
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2003
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+3060160
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2003
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+95607978
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2003
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+76052096
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2003
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+7727950
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2003
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+12045912
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2004
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+58767355
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2004
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+68236370
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2004
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+3105228
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2004
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+96657436
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2004
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+78555015
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2004
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+7888131
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2004
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+12412818
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2005
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+59109274
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2005
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+70607592
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2005
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+3363853
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2005
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+98784115
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2005
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+81323150
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2005
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+8124287
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2005
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+12828021
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2006
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+60365371
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2006
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+72716601
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2006
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+3420132
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2006
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+100759753
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2006
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+83445211
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2006
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+8341628
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2006
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+13077202
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+62183015
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+77030230
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+3648929
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+99363744
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+88461833
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+8664775
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2007
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+13584426
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2008
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+62263344
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2008
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+80839889
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2008
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+3832971
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2008
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+103563936
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2008
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+92681822
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2008
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+8588012
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2008
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+13594780
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2009
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+62570786
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2009
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+83030541
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2009
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+3943042
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2009
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+106148192
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2009
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+94750296
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2009
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+8565206
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2009
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+13695071
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2010
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+62654388
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2010
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+87231600
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2010
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+4081960
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2010
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+108972569
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2010
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+99296537
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2010
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+8484009
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2010
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+13690948
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2011
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+62374058
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2011
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+90900641
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2011
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+4227252
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2011
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+109623889
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2011
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+103287346
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2011
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+8575130
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2011
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+13753596
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2012
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+62938922
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2012
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+94109691
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2012
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+4361555
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2012
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+113126600
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2012
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+106998645
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2012
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+8680443
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2012
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+13952613
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2013
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+63968833
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2013
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+97634277
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2013
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+4425976
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2013
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+115104163
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2013
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+110438697
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2013
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+8923286
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2013
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+14319846
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2014
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+64471317
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2014
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+100437665
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2014
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+4362532
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2014
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+117055107
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2014
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+113055821
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2014
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+9173477
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2014
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+14717407
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2015
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+63923615
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2015
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+103740143
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2015
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+4297034
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2015
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+119407109
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2015
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+116259109
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2015
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+9437101
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2015
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+15106114
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2016
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+64568004
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2016
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+106638508
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2016
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+4417258
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2016
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+118956327
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2016
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+119696789
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2016
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+9567978
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2016
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+15362559
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2017
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+65415554
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2017
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+110237687
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2017
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+4334520
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2017
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+119929879
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2017
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+123183515
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2017
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+9532953
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2017
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+15415440
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2018
+</td>
+<td style="text-align:left;">
+meat, cattle
+</td>
+<td style="text-align:right;">
+67353900
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2018
+</td>
+<td style="text-align:left;">
+meat, chicken
+</td>
+<td style="text-align:right;">
+114266750
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2018
+</td>
+<td style="text-align:left;">
+meat, duck
+</td>
+<td style="text-align:right;">
+4464925
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2018
+</td>
+<td style="text-align:left;">
+meat, pig
+</td>
+<td style="text-align:right;">
+120881269
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2018
+</td>
+<td style="text-align:left;">
+meat, poultry
+</td>
+<td style="text-align:right;">
+127298325
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2018
+</td>
+<td style="text-align:left;">
+meat, sheep
+</td>
+<td style="text-align:right;">
+9788315
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2018
+</td>
+<td style="text-align:left;">
+sheep and goat meat
+</td>
+<td style="text-align:right;">
+15765334
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<p><br></p>
+<div class="code">
+<p>Code behind this post is available <a href="https://github.com/datavizvg/website/blob/main/content/post/2020-11-08-livestock-over-time.Rmd">here</a>.</p>
+</div>
+</div>
+</div>
+</div>
+    
+    <div>
+        <div>
+            Share this article!
+        </div>
+        <div>
+            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-via="datavizvg" data-hashtags="datavizvg" data-related="_ColinFay" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+        </div>
+        </div>
+
+    
+    
+    
+        <h4 class="page-header">Related</h4>
+         <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/natural-slaughtered-lifespan-animals/">Typical Slaughter Age and Natural Life Span of Animals</a></h4>
+    <h5>November 29, 2020</h5>
+    
+<a href="https://dataviz.vg/tags/livestock"><kbd class="item-tag">livestock</kbd></a>
+
+<a href="https://dataviz.vg/tags/production"><kbd class="item-tag">production</kbd></a>
+
+<a href="https://dataviz.vg/tags/industry"><kbd class="item-tag">industry</kbd></a>
+
+
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/worldwide-cheese-production-1961-2014/">Worlwide Cheese Production — 1961-2014</a></h4>
+    <h5>November 22, 2020</h5>
+    
+<a href="https://dataviz.vg/tags/livestock"><kbd class="item-tag">livestock</kbd></a>
+
+<a href="https://dataviz.vg/tags/production"><kbd class="item-tag">production</kbd></a>
+
+<a href="https://dataviz.vg/tags/industry"><kbd class="item-tag">industry</kbd></a>
+
+
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/worldwide-meat-production-vs-population-growth-1965-2015/">Worlwide Meat Production compared to Population Growth — 1965-2015</a></h4>
+    <h5>November 11, 2020</h5>
+    
+<a href="https://dataviz.vg/tags/livestock"><kbd class="item-tag">livestock</kbd></a>
+
+<a href="https://dataviz.vg/tags/production"><kbd class="item-tag">production</kbd></a>
+
+<a href="https://dataviz.vg/tags/industry"><kbd class="item-tag">industry</kbd></a>
+
+
+
+</div>
+ 
+    
+
+    
+    
+
+</main>
+
+        <footer>
+            <p class="copyright text-muted"> </p>
+        </footer>
+        
+        
+
+        
+
+        
+    </body>
+
+</html>
+

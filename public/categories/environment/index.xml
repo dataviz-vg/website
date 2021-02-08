@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>environment on DATAVIZ.VG</title>
+    <link>https://dataviz.vg/categories/environment/</link>
+    <description>Recent content in environment on DATAVIZ.VG</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 06 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://dataviz.vg/categories/environment/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Embodied Food GHG emissions According to Dietary Pattern</title>
+      <link>https://dataviz.vg/post/embodied-food-ghg-dietary-pattern/</link>
+      <pubDate>Sun, 06 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dataviz.vg/post/embodied-food-ghg-dietary-pattern/</guid>
+      <description>Note: we have another article about GHG emissions and Diet. This new post relies on another source.
+ 🔎 About the source Climate change mitigation and health effects of varied dietary patterns in real-life settings throughout North America
+ academic.oup.com/ajcn/article/100/suppl_1/490S/4576703
+  With the nonvegetarian diet as reference, the mean percentage change in total GHGEs and change in annual emissions were −29.2% and −325 kg CO2e for the vegetarian and −21.</description>
+    </item>
+    
+    <item>
+      <title>Food Commodities and GHG Emissions</title>
+      <link>https://dataviz.vg/post/greenhouse-by-food-commodities/</link>
+      <pubDate>Sun, 15 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dataviz.vg/post/greenhouse-by-food-commodities/</guid>
+      <description>🔎 About the source Dietary greenhouse gas emissions of meat-eaters, fish-eaters, vegetarians and vegans in the UK
+ link.springer.com/article/10.1007/s10584-014-1169-1
+  The production of animal-based foods is associated with higher greenhouse gas (GHG) emissions than plant-based foods.
+   The source document for GHG parameters was Audsley et al. (2009), which estimates comparable GHG emissions for 94 food commodities consumed in the UK. These parameters incorporate the life cycle of food commodities from the earliest stages of production to the retail distribution centre.</description>
+    </item>
+    
+    <item>
+      <title>Greenhouse gas emissions per 2,000 kcal by diet</title>
+      <link>https://dataviz.vg/post/greenhouse-by-diet-2000kcal/</link>
+      <pubDate>Mon, 02 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dataviz.vg/post/greenhouse-by-diet-2000kcal/</guid>
+      <description>🔎 About the source Scarborough, P., Appleby, P.N., Mizdrak, A. et al. Dietary greenhouse gas emissions of meat-eaters, fish-eaters, vegetarians and vegans in the UK. Climatic Change 125, 179–192 (2014). https://doi.org/10.1007/s10584-014-1169-1
+ link.springer.com/article/10.1007/s10584-014-1169-1
+  The production of animal-based foods is associated with higher greenhouse gas (GHG) emissions than plant-based foods.
+   The diets of 2,041 vegans, 15,751 vegetarians, 8,123 fish-eaters and 29,589 meat-eaters aged 20–79 were assessed using a validated food frequency questionnaire.</description>
+    </item>
+    
+  </channel>
+</rss>

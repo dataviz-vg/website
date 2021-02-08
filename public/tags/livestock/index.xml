@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>livestock on DATAVIZ.VG</title>
+    <link>https://dataviz.vg/tags/livestock/</link>
+    <description>Recent content in livestock on DATAVIZ.VG</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 29 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://dataviz.vg/tags/livestock/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Typical Slaughter Age and Natural Life Span of Animals</title>
+      <link>https://dataviz.vg/post/natural-slaughtered-lifespan-animals/</link>
+      <pubDate>Sun, 29 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dataviz.vg/post/natural-slaughtered-lifespan-animals/</guid>
+      <description>🔎 About the source Farm Transparency Project - Age of animals slaughtered
+ farmtransparency.org/kb/abattoirs/48-age-animals-slaughtered
+  Most animals are slaughtered as babies, at a very small portion of their natural life span, regardless of whether they are raised conventionally or in operations that are labelled “humane”, “sustainable”, “natural”, “free range”, “cage free”, “heritage bred”, “grass fed”, “local” or “organic”.
+   📈 Visualising the data Visualization of Age of animals slaughtered.</description>
+    </item>
+    
+    <item>
+      <title>Worlwide Cheese Production — 1961-2014</title>
+      <link>https://dataviz.vg/post/worldwide-cheese-production-1961-2014/</link>
+      <pubDate>Sun, 22 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dataviz.vg/post/worldwide-cheese-production-1961-2014/</guid>
+      <description>🔎 About the source Food and Agriculture Organization of the United Nations - Livestock Processed, All Area Groups dataset.
+ fao.org/faostat/en/#data/QP
+  The data on livestock numbers are intended to cover all domestic animals irrespective of their age and the place or purpose of their breeding. Estimates have been made for non-reporting countries as well as for countries reporting incomplete data. However, in certain countries, data for chickens, ducks and turkeys do not yet seem to represent the total number of these birds.</description>
+    </item>
+    
+    <item>
+      <title>Worlwide Meat Production compared to Population Growth — 1965-2015</title>
+      <link>https://dataviz.vg/post/worldwide-meat-production-vs-population-growth-1965-2015/</link>
+      <pubDate>Wed, 11 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dataviz.vg/post/worldwide-meat-production-vs-population-growth-1965-2015/</guid>
+      <description>This post is a complementary view of our Worlwide Meat Production — 1961-2018 blogpost. In this post, we will compare meat production with the evolution of the population worldwide, notably answering the question: “For a given year, how many kilograms of meat are produced for one human?”
+ 🔎 About the source Food and Agriculture Organization of the United Nations - Livestock Primary dataset.
+ Food and Agriculture Organization of the United Nations - Annual population dataset.</description>
+    </item>
+    
+    <item>
+      <title>Worlwide Meat Production — 1961-2018</title>
+      <link>https://dataviz.vg/post/worldwide-meat-production-1961-2018/</link>
+      <pubDate>Sun, 08 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dataviz.vg/post/worldwide-meat-production-1961-2018/</guid>
+      <description>🔎 About the source Food and Agriculture Organization of the United Nations - Livestock Primary dataset, ‘All Area Groups’.
+ Note: in a first version of this article, we were using the ‘All Data’ dataset, then switched to the ‘All Area Groups’ dataset, that already countains the worldwide aggregated data.
+fao.org/faostat/en/#data/QL
+  The data on livestock numbers are intended to cover all domestic animals irrespective of their age and the place or purpose of their breeding.</description>
+    </item>
+    
+  </channel>
+</rss>

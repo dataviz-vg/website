@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Worlwide Meat Production compared to Population Growth — 1965-2015</title>
+        
+            <link rel="icon" href="https://dataviz.vg/favicon.ico">
+        
+        <style>
+
+    html body {
+        font-family: 'Raleway', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: green;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://dataviz.vg/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+
+ <meta name="generator" content="Hugo 0.80.0" />
+        
+
+        
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-VC1T236FH5"></script>
+            <script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments)};
+              gtag('js', new Date());
+              gtag('config', 'G-VC1T236FH5');
+            </script>
+        
+
+        
+            <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+            <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+
+        
+
+        
+
+    </head>
+
+    <body>
+        
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand visible-xs" href="#">DATAVIZ.VG</a>
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse">
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/">Home</a></li>
+                            
+                                <li><a href="/post/">Posts</a></li>
+                            
+                                <li><a href="/about/">About</a></li>
+                            
+                                <li><a href="/resources/">Resources</a></li>
+                            
+                        </ul>
+                    
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="https://dataviz.vg/about/#contact"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/datavizvg"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/datavizvg/"><i class="fa fa-twitter"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://instagram.com/datavizvg/"><i class="fa fa-instagram"></i></a></li>
+                            
+                        </ul>
+                    
+                </div>
+            </div>
+        </nav>
+
+
+<main>
+
+    <div>
+        <h2>Worlwide Meat Production compared to Population Growth — 1965-2015</h2>
+        <h5>November 11, 2020</h5>
+        
+<a href="https://dataviz.vg/tags/livestock"><kbd class="item-tag">livestock</kbd></a>
+
+<a href="https://dataviz.vg/tags/production"><kbd class="item-tag">production</kbd></a>
+
+<a href="https://dataviz.vg/tags/industry"><kbd class="item-tag">industry</kbd></a>
+
+
+    </div>
+
+    <div align="start" class="content">
+
+
+<blockquote>
+<p>This post is a complementary view of our <a href="https://dataviz.vg/post/greenhouse-by-diet-2000kcal/">Worlwide Meat Production — 1961-2018</a> blogpost.
+In this post, we will compare meat production with the evolution of the population worldwide, notably answering the question:
+“For a given year, how many kilograms of meat are produced for one human?”</p>
+</blockquote>
+<div id="about-the-source" class="section level3">
+<h3>🔎 About the source</h3>
+<div class="source">
+<ol style="list-style-type: decimal">
+<li><p>Food and Agriculture Organization of the United Nations - <em>Livestock Primary</em> dataset.</p></li>
+<li><p>Food and Agriculture Organization of the United Nations - <em>Annual population</em> dataset.</p></li>
+</ol>
+</div>
+<div class="link">
+<ul>
+<li><p><a href="https://www.fao.org/faostat/en/#data/QL">fao.org/faostat/en/#data/QL</a></p></li>
+<li><p><a href="http://www.fao.org/faostat/en/#data/OA">fao.org/faostat/en/#data/OA</a></p></li>
+</ul>
+</div>
+<div class="count">
+<blockquote>
+<ol style="list-style-type: decimal">
+<li>The data on livestock numbers are intended to cover all domestic animals irrespective of their age and the place or purpose of their breeding. Estimates have been made for non-reporting countries as well as for countries reporting incomplete data. However, in certain countries, data for chickens, ducks and turkeys do not yet seem to represent the total number of these birds. Certain other countries give a single figure for all poultry; data for these countries are shown under “Chickens”.</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="2" style="list-style-type: decimal">
+<li>The FAOSTAT Population module contains time series data on population, by sex and urban/rural. The series consist of both estimates and projections for different periods as available from the original sources, namely:1. Population data refers to the World Population Prospects: The 2019 Revision from the UN Population Division.2. Urban/rural population data refers to the World Urbanization Prospects: The 2018 Revision from the UN Population Division.</li>
+</ol>
+</blockquote>
+</div>
+</div>
+<div id="visualising-the-data" class="section level3">
+<h3>📈 Visualising the data</h3>
+<div id="method" class="section level4">
+<h4>Method</h4>
+<p>In this visualization, we have taken both the datasets (Livestock Primary and Annual Population) and joined them by year, then only kept the date each 5 years.
+Then, the <code>Meat</code> column (expressed in kilograms) is divided by the <code>Population</code> column (expressed in number of humans).
+That gives us an estimation of how many kilograms of meats are produced on these given years for each human.</p>
+<p>For example, in 1965, the volume of meat produced worldwide was 84,465,228,000, and the worldwide population 3,339,583,597, making an estimate of 25.29214 kilogram of meat by human on earth.</p>
+<p>In 2015, the volume of meat produced worldwide was 325,427,235,000, and the worldwide population 7,379,797,139, making an estimate of 44.09704 kilogram of meat by human on earth.</p>
+<p><img src="/post/2020-11-11-livestock-world-population-over-time_files/figure-html/meat-over-years-1.png" width="1152" /></p>
+<details closed>
+<p><summary> <span title="Click to Expand"> Show the data </span> </summary></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right;">
+Year
+</th>
+<th style="text-align:left;">
+Human
+</th>
+<th style="text-align:left;">
+Meat
+</th>
+<th style="text-align:right;">
+one_man_has
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+1965
+</td>
+<td style="text-align:left;">
+3,339,583,597
+</td>
+<td style="text-align:left;">
+84,465,228,000
+</td>
+<td style="text-align:right;">
+25.29214
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1970
+</td>
+<td style="text-align:left;">
+3,700,437,046
+</td>
+<td style="text-align:left;">
+100,669,144,000
+</td>
+<td style="text-align:right;">
+27.20466
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1975
+</td>
+<td style="text-align:left;">
+4,079,480,606
+</td>
+<td style="text-align:left;">
+115,820,268,000
+</td>
+<td style="text-align:right;">
+28.39093
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1980
+</td>
+<td style="text-align:left;">
+4,458,003,514
+</td>
+<td style="text-align:left;">
+136,738,269,000
+</td>
+<td style="text-align:right;">
+30.67253
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1985
+</td>
+<td style="text-align:left;">
+4,870,921,740
+</td>
+<td style="text-align:left;">
+154,493,243,000
+</td>
+<td style="text-align:right;">
+31.71746
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1990
+</td>
+<td style="text-align:left;">
+5,327,231,061
+</td>
+<td style="text-align:left;">
+179,492,556,000
+</td>
+<td style="text-align:right;">
+33.69341
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1995
+</td>
+<td style="text-align:left;">
+5,744,212,979
+</td>
+<td style="text-align:left;">
+209,424,959,000
+</td>
+<td style="text-align:right;">
+36.45843
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2000
+</td>
+<td style="text-align:left;">
+6,143,493,823
+</td>
+<td style="text-align:left;">
+233,440,887,000
+</td>
+<td style="text-align:right;">
+37.99807
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2005
+</td>
+<td style="text-align:left;">
+6,541,907,027
+</td>
+<td style="text-align:left;">
+260,471,710,000
+</td>
+<td style="text-align:right;">
+39.81587
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2010
+</td>
+<td style="text-align:left;">
+6,956,823,603
+</td>
+<td style="text-align:left;">
+294,619,190,000
+</td>
+<td style="text-align:right;">
+42.34967
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2015
+</td>
+<td style="text-align:left;">
+7,379,797,139
+</td>
+<td style="text-align:left;">
+325,427,235,000
+</td>
+<td style="text-align:right;">
+44.09704
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<p><br></p>
+<div class="code">
+<p>Code behind this post is available <a href="https://github.com/datavizvg/website/blob/main/content/post/2020-11-11-livestock-world-population-over-time.Rmd">here</a>.</p>
+</div>
+</div>
+</div>
+</div>
+    
+    <div>
+        <div>
+            Share this article!
+        </div>
+        <div>
+            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-via="datavizvg" data-hashtags="datavizvg" data-related="_ColinFay" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+        </div>
+        </div>
+
+    
+    
+    
+        <h4 class="page-header">Related</h4>
+         <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/natural-slaughtered-lifespan-animals/">Typical Slaughter Age and Natural Life Span of Animals</a></h4>
+    <h5>November 29, 2020</h5>
+    
+<a href="https://dataviz.vg/tags/livestock"><kbd class="item-tag">livestock</kbd></a>
+
+<a href="https://dataviz.vg/tags/production"><kbd class="item-tag">production</kbd></a>
+
+<a href="https://dataviz.vg/tags/industry"><kbd class="item-tag">industry</kbd></a>
+
+
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/worldwide-cheese-production-1961-2014/">Worlwide Cheese Production — 1961-2014</a></h4>
+    <h5>November 22, 2020</h5>
+    
+<a href="https://dataviz.vg/tags/livestock"><kbd class="item-tag">livestock</kbd></a>
+
+<a href="https://dataviz.vg/tags/production"><kbd class="item-tag">production</kbd></a>
+
+<a href="https://dataviz.vg/tags/industry"><kbd class="item-tag">industry</kbd></a>
+
+
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/worldwide-meat-production-1961-2018/">Worlwide Meat Production — 1961-2018</a></h4>
+    <h5>November 8, 2020</h5>
+    
+<a href="https://dataviz.vg/tags/livestock"><kbd class="item-tag">livestock</kbd></a>
+
+<a href="https://dataviz.vg/tags/production"><kbd class="item-tag">production</kbd></a>
+
+<a href="https://dataviz.vg/tags/industry"><kbd class="item-tag">industry</kbd></a>
+
+
+
+</div>
+ 
+    
+
+    
+    
+
+</main>
+
+        <footer>
+            <p class="copyright text-muted"> </p>
+        </footer>
+        
+        
+
+        
+
+        
+    </body>
+
+</html>
+

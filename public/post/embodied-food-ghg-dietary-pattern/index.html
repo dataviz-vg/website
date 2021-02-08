@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Embodied Food GHG emissions According to Dietary Pattern</title>
+        
+            <link rel="icon" href="https://dataviz.vg/favicon.ico">
+        
+        <style>
+
+    html body {
+        font-family: 'Raleway', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: green;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://dataviz.vg/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+
+ <meta name="generator" content="Hugo 0.80.0" />
+        
+
+        
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-VC1T236FH5"></script>
+            <script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments)};
+              gtag('js', new Date());
+              gtag('config', 'G-VC1T236FH5');
+            </script>
+        
+
+        
+            <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+            <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+
+        
+
+        
+
+    </head>
+
+    <body>
+        
+
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand visible-xs" href="#">DATAVIZ.VG</a>
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse">
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/">Home</a></li>
+                            
+                                <li><a href="/post/">Posts</a></li>
+                            
+                                <li><a href="/about/">About</a></li>
+                            
+                                <li><a href="/resources/">Resources</a></li>
+                            
+                        </ul>
+                    
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="https://dataviz.vg/about/#contact"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/datavizvg"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/datavizvg/"><i class="fa fa-twitter"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://instagram.com/datavizvg/"><i class="fa fa-instagram"></i></a></li>
+                            
+                        </ul>
+                    
+                </div>
+            </div>
+        </nav>
+
+
+<main>
+
+    <div>
+        <h2>Embodied Food GHG emissions According to Dietary Pattern</h2>
+        <h5>December 6, 2020</h5>
+        
+<a href="https://dataviz.vg/tags/greenhouse"><kbd class="item-tag">greenhouse</kbd></a>
+
+<a href="https://dataviz.vg/tags/ecology"><kbd class="item-tag">ecology</kbd></a>
+
+<a href="https://dataviz.vg/tags/environment"><kbd class="item-tag">environment</kbd></a>
+
+
+    </div>
+
+    <div align="start" class="content">
+
+
+<blockquote>
+<p>Note: we have another article about <a href="https://dataviz.vg/post/greenhouse-by-diet-2000kcal/">GHG emissions and Diet</a>.
+This new post relies on another source.</p>
+</blockquote>
+<div id="about-the-source" class="section level3">
+<h3>🔎 About the source</h3>
+<div class="source">
+<p>Climate change mitigation and health effects of varied dietary patterns in real-life settings throughout North America</p>
+</div>
+<div class="link">
+<p><a href="https://academic.oup.com/ajcn/article/100/suppl_1/490S/4576703">academic.oup.com/ajcn/article/100/suppl_1/490S/4576703</a></p>
+</div>
+<div class="quote">
+<blockquote>
+<p>With the nonvegetarian diet as reference, the mean percentage change in total GHGEs and change in annual emissions were −29.2% and −325 kg CO2e for the vegetarian and −21.6% and −241 kg CO2e for semivegetarian diets, respectively.</p>
+</blockquote>
+</div>
+<div class="count">
+<blockquote>
+<p>Data from the Adventist Health Study 2 (AHS-2) were used to characterize and quantify the dietary patterns assessed. The AHS-2 is a large prospective cohort study of Seventh-day Adventists spread throughout the United States and Canada. Dietary intake was assessed by a self-administered food-frequency questionnaire of 210 food items including fruit, vegetables, legumes, grains, oils, dairy, fish, eggs, meat, beverages, and commercially prepared products such as dietary supplements, dry cereals, and vegetarian protein products. Dietary patterns were determined according to the reported combined intake of all meats, including fish. Vegetarians rarely or never consumed meats (&lt;1 time/mo), semivegetarians consumed meats &gt;1 time/mo but &lt;1 time/wk, and nonvegetarians consumed meats at least 1 time/wk.</p>
+</blockquote>
+</div>
+</div>
+<div id="visualising-the-data" class="section level3">
+<h3>📈 Visualising the data</h3>
+<p>Visualization of <em>Embodied food greenhouse gas emissions, adjusted to 2000 kcal, according to Dietary pattern</em>.</p>
+<p>Three Dietary patterns are studied (either Nonvegetarian, Semivegetarian, or Vegetarian).</p>
+<p><img src="/post/2020-12-06-co2-diet_files/figure-html/unnamed-chunk-1-1.png" width="1152" /></p>
+<details closed>
+<p><summary> <span title="Click to Expand"> Show the data </span> </summary></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left;">
+Dietary.pattern
+</th>
+<th style="text-align:right;">
+Mean.GHG.Emission
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Nonvegetarian
+</td>
+<td style="text-align:right;">
+3.05
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Semivegetarian
+</td>
+<td style="text-align:right;">
+2.39
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Vegetarian
+</td>
+<td style="text-align:right;">
+2.16
+</td>
+</tr>
+</tbody>
+</table>
+</details>
+<p><br></p>
+<div class="code">
+<p>Code behind this post is available <a href="https://github.com/datavizvg/website/blob/main/content/post/2020-12-06-co2-diet.Rmd">here</a>.</p>
+</div>
+</div>
+</div>
+    
+    <div>
+        <div>
+            Share this article!
+        </div>
+        <div>
+            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-via="datavizvg" data-hashtags="datavizvg" data-related="_ColinFay" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+        </div>
+        </div>
+
+    
+    
+    
+        <h4 class="page-header">Related</h4>
+         <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/greenhouse-by-food-commodities/">Food Commodities and GHG Emissions</a></h4>
+    <h5>November 15, 2020</h5>
+    
+<a href="https://dataviz.vg/tags/greenhouse"><kbd class="item-tag">greenhouse</kbd></a>
+
+<a href="https://dataviz.vg/tags/ecology"><kbd class="item-tag">ecology</kbd></a>
+
+<a href="https://dataviz.vg/tags/environment"><kbd class="item-tag">environment</kbd></a>
+
+
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/greenhouse-by-diet-2000kcal/">Greenhouse gas emissions per 2,000 kcal by diet</a></h4>
+    <h5>November 2, 2020</h5>
+    
+<a href="https://dataviz.vg/tags/greenhouse"><kbd class="item-tag">greenhouse</kbd></a>
+
+<a href="https://dataviz.vg/tags/ecology"><kbd class="item-tag">ecology</kbd></a>
+
+<a href="https://dataviz.vg/tags/environment"><kbd class="item-tag">environment</kbd></a>
+
+
+
+</div>
+ 
+    
+
+    
+    
+
+</main>
+
+        <footer>
+            <p class="copyright text-muted"> </p>
+        </footer>
+        
+        
+
+        
+
+        
+    </body>
+
+</html>
+
