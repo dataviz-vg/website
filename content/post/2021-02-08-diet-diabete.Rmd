@@ -1,0 +1,106 @@
+---
+title: "Type of Vegetarian Diet, Body Weight, and Prevalence of Type 2 Diabetes"
+author: "Colin Fay"
+date: 2021-02-08
+slug: "type-diet-type-2-diabet"
+categories: ["health"]
+tags: ["health", "diabete"]
+draft: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE, 
+  echo = FALSE, 
+  warning = FALSE, 
+  message = FALSE
+)
+```
+
+### `r emo::ji("mag_right")` About the source 
+
+::: {.source}
+Type of Vegetarian Diet, Body Weight, and Prevalence of Type 2 Diabetes
+::: 
+
+::: {.link}
+[ncbi.nlm.nih.gov/pmc/articles/PMC2671114/](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2671114/)
+:::
+
+::: {.quote}
+> Mean BMI was lowest in vegans and incrementally higher in lacto-ovo vegetarians, pesco-vegetarians, semi-vegetarians, and nonvegetarians. Prevalence of type 2 diabetes increased from 2.9% in vegans to 7.6% in nonvegetarians; the prevalence was intermediate in participants consuming lacto-ovo (3.2%), pesco (4.8%), or semi-vegetarian (6.1%) diets. After adjustment (...) vegans, lacto-ovo vegetarians, pesco-vegetarians, and semi-vegetarians had a lower risk of type 2 diabetes than nonvegetarians.
+:::
+
+::: {.count}
+> The study population comprised 22,434 men and 38,469 women who participated in the Adventist Health Study-2 conducted in 2002–2006. We collected self-reported demographic, anthropometric, medical history, and lifestyle data from Seventh-Day Adventist church members across North America. The type of vegetarian diet was categorized based on a food-frequency questionnaire. We calculated odds ratios (ORs) and 95% CIs using multivariate-adjusted logistic regression.
+:::
+
+```{r}
+library(tidyverse)
+library(vegviz)
+table <- paste0("type-diet-type-2-diabet", ".csv")
+if (!file.exists(
+  table
+)){
+  library(rvest)
+  # READ DATA HERE
+   tbls <- read_html("https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2671114/") %>%
+    # MANIPULATE
+    html_table() 
+   tbls[[2]] %>%
+     .[2, 2:6] %>%
+     pivot_longer(
+       cols = everything(), 
+       names_to = "Diet", 
+       values_to = "Type 2 diabetes"
+     ) %>%
+    # WRITE
+    readr::write_csv(table)
+}
+source_table <- readr::read_csv(table)
+```
+
+
+### `r emo::ji("chart_with_upwards_trend")` Visualising the data
+
+Comparison of the diabetes prevalence among 5 diets (either `r knitr::combine_words(source_table$name, and = "or ")`).
+
+```{r fig.dim = c(12, 8)}
+# VIZ
+source_table %>%
+    ggplot(
+    aes(
+      reorder(Diet, `Type 2 diabetes`),
+      `Type 2 diabetes`, 
+      fill = Diet,  
+      label = Diet
+    )
+  ) + 
+  geom_col(alpha = .9) + 
+  geom_text(
+    aes(y = 0.2,label = `Diet`, hjust = 0), 
+    size = rel(6)
+  ) + 
+  coord_flip() + 
+  scale_fill_viridis_d(option = "D") + 
+  guides(
+    fill = FALSE
+  )  +
+  ggtheme() +
+  labs(
+    title = "Vegan and vegetarian diets are associated with a reduction in risk of type 2 diabetes", 
+    subtitle = "From: 'Type of Vegetarian Diet, Body Weight, and Prevalence of Type 2 Diabetes'\nhttps://www.ncbi.nlm.nih.gov/pmc/articles/PMC2671114/", 
+    x = " ", 
+    y = "Prevalence of type 2 diabetes", 
+    fill = "Dietary pattern",
+    caption = "Via dataviz.vg"
+  ) + 
+  theme(axis.text.y = element_blank(),
+        axis.ticks.y = element_blank())
+```
+
+`r details::details(knitr::kable(source_table, format = "html"), summary = "Show the data",lang  = NULL)`
+
+::: {.code}
+Code behind this post is available `r build_link(knitr::current_input())`. 
+:::
