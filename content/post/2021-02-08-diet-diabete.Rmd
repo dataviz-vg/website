@@ -37,6 +37,7 @@ Type of Vegetarian Diet, Body Weight, and Prevalence of Type 2 Diabetes
 ```{r}
 library(dplyr)
 library(ggplot2)
+library(tidyr)
 library(vegviz)
 table <- paste0("type-diet-type-2-diabet", ".csv")
 if (!file.exists(
