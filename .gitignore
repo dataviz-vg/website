@@ -2,4 +2,4 @@
 .RData
 .Rproj.user
 content/post/*.html
-public/
+content/post/*.csv
